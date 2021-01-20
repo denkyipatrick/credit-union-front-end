@@ -1,0 +1,19 @@
+
+<div style="width: 500px; max-width: 100%;">
+    <span class="flex items-center space-x-4">
+        <p class="text-lg font-medium">{{data?.title || 'Confirm'}}</p>
+    </span>
+
+    <p>{{data?.message || 'Are you sure you want to continue?'}}</p>
+
+    <div class="flex justify-end space-x-4">
+        <button mat-raised-button class="p-2 border-2" (click)="close()">
+            {{data?.cancelButtonText || 'CANCEL'}}
+        </button>
+        <button mat-raised-button 
+            style="width: 80px;"
+            class="p-2 bg-blue-600 text-white" (click)="continue()">
+            {{data?.okButtonText || 'OK'}}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+
+<div style="width: 500px; max-width: 100%;">
+    <p class="text-lg font-medium">{{data?.title || 'Info'}}</p>
+    <p>{{data?.message || 'This is a description of the information'}}</p>
+
+    <span class="flex justify-end">
+        <button mat-raised-button style="width: 80px;"
+        class="p-2 bg-blue-600 text-white" (click)="close()">{{data?.okButtonText || 'OK'}}</button>
+    </span>
+</div>

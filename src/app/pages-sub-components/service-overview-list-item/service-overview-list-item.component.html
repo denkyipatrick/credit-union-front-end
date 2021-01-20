@@ -1,0 +1,14 @@
+
+<div class="card-and-image-container" [ngClass]="{'flipped': isFlipped}">
+    <div class="data-wrapper">
+        <div class="data" [ngClass]="{'flip-right': isFlipped}">
+            <h3><a [href]="targetUrl">{{title}}</a></h3>
+            <p>{{description}}</p>
+            <a [href]="targetUrl" class="btn btn-outlined">Learn More</a>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img [src]="featuredPhotoUrl" />
+        <span class="image-overlay"></span>
+    </div>
+</div>

@@ -1,0 +1,125 @@
+
+<!-- <div *ngIf="isFetching" style="height: 30vh;" class="mx-auto flex items-center justify-center">
+    <p>Loading Account Transactions</p>
+</div> -->
+
+<app-loader *ngIf="isFetching"></app-loader>
+
+<div *ngIf="isErrorFetching" class="flex items-center justify-center mx-auto" style="height: 30vh;">
+    <p>An error has occured. Please reload your browser.</p>
+</div>
+
+<div *ngIf="!isFetching && !isErrorFetching" class="space-y-12">
+    <div>
+        <span class="flex justify-end mb-4">
+            <button 
+            mat-raised-button 
+            class="yellow-button"
+            (click)="makeTransaction('deposit')">MAKE A DEPOSIT</button>
+        </span>
+        <mat-card>
+            <mat-card-title>
+                <span class="flex items-center justify-between space-x-4">
+                    <p class="text-2xl font-normal">Deposits</p>
+                    <p>${{totalDepositedAmount?.toFixed(2)}}</p>
+                </span>
+            </mat-card-title>
+            <mat-card-content>
+                <div>
+                    <p *ngIf="!deposits?.length">Your deposits will be shown here...</p>
+                    
+                    <div *ngIf="deposits?.length" class="mt-4">
+                        <span class="flex items-center space-x-4">
+                            <p class="w-1/3 font-medium">Account Number</p>
+                            <p class="w-1/3 font-medium">Amount</p>
+                            <p class="w-1/3 font-medium">Date</p>
+                        </span>
+
+                        <ul>
+                            <li *ngFor="let deposit of deposits" class="flex items-center space-x-4">
+                                <p class="w-1/3">{{deposit?.account?.accountNumber}}</p>
+                                <p class="w-1/3">${{deposit?.amount?.toFixed(2)}}</p>
+                                <p class="w-1/3">{{deposit?.createdAt}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div>
+        <span class="flex justify-end mb-4">
+            <button 
+            mat-raised-button 
+            class="yellow-button"
+            (click)="makeTransaction('withdrawal')">MAKE A WITHDRAWAL</button>
+        </span>
+        <mat-card>
+            <mat-card-title>
+                <span class="flex items-center justify-between space-x-4">
+                    <p class="text-2xl font-normal">Withdawals</p>
+                    <p>${{totalWithdrawnAmount?.toFixed(2)}}</p>
+                </span>
+            </mat-card-title>
+            <mat-card-content>
+                <div>
+                    <p *ngIf="!withdrawals?.length">Your withdrawals will be shown here...</p>
+                    
+                    <div *ngIf="withdrawals?.length" class="mt-4">
+                        <span class="flex items-center space-x-4">
+                            <p class="w-1/3 font-medium">Account Number</p>
+                            <p class="w-1/3 font-medium">Amount</p>
+                            <p class="w-1/3 font-medium">Date</p>
+                        </span>
+
+                        <ul>
+                            <li *ngFor="let withdrawal of withdrawals" class="flex items-center space-x-4">
+                                <p class="w-1/3">{{withdrawal?.account?.accountNumber}}</p>
+                                <p class="w-1/3">${{withdrawal?.amount?.toFixed(2)}}</p>
+                                <p class="w-1/3">{{withdrawal?.createdAt}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div>
+        <span class="flex justify-end mb-4">
+            <button mat-raised-button class="yellow-button">MAKE A TRANSFER</button>
+        </span>
+        <mat-card>
+            <mat-card-title>
+                <span class="flex items-center justify-between space-x-4">
+                    <p class="text-2xl font-normal">Transfer History</p>
+                    <p>${{totalTransferedAmount?.toFixed(2)}}</p>
+                </span>
+            </mat-card-title>
+            <mat-card-content>
+                <div>
+                    <p *ngIf="!transfers?.length">Your transfer history will be shown here...</p>
+                </div>
+                
+                <div *ngIf="transfers?.length">
+                    <span class="flex items-center space-x-4">
+                        <p class="w-1/3 font-medium">Receiver</p>
+                        <p class="w-1/3 font-medium">Amount</p>
+                        <p class="w-1/3 font-medium">Date</p>
+                    </span>
+
+                    <ul>
+                        <li *ngFor="let transfer of transfers">
+                            <span class="flex items-center space-x-4">
+                                <p class="w-1/3">{{transfer?.receiverAccount?.owner?.firstName}} {{transfer?.receiverAccount?.owner?.lastName}}</p>
+                                <p class="w-1/3">${{transfer?.amount?.toFixed(2)}}</p>
+                                <p class="w-1/3">{{transfer?.createdAt}}</p>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>    
+</div>

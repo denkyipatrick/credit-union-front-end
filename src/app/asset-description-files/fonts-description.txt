@@ -1,0 +1,50 @@
+main headings fonts 
+    family: PT Serif, Times Roman, Courier, serif
+    weight: 400
+    line-height: 1.2
+    color #0c3c49
+
+main heading description-1 font
+    family: Lato, Helvetica Neue, Arial, sans-serif
+    weight: 400
+    height: 1.5
+    color: #444
+
+main heading description-2 font
+    family: Lato, Helvetica Neue, Arial, sans-serif
+    weight: 200
+    height: 1.5
+    color: #444
+
+
+:root {
+    --blue: #597688;
+    --indigo: #0c3c49;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #cf881c;
+    --green: #1c9a3a;
+    --teal: #20c997;
+    --cyan: #88cad0;
+    --white: #fff;
+    --gray: #666666;
+    --gray-dark: #444;
+    --primary: #597688;
+    --secondary: #72103d;
+    --success: #1c9a3a;
+    --info: #0c3c49;
+    --warning: #cf881c;
+    --danger: #dc3545;
+    --light: #eaeaea;
+    --dark: #444;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1400px;
+    --font-family-sans-serif: "Lato", "Helvetica Neue", Arial, sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

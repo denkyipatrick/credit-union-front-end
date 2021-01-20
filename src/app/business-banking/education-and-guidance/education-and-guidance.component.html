@@ -1,0 +1,66 @@
+
+
+
+<app-header 
+    heroTitle="Education & Guidance"
+    heroDescription="
+        Smart advice and inspirational 
+        ideas from experts to help you 
+        plan the big decisions for your business."
+    heroImageUrl="../assets/images/business/education-guidance/group-coworkers-having-a-meeting-large.jpg">
+</app-header>
+
+<div class="container">
+    <div class="row">
+        <ul class="service-overview-list">
+            <li>
+                <app-service-overview-list-item
+                    title="Becoming a Business Owner"
+                    [targetUrl]="baseUrl + '/becoming-a-business-owner'"
+                    featuredPhotoUrl="../assets/images/business/education-guidance/group-of-professionals-celebrating-their-new-office-space-small.jpg"
+                    description="
+                        Becoming a business owner is 
+                        an opportunity of a lifetime 
+                        that can bring great success, or 
+                        many challenges. 
+                        Find out how Johnson Financial Group 
+                        can partner with you to make success 
+                        a reality.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Running Your Business"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/running-your-business'"
+                    featuredPhotoUrl="../assets/images/business/education-guidance/woman-at-desk-writing-in-notepad-small.jpg"
+                    description="Are you managing your business to its full potential?">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Growing Your Business"
+                    [targetUrl]="baseUrl + '/growing-your-business'"
+                    featuredPhotoUrl="../assets/images/business/education-guidance/group-employees-standing-in-their-new-office-space-small.jpg"
+                    description="It's all in your strategy.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Business Succession Planning"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/business-succession-planning'"
+                    featuredPhotoUrl="../assets/images/business/education-guidance/family-son-taking-over-business-from-mother-small.webp"
+                    description="
+                        As a multigenerational family business, 
+                        we are attuned to the needs of 
+                        business owners at every stage, 
+                        from that initial creative spark 
+                        to your retirement and beyond.">
+                </app-service-overview-list-item>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<app-footer></app-footer>

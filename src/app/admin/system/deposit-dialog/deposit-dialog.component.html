@@ -1,0 +1,14 @@
+
+<div>
+    <p class="text-lg">Deposit Amount</p>
+    <p class="text-base font-medium">Account Number: {{data?.account?.accountNumber}}</p>
+        
+    <form [formGroup]="form" (ngSubmit)="deposit()">
+        <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Amount</mat-label>
+            <input matInput required formControlName="amount" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="w-full" [disabled]="isWorking">SAVE</button>
+    </form>
+</div>

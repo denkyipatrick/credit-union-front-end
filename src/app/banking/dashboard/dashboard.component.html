@@ -1,0 +1,83 @@
+
+
+<div>
+    <mat-card class="mb-8">
+        <mat-card-title>
+            <p class="text-base font-medium">Account Details</p>
+        </mat-card-title>
+        <mat-card-content>
+            <span class="flex items-center space-x-4">
+                <p class="w-1/3 font-medium">{{user?.firstName}} {{user?.lastName}}</p>
+                <p class="w-1/3 font-medium">Account</p>
+                <p class="w-1/3 font-medium">Balance</p>
+            </span>
+
+            <span class="flex items-start space-x-4">
+                <div class="w-1/3">
+                    <p>{{user?.phoneNumber}}</p>
+                    <p>{{user?.emailAddress}}</p>
+                </div>
+
+                <div class="w-1/3">
+                    {{userAccount?.accountNumber}}
+                </div>
+
+                <div class="w-1/3">
+                    <p class="text-xl">${{userAccount?.balance.toFixed(2)}}</p>
+                </div>
+            </span>
+        </mat-card-content>
+    </mat-card>
+    
+    <app-loader *ngIf="fetchingAccountData" [message]="'Fetching Dashboard data...'"></app-loader>
+    <div *ngIf="userAccount && !fetchingAccountData" class="space-y-8">
+        <mat-card>
+            <mat-card-title>
+                <p class="text-base font-normal">Transfers</p>
+            </mat-card-title>
+            <mat-card-content>
+                <div style="margin-top: 2rem;">
+                    <p class="text-3xl">${{totalTransferedAmount.toFixed(2)}}</p>
+                </div>
+    
+                <div class="flex justify-end items-center space-x-4">
+                    <button mat-raised-button>View Transfers</button>
+                    <a routerLink="/banking/transfers" mat-raised-button class="yellow-button">Transfer Money</a>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card>
+            <mat-card-title>
+                <p class="text-base font-normal">Deposits</p>
+            </mat-card-title>
+            <mat-card-content>
+                <div style="margin-top: 2rem;">
+                    <p class="text-3xl">${{totalDepositedAmount?.toFixed(2)}}</p>
+                </div>
+    
+                <div class="flex justify-end items-center space-x-4">
+                    <a routerLink="/banking/transactions" mat-raised-button>View Deposits</a>
+                    <button mat-raised-button class="yellow-button" (click)="deposit()">Make a Deposit</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card>
+            <mat-card-title>
+                <p class="text-base font-normal">Withdrawals</p>
+            </mat-card-title>
+            <mat-card-content>
+                <div style="margin-top: 2rem;">
+                    <p class="text-3xl">${{totalWithdrawnAmount?.toFixed(2)}}</p>
+                </div>
+    
+                <div class="flex justify-end items-center space-x-4">
+                    <a routerLink="/banking/transactions" 
+                    mat-raised-button class="yellow-button">View Withdrawals</a>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class='service-title mx-auto my-6 mt-12' style="width: 700px; max-width: 90%;">
+    <p class="text-4xl">Contact Us</p>
+    <p>
+        Get in touch with us with your queries, suggestions, comments and any feedbacks.
+        <br />We will be glad to hear from you.
+    </p>
+</div>
+
+<div>
+    <form [formGroup]="form" class="mx-auto my-8" 
+    style="width: 700px; max-width: 90%;" (ngSubmit)="send()">
+        <div class="flex items-center space-x-8">
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>First Name</mat-label>
+                <input required matInput formControlName="fName" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Last Name</mat-label>
+                <input required matInput formControlName="lName" />
+            </mat-form-field>
+        </div>
+        
+        <div class="flex items-center space-x-8">
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Email Address</mat-label>
+                <input required matInput formControlName="email" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Phone Number (Intl. Format)</mat-label>
+                <input required matInput formControlName="phone" />
+            </mat-form-field>
+        </div>
+        
+        <div class="flex items-center space-x-8">
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Questions / Comments</mat-label>
+                <textarea matInput required formControlName="questionsOrComments" rows="5"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button class="yellow-button w-full" 
+            mat-raised-button
+            [disabled]="isSending">SEND</button>
+        </div>
+
+    </form>
+</div>
+
+<app-footer></app-footer>

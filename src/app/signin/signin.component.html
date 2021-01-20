@@ -1,0 +1,40 @@
+
+<div class="w-full bg-teal-700" style="height: 60px;"></div>
+<div class="mx-auto my-12" style="width: 350px; max-width: 90%;">
+    <form [formGroup]="form" (ngSubmit)="signin()">
+
+        <div class="text-center mb-8">
+            <img src="../../assets/images/g18-300x300.png" 
+                class="mx-auto outline-none border-none mb-8"
+                style="width: 70px;" />
+            <p class="text-3xl my-4 font-light">Online Banking</p>
+            <p>
+                <a href="/create-account" class="text-blue-700 font-medium">Register</a> 
+                if you do not already have an account with BSV
+            </p>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Your Email Address or Phone Number</mat-label>
+                <input matInput required email formControlName="id" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Password</mat-label>
+                <input matInput required formControlName="password" type="password" />
+            </mat-form-field>
+        </div>
+
+        <div class="text-center">
+            <p style="margin: 1rem 0;" class="text-red-600">{{errorMessage}}</p>
+
+            <button 
+                mat-raised-button 
+                class="yellow-button w-full"
+                [disabled]="isWorking">
+                Start Online Banking
+            </button>
+        </div>
+    </form>
+</div>

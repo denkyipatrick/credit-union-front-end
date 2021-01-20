@@ -1,0 +1,16 @@
+
+<mat-card>
+    <mat-card-content>
+        <p class="text-lg">{{user?.firstName}} {{user?.lastName}}</p>
+        <span class="flex items-center space-x-4">
+            <p>Phone: <span class="text-blue-600">{{user?.phoneNumber}}</span></p>
+            <p>Email: <span class="text-blue-600">{{user?.emailAddress}}</span></p>
+        </span>
+
+        <span class="flex space-x-4 items-center justify-between">
+            <p>Accounts: {{user?.accounts?.length}}</p>
+            <a [routerLink]="'/admin/s/users/' + user?.id" 
+                mat-raised-button class="bg-blue-600 text-white">View User</a>
+        </span>
+    </mat-card-content>
+</mat-card>

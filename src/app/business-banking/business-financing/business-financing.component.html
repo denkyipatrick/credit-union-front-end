@@ -1,0 +1,87 @@
+
+<app-header 
+heroTitle="Business Financing"
+heroDescription="
+    As a business owner, 
+    you may aspire to expand your 
+    company or acquire new equipment. 
+    Make your dreams a reality with 
+    our flexible financing options 
+    for businesses."
+heroImageUrl="../assets/images/business/business-financing/business-owners-reviewing-warehouse-layout-large.jpg">
+</app-header>
+
+
+<div class="container">
+    <div class="row btf-title">
+        <h2>Our Approach</h2>
+        <p class="light">
+            We know that every business is 
+            unique and faces different types 
+            of challenges. Our advisors take 
+            the time to get to know you and 
+            understand your business and 
+            specific needs in order to 
+            develop customized financing 
+            solutions. Our relationship 
+            with you provides ongoing guidance, 
+            stability and reliability so 
+            you can focus on running your 
+            business.
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ul class="service-overview-list">
+            <li>
+                <app-service-overview-list-item
+                    title="Business Loans"
+                    [targetUrl]="baseUrl + '/business-loans'"
+                    featuredPhotoUrl="../assets/images/business/business-financing/business-owners-looking-at-building-plans-small.jpg"
+                    description="
+                        We offer a full suite of business 
+                        financing solutions that can 
+                        help you acquire a business or 
+                        inventory, purchase or refinance 
+                        equipment, or meet your working 
+                        capital needs.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Commercial Real Estate"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/commercial-real-estate'"
+                    featuredPhotoUrl="../assets/images/business/business-financing/business-owner-and-architect-discussing-building-plans-small.webp"
+                    description="
+                        You need a reliable banking partner 
+                        that can promptly deliver the right 
+                        real estate loans through fluctuating 
+                        economic cycles. We have the capabilities 
+                        you need to successfully execute on 
+                        your next project.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Equipment Leasing"
+                    [targetUrl]="baseUrl + '/business-loans'"
+                    featuredPhotoUrl="../assets/images/business/business-financing/manufacturing-facility-machinery-small.jpg"
+                    description="
+                        We work to understand your 
+                        business and your short and long‐term goals. 
+                        By leasing your company's equipment, 
+                        you can take advantage of the latest 
+                        advances in technology for the highest 
+                        productivity, without tying up your 
+                        valuable cash and credit resources.">
+                </app-service-overview-list-item>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

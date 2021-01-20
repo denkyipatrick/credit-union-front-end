@@ -1,0 +1,116 @@
+@tailwind base;
+
+$green_heading: #7b9440;
+$divider_color: #d8efb0;
+$paragraph_text_color: #333;
+
+$primaryDarkColor: #0c3c49;
+$headingTextColor: $primaryDarkColor;
+$bodyTextColor: #444;
+
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $bodyTextColor;
+    text-align: left;
+    background-color: #fff;
+    header {}
+    main {
+    }
+    footer {}
+}
+
+h1, h2, h3, h4, h5, h6 {    
+    font-family: "PT Serif";
+    line-height: 1.2;
+    color: $headingTextColor;
+}
+
+h2 {
+    font-size: 3.75rem;
+}
+h3 {
+    font-size: 2.75rem;
+}
+h4 {
+    font-size: 2.125rem;
+}
+
+p {
+    font-size: 1.375rem;
+    .light {
+        font-weight: 300;
+    }
+}
+
+.navbar {
+    .primary {}
+    .secondary {
+        .nav-link {
+            color: #222;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.card {
+    p {
+        font-size: 1.125rem;
+    }
+}
+
+
+
+footer {
+    .top-section {
+        padding: 100px;
+        background-color: $primaryDarkColor;
+        h5 {
+            font-size: 1.5rem;
+            padding: 60px 0 60px 0;
+            color: #fff;
+            border-bottom: 1px solid #c2c2c2;
+        }
+        nav ul {
+            li {
+                a {
+                    color: #88cad0;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+                a:hover {
+                    color: #fff;
+                }
+            }
+
+        }
+    }
+    .legal-section {
+        border-top: 10px solid maroon;
+        height: 600px;
+        background-color: #fff;
+        padding: 100px;
+        h5 {
+            font-size: .9375rem;
+            color: $bodyTextColor;
+            text-transform: uppercase;
+            font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+@tailwind components;
+@tailwind utilities;

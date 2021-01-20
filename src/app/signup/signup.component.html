@@ -1,0 +1,88 @@
+
+<div class="w-full bg-teal-700" style="height: 60px;"></div>
+
+<div class="mt-8">
+    <form [formGroup]="form" 
+        (ngSubmit)="createAccount()"
+        style="width: 350px; max-width: 90%;"
+        class="mx-auto my-8 space-y-4">
+
+        <div class="text-center mb-8">
+            <img src="../../assets/images/g18-300x300.png" 
+                class="mx-auto outline-none border-none mb-8"
+                style="width: 70px;" />
+            <p class="text-3xl my-4 font-light">Online Banking</p>
+            <p>
+                <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
+                if you already have an account with BSV
+            </p>
+        </div>
+
+        <div>
+            <p class="text-base font-normal">Name</p>
+            <mat-form-field appearance="outline" class="w-full mb-4">
+                <mat-label>First Name</mat-label>
+                <input required matInput formControlName="fName" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-full mb-4">
+                <mat-label>Last Name</mat-label>
+                <input required matInput formControlName="lName" />
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <p class="text-base font-normal">Contact</p>
+            <mat-form-field appearance="outline" class="w-full mb-4">
+                <mat-label>Email Address</mat-label>
+                <input required email matInput formControlName="email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-full mb-4">
+                <mat-label>Phone Number (Intl. Format)</mat-label>
+                <input required matInput formControlName="phone" />
+                <mat-hint>
+                    Phone number must be in the international format. 
+                    <span class="inline-block">Example: (+1 202 220 890)</span>
+                </mat-hint>
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <p class="text-base font-normal">Account</p>
+            <p class="text-sm">Choose which type of account you would like to open.</p>
+            <mat-form-field appearance="outline" class="w-full mb-4">
+                <mat-label>Choose Account Type</mat-label>
+                <mat-select formControlName="accountTypeName">
+                    <mat-option *ngFor="let accountType of accountTypes" [value]="accountType?.name">
+                        {{accountType?.name}} Account
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="p-4 bg-green-400 rounded-md"> 
+                <p class="text-sm">
+                    Please upload any of your national IDs <span class="inline-block">(National Identity Card, Driving License)</span>
+                </p>
+                <input class="inline-block w-full bg-yellow-600 text-white" type="file" />
+            </div>
+        </div>
+
+        <div>
+            <p class="text-red-700 text-center" style="margin: 1.5rem 0;">
+                {{errorMessage}}
+            </p>
+
+            <button mat-raised-button 
+                [disabled]="form.invalid || creatingUser"
+                class="yellow-button w-full inline-block my-4">
+                REGISTER
+            </button>
+
+            <p class="text-xs text-center" style="margin: 1rem 0;">
+                By clicking on REGISTER, you agree 
+                to our Terms.
+            </p>
+        </div>
+    </form>
+</div>

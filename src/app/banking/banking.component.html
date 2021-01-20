@@ -1,0 +1,43 @@
+<div style="height: 50px;" class="bg-green-900"></div>
+
+<div 
+class="flex items-start justify-center space-x-8 border-2 mx-auto" 
+style="width: 1024px; max-width: 90%; margin: 2rem auto">
+    <div class="w-1/4" style="margin-top: 3rem;">
+        <div class="text-center">
+            <img src="../../assets/images/g18-300x300.png" style="width: 50px;"
+                class="mx-auto border-none mb-4" />
+            <p class="text-gray-600 text-sm my-2">Secure Connection</p>
+        </div>
+        <ul>
+            <li>
+                <a mat-button 
+                class="left-menu-link"
+                routerLinkActive="active-left-menu-link" 
+                routerLink="/banking/dashboard">Dashboard</a>
+            </li>
+            <li>
+                <a mat-button 
+                class="left-menu-link"
+                routerLinkActive="active-left-menu-link" 
+                routerLink="/banking/transfers">Transfers</a>
+            </li>
+            <li>
+                <a mat-button 
+                class="left-menu-link" 
+                routerLinkActive="active-left-menu-link" 
+                routerLink="/banking/transactions">Transactions</a>
+            </li>
+            <li>
+                <button 
+                class="left-menu-link" 
+                mat-button 
+                (click)="logout()"
+                routerLinkActive="active-left-menu-link">Sign Out</button>
+            </li>
+        </ul>
+    </div>
+    <div class="w-2/3">
+        <router-outlet></router-outlet>
+    </div>
+</div>

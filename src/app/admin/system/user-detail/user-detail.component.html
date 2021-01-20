@@ -1,0 +1,104 @@
+
+<div>
+    <div class="flex items-center space-x-4 my-4">
+        <button mat-icon-button>
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <p class="text-lg" style="margin-right: auto;">User Details</p>
+        <button 
+            *ngIf="!user?.password"
+            mat-raised-button 
+            (click)="setPassword()">
+            SET PASSWORD
+        </button>
+    </div>
+
+    <div>
+        <mat-card>
+            <mat-card-content>
+                <p class="text-lg"> {{user?.firstName}} {{user?.lastName}} </p>
+
+                <div class="flex items-center space-x-8">
+                    <p>Phone: <span class="text-red-600">{{user?.phoneNumber}}</span></p>
+                    <p>Email: <span class="text-red-600">{{user?.emailAddress}}</span></p>
+                </div>
+
+                <p>
+                    Initial Bank Account: <span class="text-red-600">{{user?.accountType}}</span>
+                </p>
+
+                <div class="p-4 bg-blue-200">
+                    <div class='flex items-center justify-between space-x-4'>
+                        <p class="font-semibold">Accounts</p>
+                        <button mat-raised-button 
+                            (click)="toggleShowForm()"
+                            class="yellow-button">Create Bank Account</button>
+                    </div>
+
+                    <div style="margin-top: 1rem;">
+                        <span class="flex items-center space-x-4">
+                            <p class="w-1/3 font-semibold font-sans">Type</p>
+                            <p class="w-1/3 font-semibold font-sans">Number</p>
+                            <p class="w-1/3 font-semibold font-sans">Balance</p>
+                        </span>
+
+                        <ul>
+                            <li class="flex items-center space-x-4" *ngFor="let userAccount of user?.accounts">
+                                <p class="w-1/3">{{userAccount?.accountTypeName}}</p>
+                                <p class="w-1/3">{{userAccount?.accountNumber}}</p>
+                                <p class="w-1/3 flex items-center justify-between">
+                                    ${{userAccount?.balance?.toFixed(2)}}
+                                    <button mat-raised-button (click)="showDepositDialog(userAccount)">deposit</button>
+                                </p>
+                            </li>
+                        </ul>
+
+                        <span>
+
+                        </span>
+                    </div>
+                </div>
+
+                <div *ngIf="showForm" style="margin: 2rem 0;">
+                    <form [formGroup]="form" autocomplete="off" (ngSubmit)="createAccount()">
+                        <p class="my-8 text-lg text-center">Create Bank Account</p>
+                        <div class="flex space-x-4">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Select Account Type</mat-label>
+                                <mat-select required formControlName="accountTypeName">
+                                    <mat-option *ngFor="let accountType of accountTypes" [value]="accountType?.name">
+                                        {{accountType?.name}} Account
+                                    </mat-option>
+                                </mat-select>
+
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Account Number</mat-label>
+                                <input matInput required formControlName="accountNumber" />
+                            </mat-form-field>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Initial Balance</mat-label>                            
+                                <span matPrefix>
+                                    <mat-icon>attach_money</mat-icon>
+                                </span>
+
+                                <input matInput required formControlName="balance" />
+                            </mat-form-field>
+
+                            <button mat-raised-button class="yellow-button mx-auto"
+                                [disabled]="form.invalid || isCreatingAccount">Create</button>
+                        </div>
+
+                        <p class="text-red-600 text-center">
+                            {{creatingAccountErrorMessage}}
+                        </p>
+                    </form>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,123 @@
+
+<app-header 
+    heroTitle="Business Insurance"
+    heroDescription="
+        As a business owner, you’ve worked 
+        hard to get your company where it is today. 
+        That’s why you need to protect you 
+        and your business from the unexpected."
+    heroImageUrl="../assets/images/business/business-insurance/coworkers-standing-in-hallway-talking-large.jpg">
+</app-header>
+
+
+<div class="container">
+    <div class="row btf-title">
+        <h2>Our Approach</h2>
+        <p class="light">
+            Our experience and breadth of 
+            insurance services provide you a variety 
+            of options, whether you're looking for 
+            the best quality, cost, efficiency, or 
+            combination of all three. Our advisors 
+            work closely with you to get to know you, 
+            your business and understand your strategic 
+            goals in order to develop the right insurance 
+            program that fits your unique needs.
+        </p>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <ul class="service-overview-list">
+            <li>
+                <app-service-overview-list-item
+                    title="Property & Casualty Insurance"
+                    [targetUrl]="baseUrl + '/property-casualty-insurance'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/man-taking-inventory-small.jpg"
+                    description="Protect your company's assets from the unexpected.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Risk Management"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/risk-management'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/man-working-in-a-manufacturing-facility-small.jpg"
+                    description="
+                        Proactively control financial 
+                        loss to your organization by 
+                        identifying, analyzing and 
+                        controlling your risks and exposures 
+                        to prevent claims before they happen.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Claims Advocacy"
+                    [targetUrl]="baseUrl + '/claims-advocacy'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/men-sitting-at-table-reviewing-laptop-small.jpg"
+                    description="Take control over your business's claim outcomes.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Professional Liability Insurance"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/professional-liability-insurance'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/doctor-and-nurse-evaluating-medical-tests-small.jpg"
+                    description="
+                        Do you or your firm provide a 
+                        professional service or offer advice? 
+                        We can protect you and your 
+                        organization from costly claims.
+                    ">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Alternative Risk Financing"
+                    [targetUrl]="baseUrl + '/alternative-risk-financing'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/man-on-balcony-with-construction-plans-small.jpg"
+                    description="
+                        Meet the strategic needs 
+                        of your business with 
+                        customized risk financing 
+                        options as an alternative 
+                        to traditional insurance.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Mergers & Acquisitions"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/merge-acquisitons'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/coworkers-standing-in-hallway-talking-large.jpg"
+                    description="
+                        Manage hidden risks when 
+                        engaging in a sale or merger 
+                        with another organization. 
+                    ">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Ready to Connect?"
+                    [targetUrl]="baseUrl + '/ready-to-connect'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/coworkers-looking-at-laptop-in-office-small.jpg"
+                    description="
+                        Tell us a little bit about 
+                        you and your business and 
+                        we will contact you to better 
+                        understand how we can help 
+                        address your business insurance 
+                        needs.">
+                </app-service-overview-list-item>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

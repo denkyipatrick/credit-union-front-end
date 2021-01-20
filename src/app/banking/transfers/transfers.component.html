@@ -1,0 +1,143 @@
+
+<div class="space-y-8">
+    <mat-card>
+        <mat-card-title>
+            <p class="text-base font-light">Account Info</p>
+        </mat-card-title>
+        <mat-card-content>
+            <div class="flex items-center space-x-4">
+                <p class="w-1/3 font-medium">Account Owner</p>
+                <p class="w-1/3 font-medium">Account Number</p>
+                <p class="w-1/3 font-medium">Balance</p>
+            </div>
+
+            <div class="flex items-start space-x-4">
+                <div class="w-1/3">
+                    <p>{{user?.firstName}} {{user?.lastName}}</p>
+                    <p>{{user?.emailAddress}}</p>
+                    <p>{{user?.phoneNumber}}</p>
+                </div>
+
+                <div class="w-1/3">
+                    <p>{{userAccount?.accountNumber}}</p>
+                </div>
+
+                <div class="w-1/3">
+                    <p class="font-medium">${{userAccount?.balance?.toFixed(2)}}</p>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-title>
+            <p class="text-sm">Transfer Money</p>
+        </mat-card-title>
+
+        <mat-card-content>
+            <div class="flex space-x-4 items-center">
+                <button mat-raised-button 
+                    class="w-full bg-blue-600 text-white" 
+                    (click)="toggleShowForm()">MAKE INBOUND TRANSFER</button>
+                <button mat-raised-button class="bg-red-600 text-white w-full"
+                (click)="outboundTransfer()">MAKE OUTBOUND TRANSFER</button>
+            </div>
+
+            <div>
+                <form *ngIf="showForm" [formGroup]="form" autocomplete="off" style="margin: 2rem 0">
+                    <div class="flex items-center space-x-4">
+                        <mat-form-field appearance="outline" class="w-1/3">
+                            <mat-label>Amount</mat-label>
+                            <input matInput required formControlName="amount" />
+                            <span matPrefix>
+                                <mat-icon>attach_money</mat-icon>
+                            </span>
+                        </mat-form-field>
+
+                        <div class="w-2/3 relative">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Search Account Number</mat-label>
+                                <input 
+                                    #search 
+                                    matInput 
+                                    required 
+                                    formControlName="receiverAccountId"
+                                    (keyup)="searchReceiver(search.value)" />
+                            </mat-form-field>
+                            
+                            <ul style="height: auto; max-height: 120px; top: 72%;" 
+                                class="w-full absolute left-0 overflow-y-auto bg-gray-100">
+                                <li *ngFor="let transferReceiver of transferReceivers"
+                                    class="flex items-start space-x-4 p-2 
+                                    cursor-default
+                                    hover:bg-gray-200"
+                                    (click)="receiverSelected(transferReceiver)">
+                                    <mat-icon>person</mat-icon>
+                                    <div>
+                                        <p class="font-medium">
+                                            {{transferReceiver?.owner?.firstName}} {{transferReceiver?.owner?.lastName}}
+                                        </p>
+                                        <p>
+                                            Account Number: {{transferReceiver?.accountNumber}}
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>                        
+                    </div>
+
+                    <div *ngIf="transferReceiver" class="bg-gray-600 p-4 text-white">
+                        <p class="font-medium text-lg">Transfer To...</p>
+                        <p>{{transferReceiver?.owner?.firstName}} {{transferReceiver?.owner?.lastName}}</p>
+                        <p class="text-sm">
+                            <span>Phone: {{transferReceiver?.owner?.phoneNumber}}</span> &nbsp; 
+                            <span>Email: {{transferReceiver?.owner?.emailAddress}}</span>
+                        </p>
+                        <p>
+                            Account Number: {{transferReceiver?.accountNumber}}
+                        </p>
+
+                        <span class="flex items-center justify-end">
+                            <button mat-raised-button 
+                            [disabled]="form.invalid || isTransferring"
+                            (click)="transferMoney()">
+                            <span *ngIf="!isTransferring">TRANSFER MONEY</span>
+                            <span *ngIf="isTransferring">PLEASE WAIT...</span>
+                        </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+        
+    <mat-card>
+        <mat-card-title>
+            <span class="flex items-center justify-between space-x-4">
+                <p class="text-sm">Transfer History</p>
+                <p>${{totalTransferedAmount?.toFixed(2)}}</p>
+            </span>
+        </mat-card-title>
+        <mat-card-content>
+            <app-loader *ngIf="isFetching" [message]="'Fetching Transfer History...'"></app-loader>
+            <div *ngIf="accountTransfers?.length && !isFetching">
+                <span class="flex items-center space-x-4">
+                    <p class="w-1/3 font-medium">Receiver</p>
+                    <p class="w-1/3 font-medium">Amount</p>
+                    <p class="w-1/3 font-medium">Date</p>
+                </span>
+
+                <ul>
+                    <li *ngFor="let transfer of accountTransfers">
+                        <span class="flex items-center space-x-4">
+                            <p class="w-1/3">{{transfer?.receiverAccount?.owner?.firstName}} {{transfer?.receiverAccount?.owner?.lastName}}</p>
+                            <p class="w-1/3">${{transfer?.amount?.toFixed(2)}}</p>
+                            <p class="w-1/3">{{transfer?.createdAt}}</p>
+                        </span>
+
+                    </li>
+                </ul>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

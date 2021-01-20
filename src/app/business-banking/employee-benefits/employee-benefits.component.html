@@ -1,0 +1,76 @@
+
+
+
+<app-header 
+heroTitle="Employee Benefits"
+heroDescription="
+    Employees are the backbone of any 
+    business. With a robust employee 
+    benefits program, you can attract and 
+    retain talented employees so your company 
+    continues to grow and thrive."
+heroImageUrl="../assets/images/business/employee-benefits/group-coworkers-in-an-office-meeting-large.jpg">
+</app-header>
+
+<div class="container">
+    <div class="row">
+        <ul class="service-overview-list">
+            <li>
+                <app-service-overview-list-item
+                    title="Retirement Plans"
+                    [targetUrl]="baseUrl + '/retirement-plans'"
+                    featuredPhotoUrl="../assets/images/business/employee-benefits/group-looking-at-table-of-papers-small.jpg"
+                    description="
+                        Become an employer of choice 
+                        with a retirement plan tailored 
+                        to fit your organization's 
+                        overall benefits program, 
+                        combining world‐class open 
+                        architecture investment options 
+                        with local personal service and 
+                        effortless administration.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Strategic Employee Benefits Consulting"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/strategic-employee-benefits-consulting'"
+                    featuredPhotoUrl="../assets/images/business/employee-benefits/business-owners-reviewing-project-small.jpg"
+                    description="
+                        You have a long-term business 
+                        strategy to grow your organization; 
+                        you should have one to manage 
+                        your employee benefits costs too.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Underwriting & Actaurial Support"
+                    [targetUrl]="baseUrl + '/underwriting-acturarial-support'"
+                    featuredPhotoUrl="../assets/images/business/employee-benefits/group-coworkers-reviewing-plans-in-an-office-setting-small.jpg"
+                    description="Identifying solutions to control rising health care costs.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Human Resources Consulting & Support"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/human-resources-consulting-support'"
+                    featuredPhotoUrl="../assets/images/business/employee-benefits/woman-showing-coworker-schedule-small.jpg"
+                    description="Do you have HR questions, issues or concerns? We have answers.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Voluntary and Worksite Benefits"
+                    [targetUrl]="baseUrl + '/strategic-employee-benefits-consulting'"
+                    featuredPhotoUrl="../assets/images/business/employee-benefits/woman-pouring-coffee-in-cup-small.jpg"
+                    description="Meet your employees' needs through creative voluntary and worksite benefits.">
+                </app-service-overview-list-item>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<app-footer></app-footer>

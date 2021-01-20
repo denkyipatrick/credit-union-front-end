@@ -1,0 +1,16 @@
+<app-loader *ngIf="isFetching"></app-loader>
+
+<div>
+    <div *ngIf="isErrorFetching">
+        <p>Error Loading Users</p>
+        <button mat-button>TRY AGAIN</button>
+    </div>
+
+    <div>
+        <ul class="space-y-4">
+            <li *ngFor="let user of users">
+                <app-user-list-item [user]="user"></app-user-list-item>
+            </li>
+        </ul>
+    </div>
+</div>

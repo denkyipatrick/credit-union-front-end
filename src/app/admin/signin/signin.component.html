@@ -1,0 +1,21 @@
+<div class="w-full bg-green-800" style="height: 60px;" ></div>
+
+<div class="mx-auto mt-10" style="width: 300px;">
+    <form [formGroup]="form" (ngSubmit)="signin()">
+        <div>
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Username</mat-label>
+                <input matInput required formControlName="username" />
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Password</mat-label>
+                <input matInput required type="password" formControlName="password" />
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-raised-button class="w-full yellow-button">SIGN IN</button>
+        </div>
+    </form>
+</div>
