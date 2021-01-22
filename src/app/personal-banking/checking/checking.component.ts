@@ -15,7 +15,7 @@ export class CheckingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle("Personal Checking Accounts, eChecking & Student Accounts");
+    this.title.setTitle(`Checking Accounts | Essential and Signature Checking | ${this.utilityService.bankName}`);
   }
 
 }

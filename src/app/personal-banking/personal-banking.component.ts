@@ -17,7 +17,7 @@ export class PersonalBankingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title.setTitle("Personal Banking, Checking, Loans & Credit Cards | BSV");
+    // this.title.setTitle("Personal Banking, Checking, Loans & Credit Cards | BSV");
   }
 
 }

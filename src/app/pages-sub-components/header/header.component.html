@@ -4,18 +4,108 @@
         <div class="nav-container">
             <nav id="top"></nav>
             <nav id="primary">
-                <ul class="nav-bar">
+                <ul class="nav-list">
                     <li><a href="/personal">Personal</a></li>
                     <li><a href="/business">Business</a></li>
                 </ul>
             </nav>
-            <nav id="secondary">
-                <ul class="nav-bar">
-                    <li><a href="/personal/banking">Banking</a></li>
-                    <li><a href="/personal/home-personal-loans">Home & Personal Loans</a></li>
-                    <li><a href="/personal/investment-retirement">Investing & Retirement</a></li>
-                    <li><a href="/personal/personal-insurance">Insurance</a></li>
-                    <li><a href="/personal/your-financial-life">Your Financial Life</a></li>
+            <nav id="secondary" *ngIf="selectedPrimaryNav == 'personal'">
+                <ul class="nav-list">
+                    <li>
+                        <a href="/personal/banking">Banking</a>
+                        <div class="sub-nav">
+                            <div class="space-x-6">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/personal/home-personal-loans">Home & Personal Loans</a>                        
+                        <div class="sub-nav">
+                            <div class="space-x-8">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/personal/investment-retirement">Investing & Retirement</a>                        
+                        <div class="sub-nav">
+                            <div class="space-x-8">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/personal/personal-insurance">Insurance</a>
+                        <div class="sub-nav">
+                            <div class="space-x-8">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/personal/your-financial-life">Your Financial Life</a>
+                        <div class="sub-nav">
+                            <div class="space-x-8">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
                 <div id="sub-nav" style="display: none">
                     <div class="space-x-8">
@@ -54,50 +144,144 @@
                     </div>
                 </div>
             </nav>
-            <nav id="secondary">
-                <ul class="nav-bar">
-                    <li><a href="/business/cash-management">Cash Management</a></li>
-                    <li><a href="/business/business-financing">Financing</a></li>
-                    <li><a href="/business/employee-benefits">Employee Benefits</a></li>
-                    <li><a href="/business/business-insurance">Insurance</a></li>
-                    <li><a href="/business/education-guidance">Education & Guidance</a></li>
+            <nav id="secondary" *ngIf="selectedPrimaryNav == 'business'">
+                <ul class="nav-list">
+                    <li>
+                        <a href="/business/cash-management">Cash Management</a>
+                        <div class="sub-nav">
+                            <div class="space-x-6">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/business/business-financing">Financing</a>
+                        <div class="sub-nav">
+                            <div class="space-x-6">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/business/employee-benefits">Employee Benefits</a>                        
+                        <div class="sub-nav">
+                            <div class="space-x-6">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/business/business-insurance">Insurance</a>
+                        <div class="sub-nav">
+                            <div class="space-x-6">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/business/education-guidance">Education & Guidance</a>
+                        <div class="sub-nav">
+                            <div class="space-x-6">
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                                <span>
+                                    <h2>Bank your Way</h2>
+                                    <ul>
+                                        <li><a href=#>Checking</a></li>
+                                        <li><a href=#>Savings and Money Market</a></li>
+                                        <li><a href=#>Health Savings Account (HSA)</a></li>
+                                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
+                                        <li><a href=#>Cards</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-                <div id="sub-nav" style="display: none">
-                    <div class="space-x-8">
-                        <span>
-                            <h2>Bank your Way</h2>
-                            <ul>
-                                <li><a href=#>Checking</a></li>
-                                <li><a href=#>Savings and Money Market</a></li>
-                                <li><a href=#>Health Savings Account (HSA)</a></li>
-                                <li><a href=#>Certificates of Deposit (CDs)</a></li>
-                                <li><a href=#>Cards</a></li>
-                            </ul>
-                        </span>
-                        
-                        <span>
-                            <h2>Bank your Way</h2>
-                            <ul>
-                                <li><a href=#>Checking</a></li>
-                                <li><a href=#>Savings and Money Market</a></li>
-                                <li><a href=#>Health Savings Account (HSA)</a></li>
-                                <li><a href=#>Certificates of Deposit (CDs)</a></li>
-                                <li><a href=#>Cards</a></li>
-                            </ul>
-                        </span>
-                        
-                        <span>
-                            <h2>Bank your Way</h2>
-                            <ul>
-                                <li><a href=#>Checking</a></li>
-                                <li><a href=#>Savings and Money Market</a></li>
-                                <li><a href=#>Health Savings Account (HSA)</a></li>
-                                <li><a href=#>Certificates of Deposit (CDs)</a></li>
-                                <li><a href=#>Cards</a></li>
-                            </ul>
-                        </span>
-                    </div>
-                </div>
             </nav>
         </div>
         <div>

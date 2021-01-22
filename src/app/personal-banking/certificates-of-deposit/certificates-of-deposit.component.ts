@@ -1,3 +1,4 @@
+import { UtilityService } from './../../services/utility.service';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CertificatesOfDepositComponent implements OnInit {
 
-  constructor(private title: Title) { }
+  constructor(private title: Title, private utilityService: UtilityService) { }
 
   ngOnInit(): void {
-    this.title.setTitle("Certificates of Deosit. Advantages, Disadvantages & Features | BSV");
+    this.title.setTitle(`Certificate of Deposits (CDs) | CD Laddering | ${this.utilityService.bankName}`);
   }
 
 }

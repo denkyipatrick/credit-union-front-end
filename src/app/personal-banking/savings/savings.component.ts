@@ -17,7 +17,7 @@ export class SavingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle("Savings and Money Market");
+    this.titleService.setTitle(`Savings and Money Market Accounts | ${this.utilityService.bankName}`);
   }
 
 }

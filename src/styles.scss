@@ -101,18 +101,18 @@ ul.more-info-card-list {
 
 header {
   nav {
-      ul.nav-bar {
-        display: flex;
-        justify-content: flex-end;
-          li {
-            display: inline-block;
-            a {
-                font-weight: 700;
-                text-transform: uppercase;
-                text-decoration: none;
-            }
+    ul.nav-list {
+      display: flex;
+      justify-content: flex-end;
+        > li {
+          display: inline-block;
+          a {
+              font-weight: 700;
+              text-transform: uppercase;
+              text-decoration: none;
           }
-      }
+        }
+    }
 
     &#top {
       height: 50px;
@@ -133,57 +133,84 @@ header {
     }
     &#secondary {
       position: relative;
-      border: 1px solid black;
-      ul.nav-bar {
-        a {
-            font-size: 16px;
-            color: #222;
-            display: inline-block;
-            padding: 0.625rem 0.9375rem;
-            border-bottom: 6px solid transparent;
-            &:hover {
+      > ul.nav-list {
+        > li {
+          > a {
+              font-size: 16px;
+              color: #222;
+              display: inline-block;
+              padding: 0.625rem 0.9375rem;
+              border-bottom: 6px solid transparent;
+              &:hover {
+                border-bottom: 6px solid $primaryDarkColor;
+              }
+          }
+          &:hover {
+            .sub-nav {
+              display: block;
+            }
+            > a {
               border-bottom: 6px solid $primaryDarkColor;
             }
+
+          }
         }
       }
-      div#sub-nav {
-        height: 400px;
-        width: 100%;
-        display: block;
-        padding-top: 32px;
-        background-color: white;
-        position: absolute;
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.123);
-        > div {
-          max-width: 1400px;
-          margin: 0 auto;
-          display: flex;
-          > span {
-            display: block;
-            width: 100%;
-            max-width: 25%;
-            h2 {
-              color: maroon;
-              font-size: 1.5rem;
-              padding-bottom: 10px;
-              border-bottom: 2px solid maroon;
-            }
-            ul {
-              margin: 1rem 0;
-              a {
-                font-size: 1.125rem;
-                color: $primaryDarkColor;
-                &:hover {
-                  color: #222;
-                }
+    }
+    
+    div.sub-nav {
+      max-height: 400px;
+      min-height: 200px;
+      width: 100%;
+      display: none;
+      padding: 1.5rem 0;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.123);
+      transition: all 150ms ease-in-out;
+      -webkit-transition: all 150ms ease-in-out;
+      -moz-transition: all 150ms ease-in-out;
+      -ms-transition: all 150ms ease-in-out;
+      -o-transition: all 150ms ease-in-out;
+      > div {
+        width: 1400px;
+        max-width: 98%;
+        margin: 0 auto;
+        display: flex;
+        > span {
+          display: block;
+          width: 100%;
+          max-width: 25%;
+          h2 {
+            color: maroon;
+            font-size: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid maroon;
+          }
+          ul {
+            margin: 1rem 0;
+            padding: 0;
+            a {
+              font-size: 1.125rem;
+              font-weight: 300;
+              display: inline-block;
+              width: 100%;
+              color: $primaryDarkColor;
+              text-transform: none;
+              text-decoration: none;
+              &:hover {
+                color: #222;
               }
             }
           }
         }
       }
     }
-  }  
+  }
 }
+
+
 
 ul.checkmark-bullets {
   text-align: left;

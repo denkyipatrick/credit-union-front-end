@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +11,10 @@ export class HeaderComponent implements OnInit {
   @Input() heroImageUrl: String;
   @Input() heroDescription: String;
 
+  selectedPrimaryNav: String;
   backgroundImagePropertyValue: String
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute) {
     this.heroTitle = "Title of this Page";
     this.heroDescription = `Lorem ipsum dolor sit amet, 
     consectetur adipisicing elit. 
@@ -25,6 +27,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.backgroundImagePropertyValue = `url(${this.heroImageUrl})`
+    this.activatedRoute.url.subscribe(urlSegments => {
+      this.selectedPrimaryNav = urlSegments[0].path;
+    })
   }
 
 }

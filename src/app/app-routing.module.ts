@@ -1,3 +1,10 @@
+import { InvestYourWayComponent } from './personal-banking/investing-retirement/invest-your-way/invest-your-way.component';
+import { InvestmentManagementComponent } from './personal-banking/investing-retirement/investment-management/investment-management.component';
+import { RetirementPlanningComponent } from './personal-banking/investing-retirement/retirement-planning/retirement-planning.component';
+import { PersonalLoansComponent } from './personal-banking/loans/personal-loans/personal-loans.component';
+import { ConstructionLoansComponent } from './personal-banking/loans/construction-loans/construction-loans.component';
+import { HomeLoansComponent } from './personal-banking/loans/home-loans/home-loans.component';
+import { HealthSavingsComponent } from './personal-banking/health-savings/health-savings.component';
 import { EducationAndGuidanceComponent } from './business-banking/education-and-guidance/education-and-guidance.component';
 import { BusinessInsuranceComponent } from './business-banking/business-insurance/business-insurance.component';
 import { EmployeeBenefitsComponent } from './business-banking/employee-benefits/employee-benefits.component';
@@ -24,6 +31,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { InvestingRetirementComponent } from './personal-banking/investing-retirement/investing-retirement.component';
 import { FinancialLifeComponent } from './personal-banking/financial-life/financial-life.component';
 import { BankingComponent } from './personal-banking/banking/banking.component';
+import { HomeAndEquityLoansComponent } from './personal-banking/loans/home-and-equity-loans/home-and-equity-loans.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,14 +47,28 @@ const routes: Routes = [
   { path: 'personal', redirectTo: '/personal/banking', pathMatch: 'full'},
   { path: 'personal/banking', component: BankingComponent },
   { path: 'personal/checking', component: CheckingComponent },
+  { path: 'personal/banking/checking', component: CheckingComponent },
   { path: 'personal/online-mobile-banking', component: OnlineMobileBankingComponent },
   { path: 'personal/savings', component: SavingsComponent },
+  { path: 'personal/banking/savings', component: SavingsComponent },
+  { path: 'personal/health-savings-accounts', component: HealthSavingsComponent },
+  { path: 'personal/banking/health-savings-accounts', component: HealthSavingsComponent },
+  { path: 'personal/savings-and-money-market', component: SavingsComponent },
+  { path: 'personal/banking/savings-and-money-market', component: SavingsComponent },
   { path: 'personal/credit-cards', component: CreditCardsComponent },
+  { path: 'personal/banking/cards', component: CreditCardsComponent },
   { path: 'personal/home-personal-loans', component: LoansComponent },
+  { path: 'personal/home-personal-loans/home-loans', component: HomeLoansComponent },
+  { path: 'personal/home-personal-loans/personal-loans-lines-of-credit', component: PersonalLoansComponent },
+  { path: 'personal/home-personal-loans/construction-lot-loans', component: ConstructionLoansComponent },
+  { path: 'personal/home-personal-loans/home-equity-loans-lines-of-credit', component: HomeAndEquityLoansComponent },
   { path: 'personal/personal-insurance', component: PersonalInsuranceComponent },
   { path: 'personal/investment-retirement', component: InvestingRetirementComponent },
+  { path: 'personal/investment-retirement/invest-your-way', component: InvestYourWayComponent },
+  { path: 'personal/investment-retirement/investment-management', component: InvestmentManagementComponent },
+  { path: 'personal/investment-retirement/retirement-financial-planning', component: RetirementPlanningComponent },
   { path: 'personal/your-financial-life', component: FinancialLifeComponent },
-  { path: 'personal/certificates-of-deposit', component: CertificatesOfDepositComponent },
+  { path: 'personal/certificates-of-deposit-cds', component: CertificatesOfDepositComponent },
   
   { path: 'business', component: BusinessBankingComponent },
   { path: 'business/cash-management', component: CashManagementComponent },

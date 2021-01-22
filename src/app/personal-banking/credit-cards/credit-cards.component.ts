@@ -1,3 +1,4 @@
+import { UtilityService } from './../../services/utility.service';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
@@ -8,9 +9,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class CreditCardsComponent implements OnInit {
 
-  constructor(private title: Title) { }
+  constructor(private title: Title, private utilityService: UtilityService) { }
 
   ngOnInit(): void {
-    this.title.setTitle("Personal Credit Cards | The Bank of Southside Virginia");
+    this.title.setTitle(` | ${this.utilityService.bankName}`);
   }
 }
