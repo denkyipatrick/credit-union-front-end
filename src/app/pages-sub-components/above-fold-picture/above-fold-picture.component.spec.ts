@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AboveFoldPictureComponent } from './above-fold-picture.component';
 
@@ -6,7 +6,7 @@ describe('AboveFoldPictureComponent', () => {
   let component: AboveFoldPictureComponent;
   let fixture: ComponentFixture<AboveFoldPictureComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AboveFoldPictureComponent ]
     })

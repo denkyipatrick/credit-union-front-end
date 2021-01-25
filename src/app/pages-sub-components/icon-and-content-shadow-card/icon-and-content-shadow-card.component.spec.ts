@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IconAndContentShadowCardComponent } from './icon-and-content-shadow-card.component';
 
@@ -6,7 +6,7 @@ describe('IconAndContentShadowCardComponent', () => {
   let component: IconAndContentShadowCardComponent;
   let fixture: ComponentFixture<IconAndContentShadowCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ IconAndContentShadowCardComponent ]
     })
