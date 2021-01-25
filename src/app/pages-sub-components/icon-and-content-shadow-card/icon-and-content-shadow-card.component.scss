@@ -1,0 +1,36 @@
+
+.icon-and-content-shadow-card {
+    width: 300px;
+    max-width: 100%;
+    min-height: 400px;
+    margin: 2rem;
+    box-shadow: 0 5px 8px rgba(24, 24, 24, 0.308);
+    transition: transform 300ms ease;
+    -webkit-transition: transform 300ms ease;
+    -moz-transition: transform 300ms ease;
+    -ms-transition: transform 300ms ease;
+    -o-transition: transform 300ms ease;
+    &:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+    }
+    .image-wrapper {
+        height: 200px;
+        img {
+            width: 100%;
+        }
+    }
+    .content {
+        padding: 2rem 1rem;
+        text-align: center;
+        h3 {
+            font-size: 2.125rem;
+        }
+        p {
+            font-size: 1.125rem;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+
+<div class="icon-and-content-item flex justify-between space-x-4 items-start">
+    <img src="../../../assets/images/personal/banking/icon-checking-accounts-50x50.webp" />
+    <span class="block space-y-6">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <a *ngIf="hasCTA" [href]="ctaUrl" class="btn btn-outlined">{{ctaText}}</a>
+    </span>
+</div>

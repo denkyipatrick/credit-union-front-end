@@ -31,49 +31,134 @@
     </p>
 </div> -->
 
-<div>
-    <div>
-        <span>
-            <img src="" /> <!-- icon -->
-            <h3>Digital Checking</h3>
-        </span>
-        <p>
-            Take advantage of no monthly fees or minimum balance 
-            requirements when you digitally manage the account 
-            as a checkless account. 
-        </p>
-    </div>
-    
-    <div>
-        <span>
-            <img src="" /> <!-- icon -->
-            <h3>Essential Checking</h3>
-        </span>
-        <p>
-            Eliminate monthly maintenance fees and balance 
-            requirements with a monthly automatic (ACH) 
-            direct deposit made to your checking account.
-        </p>
-    </div>
-    
-    <div>
-        <span>
-            <img src="" /> <!-- icon -->
-            <h3>Essential Checking</h3>
-        </span>
-        <p>
-            Earn interest, eliminate maintenance fees 
-            and balance requirements when you link 
-            the balances from your other eligible 
-            {{bankName}} accounts.
-        </p>
+<div class="container">
+    <div class="row">
+        <div class="row-title-and-description">
+            <h2>Checking Account Options</h2>
+            <p class="light">
+                Managing your money is easy and worry-free 
+                when you choose one of our checking account 
+                options. We'll take the time to 
+                understand your needs to find the one 
+                that's right for you. 
+            </p>
+        </div>
+
+        <div class="grid grid-cols-4 col-gap-4 row-gap-4 grid-flow-row mx-auto w-auto" 
+            style="margin: 0 auto; width: 1400px; max-width: 90%; border: 1px solid black;">
+            <app-icon-and-content-item
+                title="Essential Checking"
+                description="
+                    Eliminate monthly maintenance 
+                    fees and balance requirements 
+                    with a monthly automatic (ACH) 
+                    direct deposit made to your 
+                    checking account.">
+            </app-icon-and-content-item>
+            <app-icon-and-content-item
+                title="Signature Checking"
+                [description]="
+                    'Earn interest, eliminate maintenance 
+                    fees and balance requirements when 
+                    you link the balances from your other 
+                    eligible' + ' ' + shortBankName + ' ' +  'accounts.'">
+            </app-icon-and-content-item>
+            <app-icon-and-content-item
+                title="Signature Checking"
+                [description]="
+                    'Earn interest, eliminate maintenance 
+                    fees and balance requirements when 
+                    you link the balances from your other 
+                    eligible' + ' ' + shortBankName + ' ' +  'accounts.'">
+            </app-icon-and-content-item>
+        </div>
     </div>
 </div>
 
+
+
 <div>
     <h2>Learn more about...</h2>
+    <div class="grid grid-cols-3 gap-4">
+        <app-more-info-card
+            title="Compare Checking Accounts"
+            description="
+                Whether you want to manage your 
+                account online or earn interest 
+                on your checking account balances, 
+                we have a checking account to fit 
+                your lifestyle.
+            "
+            imageUrl="../../../assets/images/personal/checking/woman-working-on-her-laptop-sitting-at-a-table-small.webp">
+        </app-more-info-card>
+        <app-more-info-card 
+            title="Switch Services"
+            description="
+                We will go out of our way 
+                to make opening a new checking 
+                account and closing your old 
+                one as easy as possible.
+            "
+            imageUrl="../../../assets/images/personal/checking/family-dad-and-daughter-running-into-arms-small.webp">
+        </app-more-info-card>
+        <app-more-info-card 
+            title="Overdraft Services"
+            description="
+                Save time and eliminate 
+                overdraft fees when you 
+                link your savings or money 
+                market account or line of 
+                credit to automatically transfer 
+                money to your checking account.
+            "
+            imageUrl="../../../assets/images/personal/checking/family-mom-and-daughter-baking-a-cake-small.webp">
+        </app-more-info-card>
 
-    <div class="card-row">
+    </div>
+    <!-- <ul class="grid grid-cols-4">
+        <li style="border: 1px solid red;">
+            <app-more-info-card 
+                style="border: 1px solid black;"
+                title="Compare Checking Accounts"
+                description="
+                    Whether you want to manage your 
+                    account online or earn interest 
+                    on your checking account balances, 
+                    we have a checking account to fit 
+                    your lifestyle.
+                "
+                imageUrl="../../../assets/images/personal/checking/woman-working-on-her-laptop-sitting-at-a-table-small.webp">
+            </app-more-info-card>
+        </li>
+        <li>
+            <app-more-info-card 
+                title="Switch Services"
+                description="
+                    We will go out of our way 
+                    to make opening a new checking 
+                    account and closing your old 
+                    one as easy as possible.
+                "
+                imageUrl="../../../assets/images/personal/checking/family-dad-and-daughter-running-into-arms-small.webp">
+            </app-more-info-card>
+        </li>
+        <li>
+            <app-more-info-card 
+                title="Overdraft Services"
+                description="
+                    Save time and eliminate 
+                    overdraft fees when you 
+                    link your savings or money 
+                    market account or line of 
+                    credit to automatically transfer 
+                    money to your checking account.
+                "
+                imageUrl="../../../assets/images/personal/checking/family-mom-and-daughter-baking-a-cake-small.webp">
+            </app-more-info-card>
+        </li>
+    </ul> -->
+
+    <!-- <div class="card-row">
         <div class="card">
             <h3>
                 <a href="#">Compare Checking Accounts</a>
@@ -107,7 +192,7 @@
                 transfer money to your checking account.
             </p>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <app-footer></app-footer>

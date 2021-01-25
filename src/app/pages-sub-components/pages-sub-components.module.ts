@@ -7,6 +7,9 @@ import { CommonModule } from '@angular/common';
 import { AboveFoldPictureComponent } from './above-fold-picture/above-fold-picture.component';
 import { IconHeadingDescriptionColumnComponent } from './icon-heading-description-column/icon-heading-description-column.component';
 import { ServiceOverviewListItemComponent } from './service-overview-list-item/service-overview-list-item.component';
+import { IconAndContentShadowCardComponent } from './icon-and-content-shadow-card/icon-and-content-shadow-card.component';
+import { IconAndContentItemComponent } from './icon-and-content-item/icon-and-content-item.component';
+import { MoreInfoCardComponent } from './more-info-card/more-info-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,11 @@ import { ServiceOverviewListItemComponent } from './service-overview-list-item/s
     RightSideBarComponent,
     AboveFoldPictureComponent,
     IconHeadingDescriptionColumnComponent,
-    ServiceOverviewListItemComponent
+    ServiceOverviewListItemComponent,
+    IconAndContentShadowCardComponent,
+    IconAndContentItemComponent,
+    IconAndContentItemComponent,
+    MoreInfoCardComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +33,10 @@ import { ServiceOverviewListItemComponent } from './service-overview-list-item/s
     FooterComponent,
     RightSideBarComponent,
     AboveFoldPictureComponent,
-    ServiceOverviewListItemComponent
+    ServiceOverviewListItemComponent,
+    IconAndContentItemComponent,
+    IconAndContentShadowCardComponent,
+    MoreInfoCardComponent
   ]
 })
 export class PagesSubComponentsModule { }

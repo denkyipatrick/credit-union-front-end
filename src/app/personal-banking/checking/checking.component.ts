@@ -9,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckingComponent implements OnInit {
   bankName: String
+  shortBankName: String;
 
   constructor(private title: Title, private utilityService:UtilityService) {
     this.bankName = utilityService.shortBankName;
+    this.shortBankName = utilityService.shortBankName;
   }
 
   ngOnInit(): void {
