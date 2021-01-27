@@ -1,3 +1,18 @@
+import { MergersAndAcquistionComponent } from './business-banking/business-insurance/mergers-and-acquistion/mergers-and-acquistion.component';
+import { ProfessionalLiabilityComponent } from './business-banking/business-insurance/professional-liability/professional-liability.component';
+import { ClaimsAdvocacyComponent } from './business-banking/business-insurance/claims-advocacy/claims-advocacy.component';
+import { RiskManagementComponent } from './business-banking/business-insurance/risk-management/risk-management.component';
+import { PropertyCasualtyInsuranceComponent } from './business-banking/business-insurance/property-casualty-insurance/property-casualty-insurance.component';
+import { RetirementPlansComponent } from './business-banking/employee-benefits/retirement-plans/retirement-plans.component';
+import { StrategicEmployeeBenefitsComponent } from './business-banking/employee-benefits/strategic-employee-benefits/strategic-employee-benefits.component';
+import { VoluntaryWorksiteBenefitsComponent } from './business-banking/employee-benefits/voluntary-worksite-benefits/voluntary-worksite-benefits.component';
+import { HumanResourceConsultingComponent } from './business-banking/employee-benefits/human-resource-consulting/human-resource-consulting.component';
+import { EquipmentLeasingComponent } from './business-banking/business-financing/equipment-leasing/equipment-leasing.component';
+import { CommercialRealEstateComponent } from './business-banking/business-financing/commercial-real-estate/commercial-real-estate.component';
+import { BusinessLoansComponent } from './business-banking/business-financing/business-loans/business-loans.component';
+import { InformationManagementComponent } from './business-banking/cash-management/information-management/information-management.component';
+import { PayablesManagementComponent } from './business-banking/cash-management/payables-management/payables-management.component';
+import { BusinessAccountsComponent } from './business-banking/cash-management/business-accounts/business-accounts.component';
 import { LifeComponent } from './personal-banking/insurance/life/life.component';
 import { LongTermCaseComponent } from './personal-banking/insurance/long-term-case/long-term-case.component';
 import { LongDisabilityComponent } from './personal-banking/insurance/long-disability/long-disability.component';
@@ -78,9 +93,23 @@ const routes: Routes = [
   
   { path: 'business', component: BusinessBankingComponent },
   { path: 'business/cash-management', component: CashManagementComponent },
+  { path: 'business/cash-management/business-accounts', component: BusinessAccountsComponent },
+  { path: 'business/cash-management/payables-management', component: PayablesManagementComponent },
+  { path: 'business/cash-management/information-management', component: InformationManagementComponent },
   { path: 'business/business-financing', component: BusinessFinancingComponent },
+  { path: 'business/business-financing/business-loans', component: BusinessLoansComponent },
+  { path: 'business/business-financing/commercial-real-estate', component: CommercialRealEstateComponent },
+  { path: 'business/business-financing/equipment-leasing', component: EquipmentLeasingComponent },
   { path: 'business/employee-benefits', component: EmployeeBenefitsComponent },
-  { path: 'business/business-insurance', component: BusinessInsuranceComponent },
+  { path: 'business/employee-benefits/retirement-plans', component: RetirementPlansComponent },
+  { path: 'business/employee-benefits/human-resources-consulting-support', component: HumanResourceConsultingComponent },
+  { path: 'business/employee-benefits/voluntary-worksite-benefits', component: VoluntaryWorksiteBenefitsComponent },
+  { path: 'business/employee-benefits/strategic-employee-benefits', component: StrategicEmployeeBenefitsComponent },
+  { path: 'business/business-insurance/property-casualty-insurance', component: PropertyCasualtyInsuranceComponent },
+  { path: 'business/business-insurance/risk-management', component: RiskManagementComponent },
+  { path: 'business/business-insurance/claims-advocacy', component: ClaimsAdvocacyComponent },
+  { path: 'business/business-insurance/professional-liability', component: ProfessionalLiabilityComponent },
+  { path: 'business/business-insurance/mergers-acquisition', component: MergersAndAcquistionComponent },
   { path: 'business/education-guidance', component: EducationAndGuidanceComponent }
 ];
 
