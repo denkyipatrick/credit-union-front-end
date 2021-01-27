@@ -11,16 +11,96 @@ heroImageUrl="../assets/images/personal/banking/friends-two-women-shopping-large
 </app-header>
 
 <div class="container">
-<div class="row btf-title">
-    <h2>Pay your way</h2>
-    <p class="light">
-        Whether you prefer to pay with your 
-        debit card or earn rewards with your 
-        credit card, we offer a variety of 
-        solutions for both your day-to-day 
-        and larger purchases.
-    </p>
+    <div class="row btf-title">
+        <h2>Pay your way</h2>
+        <p class="light">
+            Whether you prefer to pay with your 
+            debit card or earn rewards with your 
+            credit card, we offer a variety of 
+            solutions for both your day-to-day 
+            and larger purchases.
+        </p>
+    </div>
 </div>
+
+<div class="container">
+    <div class="row btf-title">
+        <h2>Debit Cards</h2>
+        <p>
+            Your debit card is the 
+            perfect solution for all 
+            of your day-to-day purchases.
+        </p>
+    </div>
+    
+    <div class="row icon-and-content-item-container">
+        <app-icon-and-content-item
+            title="Secure"
+            iconImageUrl="../../../assets/images/personal/cards/icon-chip-card-50x50.png"
+            description="
+                Each debit card comes with 
+                the enhanced security of an 
+                embedded microchip.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Fast"
+            iconImageUrl="../../../assets/images/personal/cards/icon-stopwatch-50x50.png"
+            description="
+                Pay family and friends on the go, 
+                conveniently make purchases both 
+                online and in-store, or even pay 
+                your bills – anytime, anywhere.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Mobile"
+            iconImageUrl="../../../assets/images/personal/cards/icon-smartphone-and-dollar-50x50.png"
+            [description]="
+                'Mobile payment technology allows 
+                you to make purchases with your 
+                mobile device using your ' + shortBankName + 
+                ' card.'">
+        </app-icon-and-content-item>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row btf-title">
+        <h2>Credit Cards</h2>
+        <p>
+            Your credit card can increase 
+            your purchasing power while 
+            giving you the chance to earn 
+            rewards to use the way you want.
+        </p>
+    </div>
+
+    <div class="row icon-and-content-item-container">
+        <app-icon-and-content-item
+            title="Cash back or rewards"
+            iconImageUrl="../../../assets/images/personal/cards/icon-rewards-50x50.png"
+            description="
+                Whether you want to maximize 
+                cash back or earn rewards, 
+                there is a card for you.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Flexible purchasing power"
+            [hasCTA]="false"
+            iconImageUrl="../../../assets/images/personal/cards/icon-percent-50x50.png"
+            description="
+                Accepted at millions of 
+                locations worldwide.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Pay down balances"
+            iconImageUrl="../../../assets/images/personal/cards/icon-cost-reduce-50x50.png"
+            description="
+                Enjoy the everyday conveniences 
+                of a non-rewards card while saving 
+                on interest and paying down other 
+                credit card balances faster.">
+        </app-icon-and-content-item>
+    </div>
 </div>
 
 <app-footer></app-footer>

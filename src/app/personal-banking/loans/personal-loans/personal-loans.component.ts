@@ -8,8 +8,10 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./personal-loans.component.scss']
 })
 export class PersonalLoansComponent implements OnInit {
+  shortBankName: String;
 
   constructor(private titleService: Title, private utilityService: UtilityService) {
+    this.shortBankName = this.utilityService.shortBankName;
   }
 
   ngOnInit(): void {

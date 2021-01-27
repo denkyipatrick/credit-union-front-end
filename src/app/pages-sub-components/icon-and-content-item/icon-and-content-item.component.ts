@@ -24,7 +24,9 @@ export class IconAndContentItemComponent implements OnInit {
       adipisicing elit. Illum omnis culpa, 
       distinctio illo quos, quas eius non minus a 
       dolorum hic quam doloremque. Aliquam veritatis 
-      eligendi maxime quam, officia a?`
+      eligendi maxime quam, officia a?`;
+    
+    // this.iconImageUrl = "../../../assets/images/personal/banking/icon-checking-accounts-50x50.webp";
   }
 
   ngOnInit(): void {

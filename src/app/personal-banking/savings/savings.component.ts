@@ -9,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavingsComponent implements OnInit {
   appName: String
+  shortBankName: String;
   bankPhoneNumber: String
 
   constructor(private titleService: Title, private utilityService: UtilityService) {
     this.appName = this.utilityService.applicationName;
-    this.bankPhoneNumber = utilityService.bankPhoneNumber;
+    this.shortBankName = this.utilityService.shortBankName;
+    this.bankPhoneNumber = this.utilityService.bankPhoneNumber;
   }
 
   ngOnInit(): void {

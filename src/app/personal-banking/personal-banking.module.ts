@@ -1,3 +1,4 @@
+import { InsuranceModule } from './insurance/insurance.module';
 import { InvestingRetirementModule } from './investing-retirement/investing-retirement.module';
 import { LoansModule } from './loans/loans.module';
 import { PagesSubComponentsModule } from './../pages-sub-components/pages-sub-components.module';
@@ -24,7 +25,6 @@ import { HealthSavingsComponent } from './health-savings/health-savings.componen
     SavingsComponent,
     CreditCardsComponent,
     CertificatesOfDepositComponent,
-    InsuranceComponent,
     PersonalInsuranceComponent,
     FinancialLifeComponent,
     BankingComponent,
@@ -33,6 +33,7 @@ import { HealthSavingsComponent } from './health-savings/health-savings.componen
   imports: [
     CommonModule,
     LoansModule,
+    InsuranceModule,
     InvestingRetirementModule,
     PagesSubComponentsModule
   ]

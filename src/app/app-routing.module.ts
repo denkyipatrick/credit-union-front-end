@@ -1,3 +1,9 @@
+import { LifeComponent } from './personal-banking/insurance/life/life.component';
+import { LongTermCaseComponent } from './personal-banking/insurance/long-term-case/long-term-case.component';
+import { LongDisabilityComponent } from './personal-banking/insurance/long-disability/long-disability.component';
+import { FloodComponent } from './personal-banking/insurance/flood/flood.component';
+import { RentersComponent } from './personal-banking/insurance/renters/renters.component';
+import { HomeAndCondoComponent } from './personal-banking/insurance/home-and-condo/home-and-condo.component';
 import { InvestYourWayComponent } from './personal-banking/investing-retirement/invest-your-way/invest-your-way.component';
 import { InvestmentManagementComponent } from './personal-banking/investing-retirement/investment-management/investment-management.component';
 import { RetirementPlanningComponent } from './personal-banking/investing-retirement/retirement-planning/retirement-planning.component';
@@ -57,6 +63,12 @@ const routes: Routes = [
   { path: 'personal/home-personal-loans/construction-lot-loans', component: ConstructionLoansComponent },
   { path: 'personal/home-personal-loans/home-equity-loans-lines-of-credit', component: HomeAndEquityLoansComponent },
   { path: 'personal/personal-insurance', component: PersonalInsuranceComponent },
+  { path: 'personal/personal-insurance/home-condo', component: HomeAndCondoComponent },
+  { path: 'personal/personal-insurance/renters', component: RentersComponent },
+  { path: 'personal/personal-insurance/flood', component: FloodComponent },
+  { path: 'personal/personal-insurance/life', component: LifeComponent },
+  { path: 'personal/personal-insurance/long-term-care', component: LongTermCaseComponent },
+  { path: 'personal/personal-insurance/disability', component: LongDisabilityComponent },
   { path: 'personal/investment-retirement', component: InvestingRetirementComponent },
   { path: 'personal/investment-retirement/invest-your-way', component: InvestYourWayComponent },
   { path: 'personal/investment-retirement/investment-management', component: InvestmentManagementComponent },
