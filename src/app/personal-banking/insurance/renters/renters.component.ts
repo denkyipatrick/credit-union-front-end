@@ -17,5 +17,4 @@ export class RentersComponent implements OnInit {
     `${this.utilityService.bankName}`);
   }
 
-
 }
