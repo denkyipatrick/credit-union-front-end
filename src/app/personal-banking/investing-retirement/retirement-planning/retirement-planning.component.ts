@@ -8,6 +8,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./retirement-planning.component.scss']
 })
 export class RetirementPlanningComponent implements OnInit {
+  shortBankName: String;
 
   constructor(private titleService: Title, private utilityService: UtilityService) {
   }

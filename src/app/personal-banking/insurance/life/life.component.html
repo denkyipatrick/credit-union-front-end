@@ -1,6 +1,15 @@
 
+<app-header 
+    heroTitle="Life Insurance"
+    heroDescription="
+        Ensure the people you love 
+        most are taken care of financially, 
+        even if you're not there.
+    "
+    heroImageUrl="../assets/images/personal/personal-insurance/family-mom-and-daughter-laying-in-bed-taking-a-selfie-large.jpg">
+</app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Benefits of Life Insurance</h2>
         <p>
@@ -14,7 +23,7 @@
     <div class="row icon-and-content-item-container grid-cols-2">
         <app-icon-and-content-item
             title="Tax-Free"
-            iconImageUrl="../../../assets/images/personal/personal-insurance/icon-appliance-50x50.png"
+            iconImageUrl="../../../assets/images/personal/personal-insurance/icon-dollar-sign-50x50.png"
             description="
                 Benefits are paid to your 
                 family in a lump sum, or 
@@ -33,5 +42,77 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Why get life insurance?</h2>
+            <p>
+                If you die unexpectedly, can 
+                your family maintain their standard 
+                of living? If the answer is no, 
+                a life insurance policy is right 
+                for you.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid grid-cols-3 gap-4">
+            <app-title-shadow-card 
+                title="Reason One"
+                description="Generate an income for your family.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Reason Two"
+                description="Pay expenses like a mortgage, childcare or college education.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Reason Three"
+                description="Supplement your retirement plan.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Reason Four"
+                description="Pay for accumulated medical expenses.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Reason Five"
+                description="Pay for final expenses.">
+            </app-title-shadow-card>
+        </div>
+    </div>
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Disability Insurance"
+        [isFlipped]="true"
+        description="
+            Chances are an unexpected illness 
+            or injury will greatly affect your life. 
+            A disability policy can ensure your 
+            income is covered so you can focus 
+            on your health. 
+        "
+        imageUrl="../../../assets/images/personal/personal-insurance/woman-with-crutches-being-assisted-walking-thru-room-small.webp">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Justin Albets, VP Personal Lines Insurance Sales Manager"
+    advisorPhotoUrl="../../../assets/images/personal/personal-insurance/justin-staebler.jpg">
+</app-find-advisor-row>
+
 
 <app-footer></app-footer>

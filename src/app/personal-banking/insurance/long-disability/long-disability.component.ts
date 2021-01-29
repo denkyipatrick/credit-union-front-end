@@ -1,3 +1,5 @@
+import { UtilityService } from './../../../services/utility.service';
+import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LongDisabilityComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title, private utilityService: UtilityService) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(`Disability Insurance | ` + 
+    `Long vs Short Term Disability | ${this.utilityService.bankName}`);
   }
 
 }

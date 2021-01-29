@@ -627,9 +627,10 @@ p .light {
   font-size: 1.125rem;
 }
 
-.container {
+.custom-container {
   width: 100%;
-  max-width: 100%;
+  padding: 2rem 0;
+  border-bottom: 1px solid lightgray;
 }
 
 ul.more-info-card-list {
@@ -677,28 +678,46 @@ ul.more-info-card-list .card:hover {
 
 .row {
   width: 1400px;
-  max-width: 100%;
+  max-width: 95%;
   margin: 0 auto;
 }
 
-.row.btf-title {
-  width: 50%;
+.row.full-row {
+  width: 100%;
   max-width: 100%;
+}
+
+.row.btf-title {
+  width: 700px;
+  max-width: 100%;
+  padding: 2rem 0;
   text-align: center;
-  padding: 2rem;
-  margin-bottom: 4rem;
-  border-bottom: 1px solid lightgray;
 }
 
 .row.btf-title h2 {
-  margin: 1rem 0;
   font-size: 3.125rem;
 }
 
 .row.btf-title p {
-  font-weight: 300;
   padding: 1rem 0;
   font-size: 1.25rem;
+}
+
+.row .header {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.row .header p {
+  font-size: 1.125rem;
+  margin: 1rem 0;
+}
+
+.row .header p.light {
+  font-weight: 300;
 }
 
 header .jumbotron {
@@ -843,7 +862,7 @@ header nav div.sub-nav > div > span ul a:hover {
   color: #222;
 }
 
-ul.checkmark-bullets {
+ul.checkmark-bullets, .list-checkmarks {
   text-align: left;
   list-style-position: inside;
   list-style-image: url(./assets/images/checkmark-primary.png);
@@ -852,6 +871,49 @@ ul.checkmark-bullets {
 .feature {
   padding-bottom: 60px;
   border-bottom: 1px solid #c2c2c2;
+}
+
+.image-and-content-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.image-and-content-row.flip-image {
+  flex-direction: row-reverse;
+}
+
+.image-and-content-row.flip-image .content {
+  margin-right: 0;
+  margin-left: 1.5rem;
+}
+
+.image-and-content-row .content {
+  width: 50%;
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+
+.image-and-content-row .content p, .image-and-content-row .content span.paragraphs {
+  font-size: 1.125rem;
+  margin: 1rem 0;
+}
+
+.image-and-content-row .content ul {
+  margin: 1rem 0;
+}
+
+.image-and-content-row .content ul li {
+  font-size: 1.125rem;
+  margin: 0.5rem 0;
+}
+
+.image-and-content-row .image-wrapper {
+  width: 50%;
+}
+
+.image-and-content-row .image-wrapper img {
+  max-width: 100%;
 }
 
 .centered-content {
@@ -987,10 +1049,18 @@ ul.checkmark-bullets {
 }
 
 .icon-and-content-item-container {
-  border: 1px solid black;
+  margin: 2rem auto;
   display: grid;
   grid-gap: 1.5rem;
   gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.more-info-card-container {
+  margin: 2rem auto;
+  display: grid;
+  grid-gap: 1rem;
+  gap: 1rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1139,6 +1209,42 @@ ul.checkmark-bullets {
   -moz-transition: opacity 150ms ease-in-out;
   -ms-transition: opacity 150ms ease-in-out;
   -o-transition: opacity 150ms ease-in-out;
+}
+
+.gray-header-item {
+  min-height: 400px;
+  width: 700%;
+  max-width: 100%;
+  margin: 1rem;
+  position: relative;
+  border: 1px solid lightgray;
+}
+
+.gray-header-item .header {
+  padding: 1rem;
+  min-height: 120px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid lightgray;
+}
+
+.gray-header-item .header h3 {
+  font-size: 2.125rem;
+}
+
+.gray-header-item .body .section {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.gray-header-item .body .section p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.gray-header-item .body .section ul {
+  margin: 1.5rem 0;
 }
 
 footer .top-section {

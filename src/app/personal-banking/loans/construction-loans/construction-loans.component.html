@@ -11,8 +11,7 @@
     heroImageUrl="../assets/images/personal/loans/couple-working-with-architect-to-plan-home-building-large.jpg">
 </app-header>
 
-
-<div class="container">
+<div class="custom-container">
     <div class="row">
         <h2>How One-Time Close Construction Loans Work</h2>
     </div>
@@ -87,5 +86,67 @@
 </div>
 
 
+<div class="custom-container">
+    <h2 class="text-center my-8">How to Apply</h2>
+    
+<app-image-and-content-row
+    title="Documents and Information"
+    [isFlipped]="true"
+    subtitle="Additional documents and information (when available)"
+    [items]="[
+        'Your Social Security number to obtain your credit report',
+        'Pay stubs, W‐2s and possibly full tax returns for income documentation',
+        'Bank and asset statements for verification of liquid and retirement savings',
+        '
+            Any other necessary information 
+            based on your individual 
+            situation like business tax returns, 
+            current real estate holdings, etc.
+        '
+    ]"
+    [subListItems]="[
+        '
+            Accepted offer to purchase - if purchasing 
+            the lot at the time of closing on your 
+            construction loan
+        ',
+        'Construction plans',
+        'Builder cost breakdown and specs',
+        'Complete signed builder contract',
+        'Insurance coverage, including builder\'s risk insurance - prior to closing'
+    ]"
+    imageUrl="../assets/images/personal/loans/hand-with-pen-filling-out-application.jpg">
+</app-image-and-content-row>
+
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">Homeowners Insurance</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Give the gift guaranteed to fit"
+        description="
+            Your home is likely one of your 
+            largest investments. You deserve 
+            to have peace of mind that your 
+            home and the possessions inside 
+            are protected from life’s 
+            unexpected events.
+        "
+        imageUrl="../../../assets/images/personal/loans/family-mom-and-daugther-playing-in-their-living-room-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+advisorName="Karrie Wichman, AVP Senior Mortgage Loan Officer"
+imageUrl="../../../assets/images/personal/loans/karie-wichman.jpg"></app-find-advisor-row>
 
 <app-footer></app-footer>

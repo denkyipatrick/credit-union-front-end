@@ -11,9 +11,9 @@
 
 
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
-        <h2>Control and Simplify</h2>
+        <h2>Control and Simplify</h2> 
         <p>
             With a personal loan or line of credit, 
             access cash to simplify your life and 
@@ -21,7 +21,7 @@
         </p>
     </div>
 
-    <div class="row icon-and-content-item-container">
+    <div class="row icon-and-content-item-container flex" style="justify-items: end;">
         <app-icon-and-content-item
             title="Loans or Lines of Credit"
             iconImageUrl="../../../assets/images/personal/home-personal-loans/icon-receive-money-50x50.png"
@@ -47,5 +47,122 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Control and Simplify</h2> 
+        </div>
+        
+    <div class="flex items-stretch justify-center space-x-6">
+        <app-icon-and-content-shadow-card
+            title="Borrow on Demand"
+            description="
+                A line of credit is a determined 
+                amount of money you've borrowed. 
+                It provides you with money on demand"
+            imageUrl="../assets/images/personal/loans/icon-cash-receive-782x440.webp">
+        </app-icon-and-content-shadow-card>
+        
+        <app-icon-and-content-shadow-card
+            title="Convenient Access"
+            description="
+                Quickly transfer from your line of 
+                credit to your checking account through 
+                eBanking, the mobile app, by phone or 
+                automatically, should your account 
+                ever become overdrawn."
+            imageUrl="../assets/images/personal/loans/icon-cash-transfer-782x440.webp">
+        </app-icon-and-content-shadow-card>
+        
+        <app-icon-and-content-shadow-card
+            title="Making Payments"
+            description="
+                Pay interest only on the money you use."
+            imageUrl="../assets/images/personal/loans/icon-cash-value-782x440.webp">
+        </app-icon-and-content-shadow-card>
+    </div>
+    </div>
+</div>
+
+<div class="custom-container">
+    <div class="row">
+        <h2 class="text-center">Personal Loan or Line of Credit Options</h2> 
+        
+        <div class="flex items-stretch justify-center space-x-6 overflow-x-auto">
+            <div class="gray-header-item">
+                <div class="header">
+                    <h3>Personal Loan</h3>
+                </div>
+                <div class="body">
+                    <div class="section">
+                        <ul class="list-checkmarks text-left">
+                            <li>Fixed rate</li>
+                            <li>Fixed monthly payment</li>
+                            <li>One-time lump sum loan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="gray-header-item">
+                <div class="header">
+                    <h3>Classic Line of Credit</h3>
+                </div>
+                <div class="body">
+                    <div class="section">
+                        <ul class="list-checkmarks text-left">
+                            <li>Variable rate</li>
+                            <li>Monthly payment based on outstanding balance</li>
+                            <li>As needed or should your checking account ever become overdrawn</li>
+                            <li>$20 annual fee</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="gray-header-item">
+                <div class="header">
+                    <h3>Premier Line of Credit</h3>
+                </div>
+                <div class="body">
+                    <div class="section">
+                        <ul class="list-checkmarks text-left">
+                            <li>Variable rate</li>
+                            <li>Monthly payment based on outstanding balance</li>
+                            <li>As needed or should your checking account ever become overdrawn</li>
+                            <li>$50 annual fee</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Auto, Boat and Recreational Vehicle Insurance"
+        description="
+            From the vehicle you drive every day, 
+            to your valued collector's car, boat, 
+            motorcycle, RV, snowmobile or ATV, we 
+            provide coverage options with more 
+            than the standard protection you 
+            would expect.
+        "
+        imageUrl="../../../assets/images/personal/loans/woman-buying-a-new-car-small.webp">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row></app-find-advisor-row>
 
 <app-footer></app-footer>

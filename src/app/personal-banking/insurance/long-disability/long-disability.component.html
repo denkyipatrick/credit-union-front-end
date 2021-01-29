@@ -1,6 +1,19 @@
 
 
-<div class="container">
+<app-header 
+    heroTitle="Disability Insurance"
+    heroDescription="
+        Chances are an unexpected illness 
+        or injury will greatly affect your life. 
+        A disability policy can ensure your 
+        income is covered so you can focus 
+        on your health.
+    "
+    heroImageUrl="../assets/images/personal/personal-insurance/woman-with-crutches-being-assisted-walking-thru-room-large.webp">
+</app-header>
+
+
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Benefits</h2>
         <p>
@@ -40,5 +53,81 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Do you need disability insurance?</h2>
+            <p>
+                If you answer yes to any of 
+                these questions, contact one of 
+                our advisors to determine what 
+                disability coverage is best for 
+                you. 
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid grid-cols-3 gap-4">
+            <app-title-shadow-card 
+                title="Question 1"
+                description="Are you currently or planning to become self-employed?  ">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Question 2"
+                description="Would a loss of income negatively impact your family's life?">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Question 3"
+                description="Would you lose your employer-paid 
+                    benefit if you leave your job?">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Question 4"
+                description="
+                    Would you like to compare extra 
+                    benefit options to your current coverage?
+                ">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Question 5"
+                description="Could you benefit from having 
+                    someone review your current coverage?
+                ">
+            </app-title-shadow-card>
+        </div>
+    </div>
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Life Insurance"
+        description="
+            Ensure the people you love most are 
+            taken care of financially, even 
+            if you're not there.  
+        "
+        imageUrl="../../../assets/images/personal/personal-insurance/family-mom-and-daughter-laying-in-bed-taking-a-selfie-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Brian Plamann, Life Insurance Sales Executive"
+    advisorPhotoUrl="../../../assets/images/personal/personal-insurance/brian-plamann.webp">
+</app-find-advisor-row>
+
+
 
 <app-footer></app-footer>

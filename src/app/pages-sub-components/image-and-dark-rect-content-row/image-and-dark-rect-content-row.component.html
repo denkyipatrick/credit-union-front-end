@@ -1,0 +1,27 @@
+
+<div class="image-and-dark-rect-content-row flex items-center">
+    <div class="dark-rect">
+        <div>
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <span [innerHTML]="paragraphs"></span>
+            <a *ngIf="hasLink" [href]="linkUrl" class="btn btn-outlined">Learn More</a>
+            
+            <ul class="main-list checkmark-bullets">
+                <li *ngFor="let item of items">
+                    {{item.item || item}}
+                    <ul class="sub-list list-disc ml-6">
+                        <li *ngFor="let subItem of item.subItems">
+                            {{subItem}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <div>
+            <img [src]="imageUrl" />
+        </div>
+    </div>
+</div>

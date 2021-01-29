@@ -1,4 +1,6 @@
+import { UtilityService } from './../../../services/utility.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-and-condo',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeAndCondoComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private titleService: Title, private utilityService: UtilityService) {
   }
 
+  ngOnInit(): void {
+    this.titleService.setTitle(`Home & Condo Insurance | ` + 
+    `What does homeowners insurance cover? | ` + 
+    `${this.utilityService.bankName}`);
+  }
 }

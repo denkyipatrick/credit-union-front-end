@@ -12,7 +12,7 @@
     heroImageUrl="../assets/images/personal/loans/kids-two-girls-having-fun-washing-dishes-large.webp">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Personalized Service</h2>
         <p>
@@ -32,6 +32,116 @@
             who will be available to answer 
             any ongoing questions.
         </p>
+    </div>
+</div>
+
+
+
+<app-image-and-content-row
+    title="Mortgage Loan Programs"
+    paragraphs="
+        <p>
+            You want to find the perfect house, 
+            but a pre-approval is an important 
+            first step. The appropriate amount 
+            of prep work can lead to a successful 
+            home buying experience. You have many 
+            loan options to consider including:
+        </p>
+    "
+    [items]="
+        [
+            'Fixed-rate mortgage',
+            'Adjustable-rate mortgage (ARM)',
+            'Jumbo loans',
+            'Condo loans',
+            'Lot loans',
+            'One-time close construction loans',
+            'Low down payment loans'
+        ]
+    "
+    imageUrl="../assets/images/personal/loans/couple-standing-in-new-home-full-of-boxes-small.jpg">
+</app-image-and-content-row>
+
+<app-image-and-content-row
+    title="Refinancing Options"
+    [isFlipped]="true"
+    paragraphs="
+        <p>
+            Refinancing may help you lower 
+            your monthly payments, remove a 
+            borrower from the loan, reduce your 
+            total financing amount or put the 
+            equity from your home to good use.
+        </p>
+    "
+    [items]="
+        [
+            'Reduce your monthly payments.',
+            'Remove private mortgage insurance (PMI).',
+            'Reduce your interest rate.',
+            'Shorten the term of your mortgage.',
+            'Get cash out.'
+        ]
+    "
+    imageUrl="../assets/images/personal/loans/couple-decorating-their-new-apartment-large.jpg">
+</app-image-and-content-row>
+
+<app-image-and-dark-rect-content-row
+    title="Lock 'n' Shop"
+    paragraphs="
+        <p>
+            Lock a great interest rate 
+            for 120 days while looking 
+            for your perfect home. Combined 
+            with our free, fully underwritten 
+            pre-approval, you’ll have peace of 
+            mind and security knowing your 
+            financing is all set.
+        </p>
+        <p>
+            Plus, if rates go down while 
+            searching for a home, your rate can drop too. 
+            Take advantage of a worry-free home financing 
+            option with certain loan products and show 
+            the seller that your offer is solid.
+        </p>
+    "
+    imageUrl="../../../assets/images/personal/loans/couple-holding-arms-looking-away-towards-house.jpg">
+</app-image-and-dark-rect-content-row>
+
+<div class="custom-container">
+    <h2 class="text-center my-4">Learn more about...</h2>
+    <div class="row more-info-card-container grid-cols-2 text-center" style="width: 850px;">
+        <app-more-info-card 
+            title="Construction & Lot Loans"
+            description="
+                Building the home of your dreams 
+                is exciting. Just as a solid 
+                foundation is important to any 
+                well-constructed house, financing 
+                is critical to the construction 
+                process as a whole.
+            "
+            linkUrl="/personal/home-personal-loans/home-loans/construction-lot-loans"
+            imageUrl="../../../assets/images/personal/loans/couple-working-with-architect-to-plan-home-building-large.jpg">
+        </app-more-info-card>
+        <app-more-info-card 
+            title="Home Equity Loans & Lines of Credit"
+            description="
+                As life changes and your needs 
+                shift, use the equity in your 
+                home to finance your next goal. 
+                Maybe you’re considering a home 
+                improvement, a new vehicle or want 
+                to consolidate debt. Whatever your 
+                project or plans, a home equity 
+                loan or line of credit can help 
+                you achieve them.
+            "
+            linkUrl="/personal/home-personal-loans/home-equity-loans-lines-of-credit"
+            imageUrl="../../../assets/images/personal/loans/couple-choosing-paint-colors-in-new-room-small.jpg">
+        </app-more-info-card>
     </div>
 </div>
 

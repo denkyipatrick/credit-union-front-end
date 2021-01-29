@@ -9,13 +9,74 @@ heroImageUrl="../assets/images/personal/investing-retirement/couple-older-lookin
 </app-header>
 
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
-        <h2>The Financial Planning Process</h2>
-        <p>
-            We will begin by understanding you along with 
-            your strengths and weaknesses surrounding money. 
-        </p>
+        <h2>Financial Planning</h2>
+    </div>
+
+    <app-image-and-content-row
+        title="Purpose of a Financial Plan"
+        paragraphs="
+            <p>
+                The purpose of a financial plan is 
+                to define how your income and assets 
+                can provide for a lifetime of happiness. 
+                Healthy savings habits, spending discipline 
+                and appropriate investments are necessary 
+                to meet your goals. But, you need more 
+                than just a plan.
+            </p>
+            <p>
+                We can keep you centered on your 
+                plan when faced with market downturns 
+                or enticing spending opportunities. 
+                Our team is invested in you and your family. 
+                We're committed to helping you get where 
+                you want to go.
+            </p>
+        "
+        imageUrl="../../../assets/images/personal/investing-retirement/father-and-son-sitting-outside-drinking-coffee.webp">        
+    </app-image-and-content-row>
+</div>
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Creating a Plan</h2>
+            <p>
+                Ask yourself these questions 
+                when you start creating your financial plan.
+            </p>
+        </div>
+        
+    <div class="flex items-stretch justify-center space-x-6">
+        <app-icon-and-content-shadow-card
+            title="What makes me happy?"
+            imageUrl="../assets/images/personal/investing-retirement/icon-happy-782x440.jpg">
+        </app-icon-and-content-shadow-card>
+        
+        <app-icon-and-content-shadow-card
+            title="What do I want to do about that?"
+            imageUrl="../assets/images/personal/investing-retirement/icon-question-782x440.webp">
+        </app-icon-and-content-shadow-card>
+        
+        <app-icon-and-content-shadow-card
+            title="What will that cost?"
+            imageUrl="../assets/images/personal/investing-retirement/icon-dollar-782x440.webp">
+        </app-icon-and-content-shadow-card>
+    </div>
+    </div>
+</div>
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>The Financial Planning Process</h2>
+            <p>
+                We will begin by understanding you along with 
+                your strengths and weaknesses surrounding money. 
+            </p>            
+        </div>
     </div>
 
     <div class="row icon-and-content-item-container grid-cols-2">
@@ -58,5 +119,93 @@ heroImageUrl="../assets/images/personal/investing-retirement/couple-older-lookin
         </app-icon-and-content-item>
     </div>
 </div>
+
+
+<div class="custom-container">
+    <div class="row btf-title">
+        <h2>Retirement Planning</h2>
+    </div>
+
+    <app-image-and-content-row
+        title="Ensure you're ready when the time comes"
+        [isFlipped]="true"
+        paragraphs="
+            <p>
+                As you get closer to retirement, 
+                we can provide you with a comprehensive 
+                proposal that evaluates your current 
+                financial plan in relation to your 
+                retirement goals.
+            </p>
+            <p>
+                This includes projections of your 
+                future financial welfare based on 
+                your income requirements, inflation 
+                projections, potential taxes, Social Security, 
+                required minimum withdrawals and 
+                military or other plan benefits.*
+            </p>
+            <p>
+                We will also provide a clear explanation 
+                of the various retirement plan options 
+                available so that your election will be 
+                appropriate based on your goals.
+            </p>
+        "
+        imageUrl="../../../assets/images/personal/investing-retirement/couple-standing-in-front-of-their-window-small.webp">        
+    </app-image-and-content-row>
+</div>
+
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>The Retirement Planning Process</h2>
+        </div>
+        
+    <div class="flex items-stretch justify-center space-x-6">
+        <app-icon-and-content-shadow-card
+            title="Review your retirement and financial plans"
+            description="
+                As you get closer to retirement, 
+                our team will work with you to review 
+                your retirement and financial plans 
+                so you continue to enjoy a fulfilling 
+                life upon your retirement.
+            "
+            imageUrl="../assets/images/personal/investing-retirement/icon-number-1-782x440.webp">
+        </app-icon-and-content-shadow-card>
+        
+        <app-icon-and-content-shadow-card
+            title="Comply with plan requirements"
+            description="
+                When you’re ready to retire, we will 
+                make sure you comply with plan requirements 
+                and accurately complete all necessary 
+                documents, resulting in a smooth and 
+                successful transition to retirement. 
+                This includes allocating your retirement 
+                assets based on your financial plan and 
+                proper distribution of your tax-deferred assets.
+            "
+            imageUrl="../assets/images/personal/investing-retirement/icon-number-2-782x440.webp">
+        </app-icon-and-content-shadow-card>
+        
+        <app-icon-and-content-shadow-card
+            title="Review your estate planning documents"
+            description="
+                Our team can also work closely with 
+                your attorney to review your estate 
+                planning documents to determine if you 
+                need any updates as a result of your 
+                change in status.
+            "
+            imageUrl="../assets/images/personal/investing-retirement/icon-number-3-782x440.jpg">
+        </app-icon-and-content-shadow-card>
+    </div>
+    </div>
+</div>
+
+<app-call-us-row></app-call-us-row>
 
 <app-footer></app-footer>

@@ -1,16 +1,16 @@
 
 <app-header 
-heroTitle="Investment Management"
-heroDescription="
-    Managing portfolios guided 
-    by your goals, sound research 
-    and a prudent investment 
-    decision-making process."
-heroImageUrl="../assets/images/personal/investing-retirement/professionals-man-and-woman-planning-large.jpg">
+    heroTitle="Investment Management"
+    heroDescription="
+        Managing portfolios guided 
+        by your goals, sound research 
+        and a prudent investment 
+        decision-making process."
+    heroImageUrl="../assets/images/personal/investing-retirement/professionals-man-and-woman-planning-large.jpg">
 </app-header>
 
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Our Approach</h2>
         <p class="light">
@@ -26,9 +26,9 @@ heroImageUrl="../assets/images/personal/investing-retirement/professionals-man-a
     </div>
 </div>
 
-<div class="container">
+<div class="custom-container">
     <div class="row">
-        <ul class="grid grid-cols-3 gap-4" style="border: 1px solid black;">
+        <ul class="grid grid-cols-3 gap-4">
             <li>
                 <app-icon-and-content-shadow-card 
                     title="Global Diversification"
@@ -67,5 +67,125 @@ heroImageUrl="../assets/images/personal/investing-retirement/professionals-man-a
         </ul>
     </div>
 </div>
+
+
+<div class="custom-container">
+    <div class="row btf-title">
+        <h2>Our Process</h2>
+        <p class="light">
+            Our investment process is a 
+            team-based approach focused 
+            on three main disciplines.
+        </p>
+    </div>
+
+    <app-image-and-content-row
+        title="Asset Allocation"
+        imageUrl="../../../../assets/images/personal/investing-retirement/man-pointing-to-graphs-with-pen-small.jpg"
+        paragraphsText="
+        <p>
+            Our Investment Committee identifies 
+            strategic global targets for client 
+            portfolios in three categories 
+            (Equities, Fixed Income and Complements) 
+            with differing risk/return profiles. 
+            We'll work with you to construct a 
+            portfolio that aligns return expectations 
+            with your desired level of risk. 
+            This process is often based on:
+        </p>"
+        [items]="[
+            'Your assets', 
+            'Your need for spending', 
+            'Your long-term strategy for the investments',
+            'Your willingness to accept short-term market declines'
+        ]">
+    </app-image-and-content-row>
+    
+    <app-image-and-content-row
+        title="Manager Selection"
+        imageUrl="../../../../assets/images/personal/investing-retirement/woman-talking-to-coworkers-making-a-decision-small.jpg"
+        [isFlipped]="true"
+        paragraphsText="
+        <p>
+            Our Research team identifies investment 
+            managers with clearly articulated, 
+            consistently applied, cost-effective 
+            strategies.
+        </p>
+        <p>
+            The team conducts qualitative and 
+            quantitative research to understand 
+            the mechanics of each manager's strategy 
+            and how they would be expected to perform 
+            in various market conditions.
+        </p>
+        <p>
+            We also assess where each manager currently 
+            is in their performance cycle so we can be 
+            intentional when entering and exiting the 
+            manager. Our decisions are explainable, 
+            repeatable and measurable.
+        </p>
+        ">
+    </app-image-and-content-row>
+    
+    
+    <app-image-and-content-row
+        title="Capital Allocation"
+        imageUrl="../../../../assets/images/personal/investing-retirement/male-coworkers-pointing-to-computer-screen-small.jpg"
+        paragraphsText="
+        <p>
+            Our Asset Class Strategy groups 
+            focus on their respective 
+            categories (Equities, Fixed Income and Complements) 
+            to find value and invest accordingly. 
+            And while we take a strategic view of 
+            the market, we look for opportunities 
+            to add value by employing tactical shifts 
+            to your portfolio, sometimes overweighting 
+            or underweighting within different categories.
+        </p>
+        <p>
+            Using a disciplined valuation framework, 
+            we seek to capitalize on changes in global 
+            market and economic conditions.
+        </p>
+        ">
+    </app-image-and-content-row>
+        
+</div>
+
+<div class="custom-container">
+    <app-image-and-dark-rect-content-row
+        title="Retirement & Financial Planning"
+        [isFlipped]="false"
+        description="
+            Developing a sound financial 
+            plan is essential to achieving 
+            your long-term retirement goals.
+        "
+        linkUrl="/personal/investment-retirement/retirement-financial-planning"
+        imageUrl="../../../../assets/images/personal/investing-retirement/couple-older-looking-at-paint-color-options-small.webp">
+    </app-image-and-dark-rect-content-row>
+    <app-image-and-dark-rect-content-row
+        title="Invest Your Way"
+        [isFlipped]="true"
+        description="
+            Helping you make the most of 
+            your money and your life with 
+            a variety of investments is 
+            important for creating a 
+            flexible plan based on your 
+            needs and future goals.
+        "
+        linkUrl="/personal/investment-retirement/invest-your-way"
+        imageUrl="../../../../assets/images/personal/investing-retirement/couple-standing-in-front-of-their-window-small.webp">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row></app-find-advisor-row>
 
 <app-footer></app-footer>

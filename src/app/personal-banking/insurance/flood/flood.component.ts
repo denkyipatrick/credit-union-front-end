@@ -15,6 +15,9 @@ export class FloodComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle(`Flood Insurance | FEMA Flood Insurance | ` + 
+    `${this.utilityService.bankName}`);
   }
+
 
 }

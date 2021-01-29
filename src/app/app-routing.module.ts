@@ -69,7 +69,7 @@ const routes: Routes = [
   { path: 'personal/banking', component: BankingComponent },
   { path: 'personal/banking/checking', component: CheckingComponent },
   { path: 'personal/banking/savings-and-money-market', component: SavingsComponent },
-  { path: 'personal/banking/health-savings-accounts', component: HealthSavingsComponent },
+  { path: 'personal/banking/health-savings-account', component: HealthSavingsComponent },
   { path: 'personal/banking/certificate-of-deposit', component: CertificatesOfDepositComponent },
   { path: 'personal/banking/cards', component: CreditCardsComponent },
   { path: 'personal/home-personal-loans', component: LoansComponent },

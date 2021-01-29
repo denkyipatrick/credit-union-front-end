@@ -1,4 +1,6 @@
+import { UtilityService } from './../../../services/utility.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-long-term-case',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LongTermCaseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title, private utilityService: UtilityService) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(`Long-Term Care Insurance | ` + 
+    `Extended Care Insurance | ${this.utilityService.bankName}`);
   }
 
 }

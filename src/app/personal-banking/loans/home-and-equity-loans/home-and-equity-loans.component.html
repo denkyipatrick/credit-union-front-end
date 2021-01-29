@@ -9,7 +9,7 @@
 </app-header>
 
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Benefits</h2>
         <p>
@@ -74,5 +74,29 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Credit Cards"
+        description="
+            A credit card can increase 
+            your purchasing power while 
+            giving you the chance to earn 
+            rewards to use the way you want.
+        "
+        imageUrl="../../../assets/images/personal/loans/woman-using-credit-card-at-home-small.webp">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row></app-find-advisor-row>
 
 <app-footer></app-footer>

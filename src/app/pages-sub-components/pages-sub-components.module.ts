@@ -10,6 +10,11 @@ import { ServiceOverviewListItemComponent } from './service-overview-list-item/s
 import { IconAndContentShadowCardComponent } from './icon-and-content-shadow-card/icon-and-content-shadow-card.component';
 import { IconAndContentItemComponent } from './icon-and-content-item/icon-and-content-item.component';
 import { MoreInfoCardComponent } from './more-info-card/more-info-card.component';
+import { ImageAndContentRowComponent } from './image-and-content-row/image-and-content-row.component';
+import { ImageAndDarkRectContentRowComponent } from './image-and-dark-rect-content-row/image-and-dark-rect-content-row.component';
+import { CallUsRowComponent } from './call-us-row/call-us-row.component';
+import { FindAdvisorRowComponent } from './find-advisor-row/find-advisor-row.component';
+import { TitleShadowCardComponent } from './title-shadow-card/title-shadow-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { MoreInfoCardComponent } from './more-info-card/more-info-card.component
     IconAndContentShadowCardComponent,
     IconAndContentItemComponent,
     IconAndContentItemComponent,
-    MoreInfoCardComponent
+    MoreInfoCardComponent,
+    ImageAndContentRowComponent,
+    ImageAndDarkRectContentRowComponent,
+    CallUsRowComponent,
+    FindAdvisorRowComponent,
+    TitleShadowCardComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +46,12 @@ import { MoreInfoCardComponent } from './more-info-card/more-info-card.component
     ServiceOverviewListItemComponent,
     IconAndContentItemComponent,
     IconAndContentShadowCardComponent,
-    MoreInfoCardComponent
+    MoreInfoCardComponent,
+    CallUsRowComponent,
+    TitleShadowCardComponent,
+    FindAdvisorRowComponent,
+    ImageAndContentRowComponent,
+    ImageAndDarkRectContentRowComponent
   ]
 })
 export class PagesSubComponentsModule { }

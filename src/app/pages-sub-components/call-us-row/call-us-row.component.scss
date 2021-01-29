@@ -1,0 +1,28 @@
+
+.call-us-row {
+    width: 50%;
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid lightgray;
+    .inner {
+        position: relative;
+        padding: 3rem;
+        text-align: center;
+        border: 1px solid lightgray;
+        .question-icon {
+            position: absolute;
+            top: -38px;
+            left: 45%;
+        }
+        h5 {
+            font-family: "Lato", sans-serif;
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1.125rem;
+            margin: 1.5rem 0;
+        }
+    }
+}

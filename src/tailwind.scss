@@ -26,10 +26,6 @@ body {
     color: $bodyTextColor;
     text-align: left;
     background-color: #fff;
-    header {}
-    main {
-    }
-    footer {}
 }
 
 h1, h2, h3, h4, h5, h6 {    
@@ -61,13 +57,13 @@ p {
     }
 }
 
-.container {
+.custom-container {
   width: 100%;
-  max-width: 100%;
+  padding: 2rem 0;
+  // border: 1px solid blue;
+  border-bottom: 1px solid lightgray;
 }
 
-header {
-}
 
 ul.more-info-card-list {
   margin-bottom: 100px;
@@ -110,23 +106,38 @@ ul.more-info-card-list {
 
 .row {
   width: 1400px;
-  max-width: 100%;
+  max-width: 95%;
   margin: 0 auto;
-  &.btf-title {
-    width: 50%;
+  &.full-row {
+    width: 100%;
     max-width: 100%;
+  }
+  // border: 1px solid red;
+  &.btf-title {
+    width: 700px;
+    max-width: 100%;
+    padding: 2rem 0;
     text-align: center;
-    padding: 2rem;
-    margin-bottom: 4rem;
-    border-bottom: 1px solid lightgray;
     h2 {
-      margin: 1rem 0;
       font-size: 3.125rem;
     }
     p {
-      font-weight: 300;
       padding: 1rem 0;
       font-size: 1.25rem;
+    }
+  }
+  .header {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    p {
+      font-size: 1.125rem;
+      margin: 1rem 0;
+      &.light {
+        font-weight: 300;
+      }
     }
   }
 }
@@ -267,7 +278,7 @@ header {
   }
 }
 
-ul.checkmark-bullets {
+ul.checkmark-bullets, .list-checkmarks {
   text-align: left;
   list-style-position: inside;
   list-style-image: url(./assets/images/checkmark-primary.png);
@@ -276,6 +287,41 @@ ul.checkmark-bullets {
 .feature {
   padding-bottom: 60px;
   border-bottom: 1px solid #c2c2c2;
+}
+
+.image-and-content-row {
+  @apply flex;
+  @apply items-start;
+  @apply justify-between;
+  &.flip-image {
+    flex-direction: row-reverse;
+    .content {
+      margin-right: 0;
+      margin-left: 1.5rem;
+    }
+  }
+  .content {
+    width: 50%;
+    margin-left: 0;
+    margin-right: 1.5rem;
+    p, span.paragraphs {
+      font-size: 1.125rem;
+      margin: 1rem 0;
+    }
+    ul {
+        margin: 1rem 0;
+        li {
+            font-size: 1.125rem;
+            margin: .5rem 0;
+        }
+    }    
+  }
+  .image-wrapper {
+    width: 50%;
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 .centered-content {
@@ -395,9 +441,16 @@ ul.checkmark-bullets {
 }
 
 .icon-and-content-item-container {
-    border: 1px solid black; 
+    margin: 2rem auto;
     @apply grid;
     @apply gap-6;
+    @apply grid-cols-3;
+}
+
+.more-info-card-container {
+    margin: 2rem auto;
+    @apply grid;
+    @apply gap-4;
     @apply grid-cols-3;
 }
 
@@ -540,6 +593,41 @@ ul.checkmark-bullets {
         -o-transition: opacity 150ms ease-in-out;
 }
     }
+  }
+}
+
+.gray-header-item {
+  min-height: 400px;
+  width: 700%;
+  max-width: 100%;
+  margin: 1rem;
+  position: relative;
+  border: 1px solid lightgray;
+  .header {
+      padding: 1rem;
+      min-height: 120px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid lightgray;
+      h3 {
+          font-size: 2.125rem;
+      }
+  }
+  .body {
+      // padding: 1rem;
+      .section {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border-bottom: 1px solid lightgray;
+          p {
+              text-align: center;
+              font-size: 1.2rem;
+          }
+          ul {
+              margin: 1.5rem 0;
+          }
+      }
+
   }
 }
 

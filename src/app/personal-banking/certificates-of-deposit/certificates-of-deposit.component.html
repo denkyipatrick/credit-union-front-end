@@ -5,14 +5,12 @@
     heroImageUrl="../assets/images/personal/banking/family-dad-playing-dolls-with-daughter-large.jpg">
 </app-header>
 
-
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Benefits</h2>
     </div>
     
-    <div class="row grid grid-cols-4 col-gap-4 row-gap-4 grid-flow-row mx-auto w-auto" 
-        style="margin: 0 auto; width: 1400px; max-width: 90%; border: 1px solid black;">
+    <div class="row icon-and-content-item-container">
         <app-icon-and-content-item
             title="FDIC Insured"
             iconImageUrl="../../../assets/images/personal/cod/icon-safe.png"
@@ -41,5 +39,62 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+<app-image-and-content-row
+    title="Benefits of CD Laddering"
+    [isFlipped]="true"
+    paragraphs="
+        <p>
+            An investment strategy with CD 
+            laddering can maximize returns 
+            while minimizing risk. Investments 
+            in a CD ladder provide you with smaller 
+            Certificates of Deposit that mature at 
+            staggered dates, rather than a single 
+            large, long-term CD.
+        </p>
+    "
+    [items]="
+        [
+            'Liquidity – You have available cash at frequent intervals.',
+            'Flexibility – You decide when you want to invest more or less of your money.',
+            '
+              Higher Interest Rates – Once your ladder 
+              is established, you can choose
+              longer-term CDs with higher rates with 
+              certificates still maturing frequently.',
+            '
+                Peace of Mind – If interest rates 
+                rise, you’ll have cash to take advantage 
+                of the best return. When rates fall, you 
+                still have money invested for the long 
+                term at higher rates.'
+        ]
+    "
+    imageUrl="../assets/images/personal/cod/hand-placing-multiple-seeds-in-dirt-along-a-row.jpg">
+</app-image-and-content-row>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <h2 class="my-8 text-center">We can also help you with...</h2>
+    
+    <app-image-and-dark-rect-content-row
+        title="IRAs"
+        description="
+            Whether your retirement is just a 
+            few years from now or in a few decades, 
+            an Individual Retirement Account (IRA) 
+            will help you prepare."
+        imageUrl="../../../assets/images/personal/cod/man-and-woman-at-a-desk-reviewing-work-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row 
+    advisorName="Lynn Erd, VP Regional Retail Sales, Manager"
+    advisorPhotoUrl="../../../assets/images/personal/cod/lynn-erd.jpg">
+</app-find-advisor-row>
+
 
 <app-footer></app-footer>

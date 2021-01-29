@@ -10,7 +10,7 @@
     heroImageUrl="../assets/images/personal/banking/family-mom-with-daughter-and-doctor-for-checkup-large.jpg">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Benefits</h2>
         <p class="light">
@@ -19,6 +19,104 @@
             and rolling over any unused balances.
         </p>
     </div>
+    
+    <div class="row icon-and-content-item-container">
+        <app-icon-and-content-item
+            title="Tax-Free Savings"
+            iconImageUrl="../../../assets/images/personal/savings/icon-piggy-bank-50x50.webp"
+            description="
+                Contributions are tax-deductible, 
+                can be spent tax-free, and your 
+                balances will grow tax-free.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Cover Medical Expenses"
+            iconImageUrl="../../../assets/images/personal/savings/icon-stethescope-50x50.png"
+            description="
+                Use account balances to pay 
+                for any qualified medical expense. 
+                Withdrawals used to pay for these 
+                qualified expenses are tax-free.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Control Your Money"
+            iconImageUrl="../../../assets/images/personal/savings/icon-lock-50x50.png"
+            [description]="
+                'You determine which qualified 
+                expenses will be paid from your HSA, 
+                how they will be paid and when. 
+                You can also use your ' + shortBankName +   
+                ' Health Savings debit card to make paying 
+                bills easier.'">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Long-Term Savings"
+            iconImageUrl="../../../assets/images/personal/savings/icon-clock-forward-50x50.png"
+            description="
+                Unlike Flexible Spending Accounts (FSA), 
+                unused balances can be carried over 
+                from year to year and continue to 
+                grow on a tax-free basis.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="HSA & Unemployment"
+            iconImageUrl="../../../assets/images/personal/savings/icon-back-and-forth-50x50.png"
+            description="
+                Preserve your liquidity between 
+                jobs or during times of unemployment. 
+                Special tax-free withdrawals are permitted.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Supplement Retirement Income"
+            iconImageUrl="../../../assets/images/personal/savings/icon-plus-sign-50x50.png"
+            description="
+                Once you enroll in Medicare, 
+                you may use HSA balances to pay 
+                for out-of-pocket Medicare expenses 
+                tax-free, or choose to use HSA balances 
+                for non-medical purposes by claiming the 
+                amount of the withdrawal as income for 
+                tax purposes, penalty-free.">
+        </app-icon-and-content-item>
+    </div>
 </div>
+
+<app-image-and-content-row
+    title="Eligibility for an HSA"
+    paragraphs="
+        <p>To be eligible for an HSA, you must meet all of the following requirements:</p>
+    "
+    [items]="
+        [
+            'You are covered under a qualified high deductible health plan (HDHP).',
+            'You are not covered under another health plan that is not an HDHP.',
+            'You are not enrolled in Medicare benefits.',
+            'You are not eligible to be claimed as a dependent on another individual\'s tax return.',
+            'You have HDHP coverage on the first day of the month in which the account is opened.'
+        ]
+    "
+    imageUrl="../assets/images/personal/banking/family-mom-with-daughter-and-doctor-for-checkup-large.jpg">
+</app-image-and-content-row>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <app-image-and-dark-rect-content-row
+        title="Debit Cards"
+        [description]="
+            shortBankName + '
+            Visa® debit cards are accepted 
+            worldwide, including millions 
+            of retailers, ATMs, online or 
+            over the phone.'"
+        imageUrl="../../../assets/images/hand-with-pen-filling-out-application.webp">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row 
+    advisorName="Julie Anchondo, AVP Branch Manager"
+    advisorPhotoUrl="../../../assets/images/michelle-van-engen.jpg">
+</app-find-advisor-row>
 
 <app-footer></app-footer>

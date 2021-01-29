@@ -12,7 +12,7 @@
     heroImageUrl="../assets/images/personal/banking/woman-gardening-on-her-rooftop-large.webp">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Savings & Money market Accounts</h2>
         <p class="light">
@@ -22,131 +22,68 @@
         </p>
     </div>
     
-    <div class="row grid grid-cols-4 col-gap-4 row-gap-4 grid-flow-row mx-auto w-auto" 
-    style="margin: 0 auto; width: 1400px; max-width: 90%; border: 1px solid black;">
-    <app-icon-and-content-item
-        title="Tax-Free Savings"
-        iconImageUrl="../../../assets/images/personal/savings/icon-piggy-bank-50x50.webp"
-        description="
-            Contributions are tax-deductible, 
-            can be spent tax-free, and your 
-            balances will grow tax-free.">
-    </app-icon-and-content-item>
-    <app-icon-and-content-item
-        title="Cover Medical Expenses"
-        iconImageUrl="../../../assets/images/personal/savings/icon-stethescope-50x50.png"
-        description="
-            Use account balances to pay 
-            for any qualified medical expense. 
-            Withdrawals used to pay for these 
-            qualified expenses are tax-free.">
-    </app-icon-and-content-item>
-    <app-icon-and-content-item
-        title="Control Your Money"
-        iconImageUrl="../../../assets/images/personal/savings/icon-lock-50x50.png"
-        [description]="
-            'You determine which qualified 
-            expenses will be paid from your HSA, 
-            how they will be paid and when. 
-            You can also use your ' + shortBankName +   
-            ' Health Savings debit card to make paying 
-            bills easier.'">
-    </app-icon-and-content-item>
-    <app-icon-and-content-item
-        title="Long-Term Savings"
-        iconImageUrl="../../../assets/images/personal/savings/icon-clock-forward-50x50.png"
-        description="
-            Unlike Flexible Spending Accounts (FSA), 
-            unused balances can be carried over 
-            from year to year and continue to 
-            grow on a tax-free basis.">
-    </app-icon-and-content-item>
-    <app-icon-and-content-item
-        title="HSA & Unemployment"
-        iconImageUrl="../../../assets/images/personal/savings/icon-back-and-forth-50x50.png"
-        description="
-            Preserve your liquidity between 
-            jobs or during times of unemployment. 
-            Special tax-free withdrawals are permitted.">
-    </app-icon-and-content-item>
-    <app-icon-and-content-item
-        title="Supplement Retirement Income"
-        iconImageUrl="../../../assets/images/personal/savings/icon-plus-sign-50x50.png"
-        description="
-            Once you enroll in Medicare, 
-            you may use HSA balances to pay 
-            for out-of-pocket Medicare expenses 
-            tax-free, or choose to use HSA balances 
-            for non-medical purposes by claiming the 
-            amount of the withdrawal as income for 
-            tax purposes, penalty-free.">
-    </app-icon-and-content-item>
-</div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <!-- <app-icon-heading-description-column heading="Essential Savings"
-        description="Build your savings and prepare for the unexpected. You can set up automatic transfers from your checking account and also protect your checking from overdrafts.">
-        </app-icon-heading-description-column>
-        
-        <app-icon-heading-description-column 
-        heading="Signature Money Market"
-        description="Receive higher interest rates for higher balances. You can set up automatic transfers from your checking account and also protect your checking from overdrafts.">
-        </app-icon-heading-description-column>
-        
-        <app-icon-heading-description-column 
-            heading="Relationship Money Market"
-            description="Earn higher relationship rates when you tie your Relationship Money Market account to qualifying accounts.5 You can set up automatic transfers from your checking account and also protect your checking from overdrafts.">
-        </app-icon-heading-description-column> -->
+    <div class="row icon-and-content-item-container">        
+        <app-icon-and-content-item
+            title="Essential Savings"
+            iconImageUrl="../../../assets/images/personal/savings/icon-piggy-bank-50x50.webp"
+            description="
+                Build your savings and prepare for 
+                the unexpected. You can set up automatic 
+                transfers from your checking account 
+                and also protect your checking from 
+                overdrafts.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Signature Money Market"
+            iconImageUrl="../../../assets/images/personal/savings/icon-money-market-50x50.png"
+            description="
+                Receive higher interest rates 
+                for higher balances. You can set up 
+                automatic transfers from your 
+                checking account and also protect 
+                your checking from overdrafts.">
+        </app-icon-and-content-item>
+        <app-icon-and-content-item
+            title="Relationship Money Market"
+            iconImageUrl="../../../assets/images/personal/savings/icon-money-market-50x50.png"
+            description="
+                Earn higher relationship rates 
+                when you tie your Relationship 
+                Money Market account to qualifying 
+                accounts. You can set up automatic 
+                transfers from your checking account and 
+                also protect your checking from 
+                overdrafts.">
+        </app-icon-and-content-item>
     </div>
 </div>
 
 <!-- dark card with photo -->
-<div class="container">
-    <div class="row">
-        <div class="dark-rect-and-photo">
-            <div class="primary-dark-rect">
-                <h3 class="">Open an Account</h3>
-        
-                <ul class="main-list checkmark-bullets">
-                    <li>
-                        Brings at least one form of the following valid photos IDs:
-                        
-                        <ul class="sub-list list-disc ml-6">
-                            <li>Driver's license</li>
-                            <li>Passport</li>
-                            <li>Government</li>
-                            <li>Student</li>
-                            <li>Tribal identification</li>
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        Provide the following personal information:
-                        
-                        <ul class="sub-list">
-                            <li>Date of birth</li>
-                            <li>Physical Address</li>
-                            <li>Phone number</li>
-                        </ul>
-                    </li>
-                    
-                    <li>Make an opening deposit for the new account.</li>
-                </ul>
-            </div>
-            <div class="photo-container">
-                <!-- photo is here -->
-                <img src="../../../assets/images/hand-with-pen-filling-out-application.webp" />
-            </div>
-        </div>
-    </div>
+<div class="custom-container">
+    <app-image-and-dark-rect-content-row
+        title="Open an Account"
+        imageUrl="../../../assets/images/hand-with-pen-filling-out-application.webp"
+        [items]="
+        [
+            { 
+                item: 'Bring at least one form of the following valid photos IDs:', 
+                subItems: ['Dervier\'s license', 'Passport', 'Governemt', 'Student', 'Tribal Identification']
+            },
+            { 
+                item: 'Provide the following personal information:', 
+                subItems: ['Date of birth', 'Physical address', 'Phone number']
+            },
+            { 
+                item: 'Make an opening deposit for the new account.'
+            }
+        ]">
+    </app-image-and-dark-rect-content-row>
 </div>
 
 <!-- account comparison overview -->
-<div class="container">
+<div class="custom-container">
     <div class="row">
-        <div class="account-overview-comparison space-y-4 text-center">
+        <div class="header">
             <h2>Account Overview Comparison</h2>
             <p class="italic">
                 In an effort to assist customers during this 
@@ -158,7 +95,9 @@
                 This change is effective May 15, 2020, 
                 through May 15, 2021.
             </p>
-        
+        </div>
+
+        <div class="account-overview-comparison space-y-4 text-center overflow-x-auto">        
             <div class="flex space-x-4">
                 <div class="price-card">
                     <div class="header">
@@ -374,82 +313,27 @@
     </div>
 </div>
 
-
 <!-- dark card with photo -->
-<div class="container">
-    <div class="row">
-        <h2 class="my-8 text-center">We can also help you with...</h2>
-        <div class="dark-rect-and-photo">
-            <div class="primary-dark-rect">
-                <h3 class="">Certificates of Deposits (CDs)</h3>
-                <p>
-                    When you want a higher than average interest 
-                    rate, a set rate of return and assurance that 
-                    your funds are insured, use a CD for your 
-                    savings and retirement goals.
-                </p>
-
-                <a class="btn btn-outlined"
-                    href="/personal/banking/certificate-of-deposit">Learn More</a>
-            </div>
-            <div class="photo-container">
-                <!-- photo is here -->
-                <img src="../../../assets/images/family-dad-playing-dolls-with-daughter-small.webp" />
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="help-and-support">
-            <div class="gray-card">
-                <h4>Help & Support</h4>
+<div class="custom-container">
+    <h2 class="my-8 text-center">We can also help you with...</h2>
     
-                <p>
-                    <a>Switch Services</a>
-                </p>
-                
-                <p>
-                    <a>Enroll in eBanking</a>
-                </p>
-            </div>
-            <div class="white-card">
-                <div class="inner">
-                    <img class="question-icon" 
-                        src="../../../assets/images/icon-question-circle-59x60.webp" />
-                    <h5>Have Questions?</h5>
-                    <p>We're here to help.</p>
-                    <p>Give us a call at {{bankPhoneNumber}}</p>
-                    <a class="btn btn-primary">Email Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-image-and-dark-rect-content-row
+        title="Certificates of Deposits (CDs)"
+        description="
+            When you want a higher than average interest 
+            rate, a set rate of return and assurance that 
+            your funds are insured, use a CD for your 
+            savings and retirement goals.
+        "
+        imageUrl="../../../assets/images/family-dad-playing-dolls-with-daughter-small.webp">
+    </app-image-and-dark-rect-content-row>
 </div>
 
-<div class="container find-advisor-container">
-    <div class="row flex justify-between">
-        <figure class="advisor-figure">
-            <a>
-                <img src="../../../assets/images/michelle-van-engen.jpg" />
-            </a>
-            <figcaption>
-                Some staff name and address
-            </figcaption>
-        </figure>
+<app-call-us-row></app-call-us-row>
 
-        <div class="data">
-            <h3>Your Trusted Partner for Life's Biggest Moments</h3>
-            <p>
-                No matter what financial needs you may have, 
-                we're here for you. Our experienced advisors 
-                work closely with you to build the right path 
-                to help you achieve your goals.
-            </p>
-            <a class="btn btn-primary">Find an Advisor</a>
-        </div>
-    </div>
-</div>
+<app-find-advisor-row 
+    advisorName="Julie Anchondo, AVP Branch Manager"
+    advisorPhotoUrl="../../../assets/images/michelle-van-engen.jpg">
+</app-find-advisor-row>
 
 <app-footer></app-footer>

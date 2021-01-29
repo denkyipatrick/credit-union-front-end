@@ -1,6 +1,53 @@
 
+<app-header 
+heroTitle="Flood Insurance"
+heroDescription="
+    Flooding can happen to anyone, 
+    and even the smallest amount of 
+    water damage could cost you thousands 
+    to repair. Ensure you are protected 
+    from financial loss with a flood 
+    insurance policy.
+"
+heroImageUrl="../assets/images/personal/personal-insurance/homes-in-a-neighborhood-bracing-for-a-storm-large.jpg">
+</app-header>
 
-<div class="container">
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Do you need flood insurance?</h2>
+            <p>
+                If repairing your home after a flood 
+                could leave your finances in despair, 
+                you may want to consider a flood 
+                insurance policy.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid grid-cols-3 gap-4">
+            <app-title-shadow-card 
+                title="Floods are the nation's most common and costly natural disaster.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="More than 20% of flood claims are not in flood zone areas.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Damages from just 1 inch of water can cost more than $20,000.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="Most homeowners and renters policies don't cover flood damage.">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                title="If you live in a flood zone, you will likely be required to carry a policy.">
+            </app-title-shadow-card>
+        </div>
+    </div>
+</div>
+
+
+<div class="custom-container">
     <div class="row btf-title">
         <h2>What's covered?</h2>
         <p>
@@ -43,7 +90,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>What's not covered?</h2>
         <p>
@@ -84,5 +131,35 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Homeowners Insurance"
+        description="
+            Your home is likely one of your 
+            largest investments. You deserve 
+            to have peace of mind that your 
+            home and the possessions inside 
+            are protected from life’s unexpected 
+            events.
+        "
+        imageUrl="../../../assets/images/personal/personal-insurance/kids-two-girls-having-fun-washing-dishes-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Justin Albets, VP Personal Lines Insurance Sales Manager"
+    advisorPhotoUrl="../../../assets/images/personal/personal-insurance/justin-staebler.jpg">
+</app-find-advisor-row>
+
 
 <app-footer></app-footer>

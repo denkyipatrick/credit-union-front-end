@@ -1,6 +1,18 @@
 
+<app-header 
+    heroTitle="Home & Condo Insurance"
+    heroDescription="
+        Your home is likely one of 
+        your largest investments. 
+        You deserve to have peace of 
+        mind that your home and the 
+        possessions inside are protected 
+        from life’s unexpected events.
+    "
+    heroImageUrl="../assets/images/personal/personal-insurance/family-mom-and-daugther-playing-in-their-living-room-large.webp">
+</app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Why is coverage important?</h2>
         <p>
@@ -12,7 +24,7 @@
         </p>
     </div>
 
-    <div class="row icon-and-content-item-container">
+    <div class="row flex items-start icon-and-content-item-container">
         <app-icon-and-content-item
             title="Be prepared for the unexpected"
             iconImageUrl="../../../assets/images/personal/personal-insurance/icon-home-and-shield-50x50.png"
@@ -32,7 +44,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>What's covered?</h2>
         <p>
@@ -75,5 +87,77 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+<app-image-and-content-row
+    title="Condo Insurance"
+    [isFlipped]="true"
+    paragraphs="
+        <p>
+            As a condominium owner, you have 
+            special needs to consider. Condo insurance 
+            can protect you if your condo or possessions 
+            are damaged, destroyed or stolen. It will 
+            also provide liability coverage for unexpected 
+            accidents in your home to protect you 
+            financially against lawsuits and liability 
+            claims.
+        </p>
+        <p>
+            We can review your association's 
+            by-laws to help you understand and 
+            select the coverage you need.
+        </p>
+        <p>
+            What does condo insurance cover?
+        </p>
+    "
+    [items]="
+        [
+            'Fire',
+            'Most weather-related events',
+            'Theft',
+            'Liability',
+            'Identity theft protection'
+        ]
+    "
+    imageUrl="../assets/images/personal/personal-insurance/couple-holding-boxes-looking-at-each-other-smiling-while-children-cheer-in-the-background.webp">
+</app-image-and-content-row>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Retirement & Financial Planning"
+        description="
+            Developing a sound financial 
+            plan is essential to achieving 
+            your long-term retirement goals.
+        "
+        imageUrl="../../../assets/images/personal/personal-insurance/couple-older-looking-at-paint-color-options-small.webp">
+    </app-image-and-dark-rect-content-row>
+    
+    <app-image-and-dark-rect-content-row
+        title="Home Loans"
+        [isFlipped]="true"
+        description="
+            Whether you are relocating to a 
+            new community, refinancing, buying 
+            your first home or moving into a new 
+            home, we'll guide you through the 
+            home financing process.
+        "
+        imageUrl="../../../assets/images/personal/personal-insurance/kids-two-girls-having-fun-washing-dishes-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+<app-find-advisor-row
+    advisorName="Justin Albets, VP Personal Lines Insurance Sales Manager"
+    advisorPhotoUrl="../../../assets/images/personal/personal-insurance/justin-staebler.jpg"></app-find-advisor-row>
 
 <app-footer></app-footer>
