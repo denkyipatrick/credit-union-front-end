@@ -1,0 +1,49 @@
+
+<mat-card class="mb-8">
+    <mat-card-content>
+        <div class="mb-16">
+            <span class="flex items-start justify-between">
+                <span>
+                    <p class="text-gray-700 font-normal text-xs">Account Type</p>
+                    <p>{{account?.accountTypeName}}</p>
+                    <p class="text-base">Account Number: {{account?.accountNumber}}</p>
+                </span>
+
+                <span>
+                    <p class="text-gray-700 font-normal text-xs">Balance</p>
+                    <p class="">${{account?.balance?.toFixed(2)}}</p>
+                </span>
+            </span>
+
+        </div>
+
+        
+        <div>
+            <mat-tab-group>
+                <mat-tab label="Bank Statement">
+                    <div class="my-4">
+                        <app-transactions [transactions]="account?.transactions"
+                            [transactedAmount]="totalTransactedAmount"></app-transactions>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Deposits">
+                    <div>
+                        <app-deposits [deposits]="account?.deposits"
+                            [depositedAmount]="totalDepositedAmount"></app-deposits>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Withdrawals">
+                    <div>
+                        <app-withdrawals [withdrawals]="account?.withdrawals" 
+                            [withdrawnAmount]="totalWithdrawnAmount"></app-withdrawals>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Transfers">
+                    <div>
+                        <app-transfers></app-transfers>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </mat-card-content>
+</mat-card>

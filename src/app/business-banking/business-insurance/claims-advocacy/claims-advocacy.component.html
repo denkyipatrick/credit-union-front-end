@@ -1,5 +1,36 @@
 
-<div class="container">
+
+<app-header 
+    heroTitle="Claims Advocacy"
+    heroDescription="
+        Take control over your business's claim outcomes..
+    "
+    heroImageUrl="../assets/images/business/business-insurance/men-sitting-at-table-reviewing-laptop-large.jpg">
+</app-header>
+
+
+<div class="custom-container">
+    <app-image-and-content-row 
+        title="Claims Management"
+        paragraphs="
+            <p>
+                In large, complex claims circumstances, 
+                our specialized claims team will be your 
+                advocate to reinforce control over your 
+                business’s claims outcomes.
+            </p>
+            <p>
+                We'll work to develop strategies to 
+                lessen or eliminate potential issues 
+                that could lead to money out of 
+                your pocket.
+            </p>
+            "
+        imageUrl="../../../../assets/images/business/business-insurance/man-and-woman-solving-problem-on-clipboard.jpg">
+    </app-image-and-content-row>
+</div>
+
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Claims Assistance & Advocacy</h2>
         <p class="font-light light">
@@ -48,3 +79,63 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>When should you contact us for help?</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <app-title-shadow-card
+                title="Employee had serious work-related injury">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                title="Significant loss or damage to property, equipment or vehicle">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                title="Carrier informed you there may not be coverage">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                title="Problems reaching settlement with carrier">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                title="Inaccurate loss run data or level of reserves">
+            </app-title-shadow-card>
+        </div>
+    </div>
+</div>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Risk Management"
+        description="
+            Proactively control financial loss 
+            to your organization by identifying, 
+            analyzing and controlling your risks 
+            and exposures to prevent claims 
+            before they happen.
+        "
+        [hasLink]="true"
+        linkUrl="/business/business-insurance/risk-management"
+        imageUrl="../../../assets/images/business/business-insurance/man-working-in-a-manufacturing-facility-large.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Bret Almstedt, VP Wealth Retirement Plan Services Manager"
+    advisorPhotoUrl="../../../assets/images/business/employee-benefits/bret-almstedt.jpg">
+</app-find-advisor-row>
+
+<app-footer></app-footer>

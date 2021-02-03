@@ -1,5 +1,72 @@
 
-<div class="container">
+
+<app-header 
+    heroTitle="Payables Management"
+    heroDescription="
+        Reduce your risk and the costs 
+        associated with disbursing funds to 
+        vendors, employees and investors 
+        using tools such as ACH payments 
+        and wire transfers.
+    "
+    heroImageUrl="../assets/images/business/cash-management/co-workers-working-in-office-reviewing-tablet-large.jpg">
+</app-header>
+
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">Our Approach</h2>
+            <p>
+                Our knowledgeable advisors will work 
+                with you to find the right solutions 
+                to streamline your disbursement needs.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <app-image-and-dark-rect-content-row
+        title="ACH Origination Solutions"
+        [isFlipped]="true"
+        description="
+            Automatic Clearing House (ACH) 
+            transactions allow money to move in 
+            and out of your account, 
+            saving you time and money. 
+        "
+        [items]="[
+            'ACH Disbursement',
+            'Payroll Direct Deposit',
+            'ACH Collection'
+        ]"
+        imageUrl="../../../assets/images/business/cash-management/woman-sitting-at-desk-smiling-looking-at-laptop-with-man-standing-to-her-side.jpg">
+    </app-image-and-dark-rect-content-row>
+    <app-image-and-dark-rect-content-row
+        title="Business Credit Cards"
+        [isFlipped]="true"
+        description="
+            Separate business from personal expenses, 
+            access free spending reports and enjoy 
+            the purchasing power you need to manage 
+            your business.
+        "
+        [items]="[
+            'Expense Management Tools ',
+            'Reduce Fees',
+            'Smart Chip Technology',
+            'Mobile Wallet Capable'
+        ]"
+        imageUrl="../../../assets/images/business/cash-management/man-using-his-business-credit-card-to-make-a-purchase-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+
+
+<div class="custom-container hidden">
     <h2 class="text-center my-4">Learn more about...</h2>
     <div class="row more-info-card-container grid-cols-2" style="width: 850px;">
         <app-more-info-card 
@@ -38,5 +105,14 @@
         </app-more-info-card> -->
     </div>
 </div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Justin Albets, VP Personal Lines Insurance Sales Manager"
+    advisorPhotoUrl="../../../assets/images/personal/personal-insurance/justin-staebler.jpg">
+</app-find-advisor-row>
+
+
 
 <app-footer></app-footer>

@@ -1,6 +1,6 @@
 
 <div class="space-y-8">
-    <mat-card>
+    <!-- <mat-card>
         <mat-card-title>
             <p class="text-base font-light">Account Info</p>
         </mat-card-title>
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </mat-card-content>
-    </mat-card>
+    </mat-card> -->
 
     <mat-card>
         <mat-card-title>
@@ -119,6 +119,28 @@
             </span>
         </mat-card-title>
         <mat-card-content>
+            <table *ngIf="transfers?.length" class="w-full" mat-table [dataSource]="transfers">
+                <ng-container matColumnDef="accountNumber">
+                    <th mat-header-cell *matHeaderCellDef> Account Number </th>
+                    <td mat-cell *matCellDef="let element">{{element.account.accountNumber}}</td>
+                </ng-container>
+                <ng-container matColumnDef="amount">
+                    <th mat-header-cell *matHeaderCellDef>Amount</th>
+                    <td mat-cell *matCellDef="let element">
+                        <strong class="text-gray-700">USD</strong>  &nbsp; 
+                        <span class='text-gray-900'>{{element.amount}}</span>
+                    </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element">{{element.createdAt}}</td>
+                </ng-container>
+        
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+            </table>
+
             <app-loader *ngIf="isFetching" [message]="'Fetching Transfer History...'"></app-loader>
             <div *ngIf="accountTransfers?.length && !isFetching">
                 <span class="flex items-center space-x-4">

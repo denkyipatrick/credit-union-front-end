@@ -1,3 +1,4 @@
+import { UtilityService } from './../../services/utility.service';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loans.component.scss']
 })
 export class LoansComponent implements OnInit {
+  baseUrl: String;
 
-  constructor(private title: Title) { }
+  constructor(private title: Title, private utilityService: UtilityService) {
+    this.baseUrl = "/personal/home-personal-loans"
+  }
 
   ngOnInit(): void {
-    this.title.setTitle("Personal Loans - Apply Online or Visit any of the 15 BSV Locations");
+    this.title.setTitle(`Home and Personal Loans | Home Loans, ` + 
+    `Home Equity Loans, Lines of Credit | ${this.utilityService.bankName}`);
   }
 
 }

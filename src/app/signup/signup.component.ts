@@ -1,5 +1,5 @@
 import { UtilityService } from './../services/utility.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -13,6 +13,11 @@ import { OkCancelDialogComponent } from '../ok-cancel-dialog/ok-cancel-dialog.co
 })
 export class SignupComponent implements OnInit {
   form: FormGroup;
+  nameForm: FormGroup;
+  contactForm: FormGroup;
+  accountForm: FormGroup;
+
+  bankName: String;
   accountTypes: any[];
 
   errorMessage: string;
@@ -24,18 +29,32 @@ export class SignupComponent implements OnInit {
     private titleService: Title, 
     private dialogOpener:  MatDialog,
     private utilityService: UtilityService) {
-    this.titleService.setTitle('Secure Connection to BSV Servers - The Bank of Southside Virginia');
+      this.bankName = utilityService.bankName;
+      this.nameForm = new FormGroup({
+        fName: new FormControl(),
+        lName: new FormControl()
+      });
+      this.contactForm = new FormGroup({
+        email: new FormControl(),
+        phone: new FormControl(),        
+      });
+      this.accountForm = new FormGroup({
+        phone: new FormControl(),
+        accountTypeName: new FormControl()
+      });
 
-    this.form = new FormGroup({
-      fName: new FormControl(),
-      lName: new FormControl(),
-      email: new FormControl(),
-      phone: new FormControl(),
-      accountTypeName: new FormControl()
-    })
+      this.form = new FormGroup({
+        fName: new FormControl(),
+        lName: new FormControl(),
+        email: new FormControl(),
+        phone: new FormControl(),
+        accountTypeName: new FormControl()
+      });
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle(`Secure Connection to ${this.utilityService.bankName} Servers`);
+
     this.getAccountTypes();
   }
 
@@ -55,6 +74,10 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  submitNameForm(form: NgForm) {
+    alert(form.value);
+  }
+
   public createAccount() {
     if (this.form.invalid) { return; }
 
@@ -63,7 +86,7 @@ export class SignupComponent implements OnInit {
         title: "Create New Account?",
         okButtonText: 'YES',
         cancelButtonText: 'NO',
-        message: "Are you sure you want to create a new Online Account with BSV?"
+        message: `Are you sure you want to create a new Online Account with ${this.utilityService.bankName}?`
       }
     })
     .componentInstance.ok.subscribe(() => {

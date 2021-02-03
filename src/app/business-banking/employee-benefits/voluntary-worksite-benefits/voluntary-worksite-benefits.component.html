@@ -1,5 +1,43 @@
 
-<div class="container">
+<app-header 
+    heroTitle="Voluntary and Worksite Benefits"
+    heroDescription="
+        Meet your employees' needs through 
+        creative voluntary and worksite benefits.
+    "
+    heroImageUrl="../assets/images/business/employee-benefits/woman-pouring-coffee-in-cup-large.jpg">
+</app-header>
+
+<div class="custom-container">
+    <app-image-and-content-row 
+        title="Elevate your benefits program"
+        paragraphs="
+            <p>
+                Your employees have unique needs. 
+                Find the best benefit 
+                options to meet them.
+            </p>
+            <p>
+                Including voluntary and worksite 
+                benefits in your overall benefits 
+                strategy gives your employees 
+                access to a variety of insurance 
+                options, conveniently available 
+                in one place on an automatic 
+                payroll deduction basis.
+            </p>
+            <p>
+                You can also remain competitive 
+                and attract top talent with little 
+                to no cost to your company.
+            </p>
+            "
+        imageUrl="../../../../assets/images/business/employee-benefits/several-hands-grouped-together-each-holding-dirt-and-a-small-plant.jpg">
+    </app-image-and-content-row>
+</div>
+
+
+<div class="custom-container">
     <h2 class="my-4 text-center">Benefits</h2>
 
     <div class="row icon-and-content-item-container">
@@ -49,5 +87,69 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+
+<div class="custom-container">
+    <div class="header">
+        <h2>How We Can Help</h2>
+    </div>
+    <app-image-and-content-row 
+        title="Attract and retain the best talent"
+        paragraphs="
+            <p>
+                Our Employee Benefits advisors will work with you to create and implement a customized voluntary and worksite benefits program that:
+            </p>
+            <p>
+                Our advisors will work closely with you 
+                to understand the unique needs of your 
+                organization and tailor a comprehensive 
+                retirement plan program that fits your 
+                overall employee benefits strategy. 
+                Our team then delivers and services 
+                your program to ensure accountability.
+            </p>
+            "
+        [items]="[
+            'Fits seamlessly into your overall benefits strategy',
+            'Aligns with your culture and the needs of your organization and employees',
+            '
+                Ultimately improves employee 
+                appreciation and the perception 
+                of the total benefits package offered
+            '
+        ]"
+        imageUrl="../../../../assets/images/business/employee-benefits/several-employees-meeting-around-table-and-smiling.jpg">
+    </app-image-and-content-row>
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Strategic Employee Benefit Consulting"
+        [isFlipped]="true"
+        description="
+            You have a long-term business 
+            strategy to grow your organization, 
+            but you also need one to manage your 
+            employee benefits costs.
+        "
+        [hasLink]="true"
+        linkUrl="/business/employee-benefits/strategic-employee-benefits"
+        imageUrl="../../../assets/images/business/employee-benefits/business-owners-reviewing-project-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Bret Almstedt, VP Wealth Retirement Plan Services Manager"
+    advisorPhotoUrl="../../../assets/images/business/employee-benefits/bret-almstedt.jpg">
+</app-find-advisor-row>
 
 <app-footer></app-footer>

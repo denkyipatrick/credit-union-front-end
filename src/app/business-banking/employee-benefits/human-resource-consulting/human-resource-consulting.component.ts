@@ -13,8 +13,7 @@ export class HumanResourceConsultingComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle(
-      `Business Retirement Plans | ` + 
-      `Employer sponsored retirement plans | ${this.utilityService.bankName}`
+      `Human Resources Consulting & Support for Business | ${this.utilityService.bankName}`
     );
   }
 

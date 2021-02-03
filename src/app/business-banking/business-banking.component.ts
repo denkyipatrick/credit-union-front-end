@@ -1,3 +1,4 @@
+import { UtilityService } from 'src/app/services/utility.service';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./business-banking.component.scss']
 })
 export class BusinessBankingComponent implements OnInit {
+  baseUrl: String;
 
-  constructor(private title: Title) { }
+  constructor(private title: Title, private utilityService: UtilityService) {
+    this.baseUrl = "/business"
+  }
 
   ngOnInit(): void {
-    this.title.setTitle('Offering Options to Help Start, Grow and Maintain your Business | BSV');
+    this.title.setTitle(`${this.utilityService.bankName} | Business Banking, Wealth, Insurance`);
   }
 
 }

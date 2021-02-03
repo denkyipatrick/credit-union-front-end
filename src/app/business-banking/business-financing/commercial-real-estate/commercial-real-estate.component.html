@@ -1,3 +1,112 @@
 
+<app-header 
+    heroTitle="Commercial Real Estate"
+    heroDescription="
+        Our experienced commercial real 
+        estate team will work with you 
+        to determine the right financing 
+        options for you and your business.
+    "
+    heroImageUrl="../assets/images/business/business-financing/business-owner-and-architect-discussing-building-plans-large.jpg">
+</app-header>
 
-<footer></footer>
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Commercial Real Estate Financing Options</h2>
+            <p>
+                We offer flexible programs for 
+                commercial property, such as office, 
+                medical office, industrial, retail, 
+                lodging and apartment buildings.
+            </p>
+        </div>
+    </div>
+
+    <div style="padding: 1rem 0;" class="row flex items-stretch justify-start overflow-x-auto">
+        <app-gray-header-item
+            title="Acquisition Financing"
+            simpleParagraph="
+                Various financing options that allow 
+                developers and investors to purchase 
+                a wide range of properties.
+            ">
+        </app-gray-header-item>
+        
+        <app-gray-header-item
+            title="Construction & Rehab Loans"
+            simpleParagraph="
+                Purchase the land or commercial 
+                property, or fund new construction 
+                or renovations for your project or 
+                development.
+            ">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="Refinance Loans"
+            simpleParagraph="
+                Pay off an existing mortgage on 
+                your commercial property for a lower 
+                rate, a longer term and/or new proceeds.
+            ">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="Bridge Financing"
+            simpleParagraph="
+                An interim funding solution that 
+                gives you time to improve a property, 
+                find a new tenant and/or sell a property.
+            ">
+        </app-gray-header-item>
+    </div>     
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Cash Management"
+        description="
+            We offer a variety of cash 
+            management solutions for your 
+            business to better manage money 
+            during every stage of your cash 
+            flow cycle.
+        "
+        [hasLink]="true"
+        linkUrl="/business/cash-management"
+        imageUrl="../../../assets/images/business/business-financing/women-sitting-at-desk-working-on-laptop-small.jpg">
+    </app-image-and-dark-rect-content-row>
+    <app-image-and-dark-rect-content-row
+        title="Property & Casualty Insurance"
+        [isFlipped]="true"
+        description="
+            We provide resources to protect your 
+            business from the unexpected so you can 
+            concentrate on what you do 
+            best—running your business.
+        "
+        [hasLink]="true"
+        linkUrl="/business/business-insurance/property-casualty-insurance"
+        imageUrl="../../../assets/images/business/business-financing/man-taking-inventory-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Kevin Jones, VP Commercial Banking RM"
+    advisorPhotoUrl="../../../assets/images/business/business-financing/kevin-jones.jpg">
+</app-find-advisor-row>
+
+
+
+<app-footer></app-footer>

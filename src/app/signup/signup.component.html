@@ -1,7 +1,227 @@
 
-<div class="w-full bg-teal-700" style="height: 60px;"></div>
+<!-- <div class="w-full bg-teal-700" style="height: 60px;"></div> -->
 
-<div class="mt-8">
+<div class="mx-auto my-4 py-8" style="width: 800px; max-width: 90%;">
+    <div class="flex space-x-8" style="border: 1px solid lightgray; border-radius: 8px;">
+        <div style="height: auto; width: 300px; overflow-y: hidden; 
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background-image: url(../../assets/images/bank_1.jpg);">
+        </div>
+        <div class="pb-8">
+            <div class="text-center mb-8 px-8">
+                <img src="../../assets/images/logo-square.png" 
+                    class="mx-auto outline-none border-none mb-8"
+                    style="width: 70px;" />
+                <h4 class="text-3xl my-4 font-light">Online Banking</h4>
+            </div>
+            <mat-horizontal-stepper #stepper [linear]="false" labelPosition="bottom" style="">
+                <mat-step [stepControl]="nameForm">
+                    <ng-template matStepLabel>Your Basic Details</ng-template>
+                    <form [formGroup]="nameForm">
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>First Name</mat-label>
+                            <input required matInput formControlName="fName" />
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Last Name</mat-label>
+                            <input required matInput formControlName="lName" />
+                        </mat-form-field>
+
+                        <div class="text-center space-x-4">
+                            <button mat-raised-button color="primary" 
+                            matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="contactForm">
+                    <ng-template matStepLabel>Your Contact Details</ng-template>
+                    <form [formGroup]="contactForm">
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Email Address</mat-label>
+                            <input required email matInput formControlName="email" />
+                        </mat-form-field>
+                
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Phone Number (Intl. Format)</mat-label>
+                            <input required matInput formControlName="phone" />
+                            <mat-hint>
+                                Phone number must be in the international format. 
+                                <span class="inline-block">Example: (+1 202 220 890)</span>
+                            </mat-hint>
+                        </mat-form-field>
+                        
+                        <div class="text-center space-x-4">
+                            <button mat-raised-button color="primary" matStepperPrevious 
+                                type="button">Back</button>
+                            <button mat-raised-button color="primary" 
+                                matStepperNext 
+                                type="button">Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="accountForm">
+                    <ng-template matStepLabel>Done</ng-template>
+                    <form [formGroup]="accountForm">
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Choose Account Type</mat-label>
+                            <mat-select formControlName="accountTypeName">
+                                <mat-option *ngFor="let accountType of accountTypes" 
+                                    [value]="accountType?.name">
+                                    {{accountType?.name}} Account
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+            
+                        <div class="p-2 bg-gray-100 rounded-md"> 
+                            <p class="text-xs" style="
+                                    font-size: .8rem;
+                                    font-family: 'Courier New', Courier, monospace;">
+                                Please upload any of your national IDs 
+                                <span class="inline-block">(National Identity Card, Driving License)</span>
+                            </p>
+                            <input class="inline-block w-full" type="file"
+                                style="font-size: .8rem; font-family: 'Courier New', Courier, monospace;" />
+                        </div>
+                        
+                        <div class="text-center my-2">
+                            <button mat-raised-button color="primary"
+                                (click)="stepper">Create New Account</button>                            
+                        </div>
+                    </form>
+                </mat-step>
+            </mat-horizontal-stepper>
+            
+            <p>
+                <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
+                if you already have an account with {{bankName}}
+            </p>
+            <form class="my-4 mr-8 hidden" [formGroup]="form">
+        
+                <div class="text-center mb-8 px-8">
+                    <img src="../../assets/images/logo-square.png" 
+                        class="mx-auto outline-none border-none mb-8"
+                        style="width: 70px;" />
+                    <h4 class="text-3xl my-4 font-light">Online Banking</h4>
+                    <p>
+                        <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
+                        if you already have an account with {{bankName}}
+                    </p>
+                </div>
+        
+                <!-- <div class="text-center mb-8">
+                    <img src="../../assets/images/g18-300x300.png" 
+                        class="mx-auto outline-none border-none mb-8"
+                        style="width: 70px;" />
+                    <p class="text-3xl my-4 font-light">Online Banking</p>
+                    <p>
+                        <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
+                        if you already have an account with {{bankName}}
+                    </p>
+                </div> -->
+        
+                <div>
+                    <p class="text-base font-normal">Name</p>
+                    <span class="flex items-center space-x-4">
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>First Name</mat-label>
+                            <input required matInput formControlName="fName" />
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Last Name</mat-label>
+                            <input required matInput formControlName="lName" />
+                        </mat-form-field>
+                    </span>
+                </div>
+                
+                <div>
+                    <p class="text-base font-normal">Contact</p>
+                    <span class="flex items-center justify-between space-x-4">
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Email Address</mat-label>
+                            <input required email matInput formControlName="email" />
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Phone Number (Intl. Format)</mat-label>
+                            <input required matInput formControlName="phone" />
+                            <mat-hint>
+                                Phone number must be in the international format. 
+                                <span class="inline-block">Example: (+1 202 220 890)</span>
+                            </mat-hint>
+                        </mat-form-field>
+                    </span>
+                </div>
+                
+                <div>
+                    <p class="text-base font-normal">Account</p>
+                    <p class="text-sm">Choose which type of account you would like to open.</p>
+
+                    <span class="flex items-start justify-between">
+                        <mat-form-field appearance="outline" class="w-full mb-4">
+                            <mat-label>Choose Account Type</mat-label>
+                            <mat-select formControlName="accountTypeName">
+                                <mat-option *ngFor="let accountType of accountTypes" 
+                                    [value]="accountType?.name">
+                                    {{accountType?.name}} Account
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+            
+                        <div class="p-4 bg-green-400 rounded-md"> 
+                            <p class="text-sm">
+                                Please upload any of your national IDs 
+                                <span class="inline-block">(National Identity Card, Driving License)</span>
+                            </p>
+                            <input class="inline-block w-full bg-yellow-600 text-white" type="file" />
+                        </div>
+                    </span>
+                </div>
+        
+                <div>
+                    <p class="text-red-700 text-center" style="margin: 1.5rem 0;">
+                        {{errorMessage}}
+                    </p>
+        
+                    <button mat-raised-button 
+                        [disabled]="form.invalid || creatingUser"
+                        class="yellow-button w-full inline-block my-4">
+                        REGISTER
+                    </button>
+        
+                    <p class="text-xs text-center" style="margin: 1rem 0;">
+                        By clicking on REGISTER, you agree 
+                        to our Terms.
+                    </p>
+                </div>
+        
+                <!-- <div class="text-center">
+                    <p style="margin: 1rem 0;" class="text-red-600">{{errorMessage}}</p>
+        
+                    <button 
+                        mat-raised-button 
+                        class="yellow-button w-full"
+                        [disabled]="false">
+                        Start Online Banking
+                    </button>
+                </div> -->
+            </form>
+
+            <div class="security-images flex items-center justify-center space-x-2 py-4">
+                <img src="../../assets/images/security_norton.png" />
+                <img src="../../assets/images/security_3.jpg" />
+                <img src="../../assets/images/security_2.png" />
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="mt-8">
     <form [formGroup]="form" 
         (ngSubmit)="createAccount()"
         style="width: 350px; max-width: 90%;"
@@ -14,7 +234,7 @@
             <p class="text-3xl my-4 font-light">Online Banking</p>
             <p>
                 <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
-                if you already have an account with BSV
+                if you already have an account with {{bankName}}
             </p>
         </div>
 
@@ -85,4 +305,4 @@
             </p>
         </div>
     </form>
-</div>
+</div> -->

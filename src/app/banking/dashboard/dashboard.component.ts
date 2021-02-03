@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit {
   totalWithdrawnAmount: number;
   totalTransferedAmount: number;
 
-  constructor(private title: Title, private dialogOpener: MatDialog, private utilityService: UtilityService) {
+  constructor(private title: Title, private dialogOpener: MatDialog, 
+    private utilityService: UtilityService) {
     this.user = JSON.parse(localStorage.getItem('user'));
     this.totalDepositedAmount = 0;
     this.totalWithdrawnAmount = 0;

@@ -1,5 +1,15 @@
 
-<div class="container">
+<app-header 
+    heroTitle="Business Loans"
+    heroDescription="
+        Flexible financing options to 
+        help make your business dreams a reality.
+    "
+    heroImageUrl="../assets/images/business/business-financing/business-owners-looking-at-building-plans-large.jpg">
+</app-header>
+
+
+<div class="custom-container">
     <div class="row text-center">
         <h2>Features</h2>
     </div>
@@ -29,4 +39,128 @@
     </div>
 </div>
 
-<footer></footer>
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Why get life insurance?</h2>
+            <p>
+                If you die unexpectedly, can 
+                your family maintain their standard 
+                of living? If the answer is no, 
+                a life insurance policy is right 
+                for you.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid grid-cols-3 gap-4">
+            <app-title-shadow-card
+                description="
+                    Establish a banking relationship 
+                    with an experienced lender. 
+                    Building a rapport with a lender 
+                    who is knowledgeable in your 
+                    industry is beneficial long 
+                    before you need a loan.
+                ">
+            </app-title-shadow-card>
+            <app-title-shadow-card 
+                description="
+                    Reduce your debt and improve your 
+                    credit profile. Reducing your debt 
+                    can quickly improve your credit 
+                    profile.
+                ">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                description="
+                    Determine your eligibility. Save valuable 
+                    time by talking with an advisor to determine 
+                    your eligibility for different types of 
+                    loans before applying.
+                ">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                description="
+                    Review your financial details. 
+                    Lenders will review your financials, 
+                    such as your cash flow, to ensure 
+                    you're well-positioned to repay the loan. 
+                ">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                description="
+                    Gather appropriate documents and 
+                    submit your loan application. 
+                    Submitting a complete application, 
+                    including all of the appropriate documents 
+                    needed for the loan review, can lead to a 
+                    quicker approval. 
+                ">
+            </app-title-shadow-card>
+        </div>
+    </div>
+</div>
+
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Business Financing Options</h2>
+        </div>
+    </div>
+    <div class="flex items-stretch justify-center flex-wrap lg:flex-no-wrap">
+        <app-gray-header-item
+            title="Line of Credit"
+            simpleParagraph="
+                Lines of credit are ideal for businesses that need 
+                easy access to cash over short periods of time to purchase 
+                inventory or manage seasonal cash flow fluctuations.
+            "
+            [simpleListItems]="[
+                'Access to working capital and cash',
+                'Competitive variable rate'
+            ]">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="Term Loan"
+            simpleParagraph="
+                Term loans help your business purchase capital 
+                goods and equipment, fund a change in ownership or consolidate 
+                business debt.
+            "
+            [simpleListItems]="[
+                'Acquire equipment or other assets with 
+                fixed monthly payments',
+                'Long-term financing',
+                'Competitive interest rate',
+                'Flexible terms and conditions'
+            ]">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="SBA Financing"
+            simpleParagraph="
+                Small Business Administration loans can be 
+                used to start or acquire a business, purchase 
+                equipment, refinance or acquire inventory and 
+                support working capital needs.
+            "
+            [simpleListItems]="[
+                'Long-term financing',
+                'Lower down payments',
+                'Competitive interest rate',
+                'Flexible terms and conditions',
+                'Improved cash flow as a result of the above benefits'
+            ]">
+        </app-gray-header-item>
+    </div>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row>
+</app-find-advisor-row>
+
+<app-footer></app-footer>

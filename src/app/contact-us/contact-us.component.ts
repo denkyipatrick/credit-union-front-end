@@ -14,8 +14,11 @@ export class ContactUsComponent implements OnInit {
   form: FormGroup;
   isSending: boolean;
   isErrorSending: boolean;
+  bankPhoneNumber: String;
+  backgroundImagePropertyValue: string;
 
   constructor(private dialogOpener: MatDialog, private utilityService: UtilityService) {
+    this.bankPhoneNumber = utilityService.bankPhoneNumber;
     this.form = new FormGroup({
       fName: new FormControl(),
       lName: new FormControl(),
@@ -33,8 +36,8 @@ export class ContactUsComponent implements OnInit {
     
     this.dialogOpener.open(OkCancelDialogComponent, {
       data: {
-        title: 'Contact BSV Online Banking ?',
-        message: "Are you sure you want to send this information to BSV Online Banking?"
+        title: `Contact ${this.utilityService.bankName}?`,
+        message: `Are you sure you want to send this information to ${this.utilityService.bankName}?`
       }
     })
     .componentInstance.ok.subscribe(() => {

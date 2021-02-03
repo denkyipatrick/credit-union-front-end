@@ -1,5 +1,56 @@
 
-<div class="container">
+<app-header 
+heroTitle="Equipment Leasing"
+heroDescription="
+    Flexible equipment leasing 
+    options to help you make your 
+    business dreams a reality.
+"
+heroImageUrl="../assets/images/business/business-financing/manufacturing-facility-machinery-large.jpg">
+</app-header>
+
+
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Benefits of Leasing</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid grid-cols-3 gap-4">
+            <app-title-shadow-card
+                title="Achieve business goals"
+                description="
+                    With 100% financing and potential 
+                    tax benefits, leasing your equipment 
+                    may be your best option to meet your 
+                    business goals. 
+                ">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                title="Increase productivity"
+                description="
+                    Resolve your operating constraints 
+                    and take advantage of the latest 
+                    advances in technology for the 
+                    highest productivity.
+                ">
+            </app-title-shadow-card>
+            <app-title-shadow-card
+                title="Increase cash flow"
+                description="
+                    Avoid tying up your valuable cash 
+                    and credit resources, and manage 
+                    working capital.
+                ">
+            </app-title-shadow-card>
+        </div>
+    </div>
+</div>
+
+
+<div class="custom-container">
     <div class="row text-center">
         <h2>You can lease most types of equipment, including:</h2>
     </div>
@@ -38,4 +89,153 @@
     </div>
 </div>
 
-<footer></footer>
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2>Equipment Leasing Solutions</h2>
+        </div>
+    </div>
+
+    <div class="row py-4 flex items-stretch overflow-x-auto">
+        <app-gray-header-item
+            title="Operating Lease"
+            [simpleListItems]="[
+                '
+                    Particularly attractive to companies 
+                    that want to manage their balance sheet 
+                    debt‐ratios, or want to use equipment for 
+                    the lease period and return it at lease 
+                    end with no further obligations',
+                'Helps you avoid a commitment to dated technology'
+            ]">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="Finance/Capital Lease"
+            [simpleListItems]="[
+                '
+                    A full‐payout, non‐cancellable 
+                    agreement in which the lessee is 
+                    responsible for maintenance, 
+                    taxes and insurance
+                ',
+                '
+                    Most attractive in cases where 
+                    the lessee wants the tax benefits 
+                    of ownership or expects to own the 
+                    equipment at lease maturity*
+                '
+            ]">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="True Lease"
+            [simpleListItems]="[
+                '
+                    Have the full use of the equipment 
+                    without the financial risk of legal 
+                    ownership (similar to an operating lease)
+                ',
+                '
+                    Allows you to expense the monthly 
+                    payments for tax purposes, and may 
+                    help you reduce your overall income 
+                    tax liability*
+                ',
+                '
+                    Enables you to return, purchase 
+                    or re-lease the equipment at the 
+                    end of the lease
+                '
+            ]">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="TRAC Lease"
+            [simpleListItems]="[
+                '
+                    A Terminal Rental Adjustment Clause (TRAC) 
+                    lease is a true lease designed to 
+                    finance licensed, titled motor 
+                    vehicles (over‐the‐road tractors, trailers, trucks and buses) 
+                    used for business
+                ',
+                '
+                    The TRAC is a stated amount in the 
+                    lease agreement representing the 
+                    estimated value of the equipment 
+                    at the end of the lease
+                ',
+                '
+                    At lease end, the vehicles can 
+                    be purchased for the TRAC amount 
+                    or sold to a third party. 
+                    If the lease‐end resale price is 
+                    more or less than the TRAC value, 
+                    you receive the excess or pay the 
+                    difference
+                '
+            ]">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="Municipal Lease"
+            [simpleListItems]="[
+                '
+                    Allows municipalities or political 
+                    subdivisions, including school districts, 
+                    police and fire departments, state and 
+                    county governments and other tax-exempt 
+                    entities, to acquire essential  equipment 
+                    quickly and conveniently without the need 
+                    for expensive and time-consuming bond issues
+                '
+            ]">
+        </app-gray-header-item>
+        <app-gray-header-item
+            title="Vendor Lease"
+            [simpleListItems]="[
+                '
+                    A contract or working relationship 
+                    between our organization and an 
+                    equipment manufacturer or vendor                
+                ',
+                '
+                    Provides the vendor with the ability 
+                    to offer customer financing, which 
+                    may stimulate sales and expedite the 
+                    sales process
+                '
+            ]">
+        </app-gray-header-item>
+    </div>
+     
+</div>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Property & Casualty Insurance"
+        description="
+            We provide resources to protect your 
+            business from the unexpected, so you 
+            can concentrate on what you do 
+            best—running your business.
+        "
+        [hasLink]="true"
+        linkUrl="/business/business-insurance/property-casualty-insurance"
+        imageUrl="../../../assets/images/business/business-financing/man-taking-inventory-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Kevin Jones, VP Commercial Banking RM"
+    advisorPhotoUrl="../../../assets/images/business/business-financing/kevin-jones.jpg">
+</app-find-advisor-row>
+
+
+<app-footer></app-footer>

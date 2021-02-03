@@ -1,5 +1,14 @@
 
-<div class="container">
+
+<app-header 
+heroTitle="Human Resources Consulting & Support"
+heroDescription="
+    Do you have HR questions, issues or concerns? We have answers.
+"
+heroImageUrl="../assets/images/business/employee-benefits/woman-showing-coworker-schedule-large.jpg">
+</app-header>
+
+<div class="custom-container">
     <div class="row btf-title">
         <h2>How We Can Help</h2>
         <p>
@@ -15,7 +24,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="custom-container">
     <div class="row icon-and-content-item-container">
         <app-icon-and-content-item
             title="Research"
@@ -44,5 +53,62 @@
         </app-icon-and-content-item>
     </div>
 </div>
+
+
+<div class="custom-container">
+    <div>
+        <app-image-and-content-row 
+            title="Our services go beyond HR and benefits compliance"
+            paragraphs="
+                <p>
+                    We can provide you and your company with 
+                    other necessary services, such as:
+                </p>
+            "
+            imageUrl="../../../../assets/images/business/employee-benefits/woman-and-man-discussing-business-options-on-paper.jpg"
+            [items]="[
+                'Online learning management system',
+                'Guidance on cybersecurity, cyber liability and breach notification',
+                'Fiduciary requirements and liability mitigation',
+                'HIPAA, PHI and PII requirements, training and best practices',
+                'Custom liability and risk exposure assessments',
+                'Workers’ compensation claims best practices',
+                'Review of contract indemnity and risk transference language',
+                'Guidance on insurance litigation and coverage issues'
+            ]">
+        </app-image-and-content-row>
+    </div>
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Strategic Employee Benefit Consulting"
+        [isFlipped]="true"
+        description="
+            You have a long-term business 
+            strategy to grow your organization, 
+            but you also need one to manage your 
+            employee benefits costs.
+        "
+        [hasLink]="true"
+        linkUrl="/business/employee-benefits/strategic-employee-benefits"
+        imageUrl="../../../assets/images/business/employee-benefits/business-owners-reviewing-project-small.jpg">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Bret Almstedt, VP Wealth Retirement Plan Services Manager"
+    advisorPhotoUrl="../../../assets/images/business/employee-benefits/bret-almstedt.jpg">
+</app-find-advisor-row>
 
 <app-footer></app-footer>

@@ -14,10 +14,10 @@ export class UtilityService {
 
   constructor(private http: HttpClient, 
     private constantsService: ConstantsService) {    
-    this.shortBankName = "Hudson";
-    this.bankPhoneNumber = "233 458 654 741";
-    this.bankName = `${this.shortBankName} Bank`;
-    this.applicationName = "Some Application Name";
+    this.shortBankName = "Lollands";
+    this.bankPhoneNumber = "888.769.3796";
+    this.bankName = `${this.shortBankName} Credit Union`;
+    this.applicationName = `${this.bankName} - Online Banking Platform`;
   }
 
   public getAccountTypes(): Observable<object[]> {
@@ -42,6 +42,14 @@ export class UtilityService {
 
   public getAccountTransfers(userAccountId: string) {
     return this.http.get<object[]>(`${this.constantsService.USER_ACCOUNTS_URL}/${userAccountId}/transfers`);
+  }
+
+  public getUserAccountDeposits(userAccountId: string) {
+    return this.http.get<object[]>(`${this.constantsService.USER_ACCOUNTS_URL}/${userAccountId}/deposits`);
+  }
+  
+  public getUserAccountWithdrawals(userAccountId: string) {
+    return this.http.get<object[]>(`${this.constantsService.USER_ACCOUNTS_URL}/${userAccountId}/withdrawals`);
   }
 
   searchTransferReceivers(accountIdOrNumber: string) {

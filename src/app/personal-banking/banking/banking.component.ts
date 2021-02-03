@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banking.component.scss']
 })
 export class BankingComponent implements OnInit {
+  baseUrl: String;
 
-  constructor() { }
+  constructor() {
+    this.baseUrl = "/personal/banking"
+  }
 
   ngOnInit(): void {
   }

@@ -1,7 +1,7 @@
 
 
 <div>
-    <mat-card class="mb-8">
+    <!-- <mat-card class="mb-8">
         <mat-card-title>
             <p class="text-base font-medium">Account Details</p>
         </mat-card-title>
@@ -27,7 +27,7 @@
                 </div>
             </span>
         </mat-card-content>
-    </mat-card>
+    </mat-card> -->
     
     <app-loader *ngIf="fetchingAccountData" [message]="'Fetching Dashboard data...'"></app-loader>
     <div *ngIf="userAccount && !fetchingAccountData" class="space-y-8">

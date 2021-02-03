@@ -12,7 +12,7 @@ heroDescription="
 heroImageUrl="../assets/images/business/employee-benefits/group-coworkers-in-an-office-meeting-large.jpg">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row">
         <ul class="service-overview-list">
             <li>
@@ -35,7 +35,7 @@ heroImageUrl="../assets/images/business/employee-benefits/group-coworkers-in-an-
                 <app-service-overview-list-item
                     title="Strategic Employee Benefits Consulting"
                     [isFlipped]="true"
-                    [targetUrl]="baseUrl + '/strategic-employee-benefits-consulting'"
+                    [targetUrl]="baseUrl + '/strategic-employee-benefits'"
                     featuredPhotoUrl="../assets/images/business/employee-benefits/business-owners-reviewing-project-small.jpg"
                     description="
                         You have a long-term business 
@@ -44,7 +44,7 @@ heroImageUrl="../assets/images/business/employee-benefits/group-coworkers-in-an-
                         your employee benefits costs too.">
                 </app-service-overview-list-item>
             </li>
-            <li>
+            <li class="hidden">
                 <app-service-overview-list-item
                     title="Underwriting & Actaurial Support"
                     [targetUrl]="baseUrl + '/underwriting-acturarial-support'"
@@ -55,7 +55,6 @@ heroImageUrl="../assets/images/business/employee-benefits/group-coworkers-in-an-
             <li>
                 <app-service-overview-list-item
                     title="Human Resources Consulting & Support"
-                    [isFlipped]="true"
                     [targetUrl]="baseUrl + '/human-resources-consulting-support'"
                     featuredPhotoUrl="../assets/images/business/employee-benefits/woman-showing-coworker-schedule-small.jpg"
                     description="Do you have HR questions, issues or concerns? We have answers.">
@@ -64,7 +63,8 @@ heroImageUrl="../assets/images/business/employee-benefits/group-coworkers-in-an-
             <li>
                 <app-service-overview-list-item
                     title="Voluntary and Worksite Benefits"
-                    [targetUrl]="baseUrl + '/strategic-employee-benefits-consulting'"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/voluntary-worksite-benefits'"
                     featuredPhotoUrl="../assets/images/business/employee-benefits/woman-pouring-coffee-in-cup-small.jpg"
                     description="Meet your employees' needs through creative voluntary and worksite benefits.">
                 </app-service-overview-list-item>
@@ -72,5 +72,13 @@ heroImageUrl="../assets/images/business/employee-benefits/group-coworkers-in-an-
         </ul>
     </div>
 </div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Kevin Jones, VP Commercial Banking RM"
+    advisorPhotoUrl="../../../assets/images/business/business-financing/kevin-jones.jpg">
+</app-find-advisor-row>
+
 
 <app-footer></app-footer>

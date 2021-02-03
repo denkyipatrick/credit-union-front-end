@@ -1,17 +1,19 @@
 
 <app-header 
-    heroTitle="Business Financing"
+    heroTitle="Banking"
     heroDescription="
-        As a business owner, 
-        you may aspire to expand your 
-        company or acquire new equipment. 
-        Make your dreams a reality with 
-        our flexible financing options 
-        for businesses."
+        In planning for the future, your 
+        goals are as unique as you are. 
+        We get it. That’s why we offer a 
+        range of personal banking services 
+        few financial institutions can 
+        match, along with people who are 
+        focused on doing what's right 
+        for you."
     heroImageUrl="../assets/images/personal/kids-young-girl-watering-garden-large.webp">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Our Approach</h2>
         <p class="light">
@@ -33,125 +35,92 @@
     </div>
 </div>
 
-<div class="container">
+<div class="custom-container">
     <div class="row">
         <ul class="service-overview-list">
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
-                    <div class="data">
-                        <h3><a>Checking Accounts</a></h3>
-                        <p>
-                            Find an account to best fit your life. 
-                            Our advisors will learn what is important 
-                            to you to make managing your money easy 
-                            and worry-free.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/couple-sitting-on-couch-looking-thorugh-book-small.webp" />
-                    <span class="image-overlay"></span>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Checking Accounts"
+                    description="
+                        Find an account to best fit your life. 
+                        Our advisors will learn what is important 
+                        to you to make managing your money easy 
+                        and worry-free.
+                    "
+                    [linkUrl]="baseUrl + '/checking'"
+                    imageUrl="../../assets/images/couple-sitting-on-couch-looking-thorugh-book-small.webp">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container flipped">
-                <div class="data-wrapper">
-                    <div class="data flip-right">
-                        <h3><a>Savings and Money Market Accounts</a></h3>
-                        <p>
-                            Be prepared for life’s little surprises 
-                            with a savings or money market account. 
-                            If you're just starting to save, building 
-                            an emergency fund, or saving for something 
-                            special, we can help you reach your goals.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/woman-gardening-on-her-rooftop-small.webp" />
-                    <div class="image-overlay"></div>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Savings and Money Market Accounts"
+                    [isFlipped]="true"
+                    description="
+                        Be prepared for life’s little surprises 
+                        with a savings or money market account. 
+                        If you're just starting to save, building 
+                        an emergency fund, or saving for something 
+                        special, we can help you reach your goals.
+                    "
+                    [linkUrl]="baseUrl + '/savings-and-money-market'"
+                    imageUrl="../../assets/images/woman-gardening-on-her-rooftop-small.webp">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
-                    <div class="data">
-                        <h3><a>Health Savings Account (HSA)</a></h3>
-                        <p>
-                            A Health Savings Account (HSA) makes 
-                            managing healthcare costs easier. 
-                            With an HSA, you can save money to 
-                            pay for qualified medical expenses.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/family-mom-with-daughter-and-doctor-for-checkup-small.webp" />
-                    <span class="image-overlay"></span>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Health Savings Account (HSA)"
+                    description="
+                        A Health Savings Account (HSA) makes 
+                        managing healthcare costs easier. 
+                        With an HSA, you can save money to 
+                        pay for qualified medical expenses.
+                    "
+                    [linkUrl]="baseUrl + '/health-savings-account'"
+                    imageUrl="../../assets/images/family-mom-with-daughter-and-doctor-for-checkup-small.webp">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container flipped">
-                <div class="data-wrapper">
-                    <div class="data flip-right">
-                        <h3><a>Certificates of Deposits (CDs)</a></h3>
-                        <p>
-                            When you want a higher than average 
-                            interest rate, a set rate of return 
-                            and assurance that your funds are insured, 
-                            use a CD for your savings and retirement goals.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/family-dad-playing-dolls-with-daughter-small.webp" />
-                    <div class="image-overlay"></div>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Certificates of Deposits (CDs)"
+                    [isFlipped]="true"
+                    description="
+                        When you want a higher than average 
+                        interest rate, a set rate of return 
+                        and assurance that your funds are insured, 
+                        use a CD for your savings and retirement goals.
+                    "
+                    [linkUrl]="baseUrl + '/certificate-of-deposit'"
+                    imageUrl="../../assets/images/family-dad-playing-dolls-with-daughter-small.webp">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
-                    <div class="data">
-                        <h3><a>Cards</a></h3>
-                        <p>
-                            Find a card for every need. 
-                            The debit, credit and gift 
-                            cards you choose can help you 
-                            through all of life’s moments.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/friends-two-women-shopping-small.jpg" />
-                    <span class="image-overlay"></span>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Cards"
+                    description="
+                        Find a card for every need. 
+                        The debit, credit and gift 
+                        cards you choose can help you 
+                        through all of life’s moments.
+                    "
+                    [linkUrl]="baseUrl + '/certificate-of-deposit'"
+                    imageUrl="../../assets/images/friends-two-women-shopping-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container flipped">
-                <div class="data-wrapper">
-                    <div class="data flip-right">
-                        <h3><a>Online & Mobile Banking</a></h3>
-                        <p>
-                            Online and mobile banking 
-                            tools make managing your money 
-                            fast and easy. Anywhere, anytime 
-                            options to deposit checks, send 
-                            money and more from your mobile 
-                            phone or the comfort of your home.
-                        </p>
-    
-                        <a class="btn outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/woman-working-in-office-with-laptop-mobile-phone-small.webp" />
-                    <div class="image-overlay"></div>
-                </div>
+            <li class="" style="display: none;">
+                <app-image-and-white-rect-row
+                    title="Online & Mobile Banking"
+                    [isFlipped]="true"
+                    description="
+                        Online and mobile banking 
+                        tools make managing your money 
+                        fast and easy. Anywhere, anytime 
+                        options to deposit checks, send 
+                        money and more from your mobile 
+                        phone or the comfort of your home.
+                    "
+                    [linkUrl]="baseUrl + '/certificate-of-deposit'"
+                    imageUrl="../../assets/images/woman-working-in-office-with-laptop-mobile-phone-small.webp">
+                </app-image-and-white-rect-row>
             </li>
         </ul>
     </div>

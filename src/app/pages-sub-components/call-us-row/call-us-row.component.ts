@@ -1,3 +1,4 @@
+import { UtilityService } from 'src/app/services/utility.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./call-us-row.component.scss']
 })
 export class CallUsRowComponent implements OnInit {
+  bankPhoneNumber: String;
 
-  constructor() { }
+  constructor(private utilityService: UtilityService) {
+    this.bankPhoneNumber = this.utilityService.bankPhoneNumber;
+  }
 
   ngOnInit(): void {
   }

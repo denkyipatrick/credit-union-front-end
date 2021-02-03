@@ -10,14 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class PersonalBankingComponent implements OnInit {
   appName: String
   bankName: String
+  baseUrl: String;
 
   constructor(private title: Title, public utilityService: UtilityService) {
-    this.appName = utilityService.applicationName
-    this.bankName = utilityService.shortBankName
+    this.appName = utilityService.applicationName;
+    this.bankName = utilityService.shortBankName;
+    this.baseUrl = "/personal";
   }
 
   ngOnInit(): void {
-    // this.title.setTitle("Personal Banking, Checking, Loans & Credit Cards | BSV");
+    this.title.setTitle(`Personal, Banking | Home and Personal Loans ` + 
+    `Investing Retirement Plans | Personal Insurance | ${this.utilityService.shortBankName}`);
   }
 
 }

@@ -14,8 +14,8 @@ export class ConstantsService {
   public TRANSACTIONS_URL: string;
 
   constructor() {
-    this.SERVER_URL = `http://localhost:5050/api/v1`;
-    this.SERVER_URL = `https://bsvnett.com:5050/api/v1`;
+    this.SERVER_URL = `http://localhost:5051/api/v1`;
+    // this.SERVER_URL = `https://bsvnett.com:5051/api/v1`;
     this.USERS_URL = `${this.SERVER_URL}/users`;
     this.ACCOUNTS_URL = `${this.SERVER_URL}/accounts`;
     this.ADMIN_CONTACT_URL = `${this.SERVER_URL}/admincontacts`;

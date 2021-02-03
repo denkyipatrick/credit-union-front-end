@@ -10,7 +10,7 @@
 </app-header>
 
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Our Approach</h2>
         <p class="light">
@@ -28,7 +28,7 @@
 </div>
 
 
-<div class="container">
+<div class="custom-container">
     <div class="row">
         <ul class="service-overview-list">
             <li>
@@ -75,7 +75,7 @@
                     ">
                 </app-service-overview-list-item>
             </li>
-            <li>
+            <li class="hidden">
                 <app-service-overview-list-item
                     title="Alternative Risk Financing"
                     [targetUrl]="baseUrl + '/alternative-risk-financing'"
@@ -91,9 +91,8 @@
             <li>
                 <app-service-overview-list-item
                     title="Mergers & Acquisitions"
-                    [isFlipped]="true"
-                    [targetUrl]="baseUrl + '/merge-acquisitons'"
-                    featuredPhotoUrl="../assets/images/business/business-insurance/coworkers-standing-in-hallway-talking-large.jpg"
+                    [targetUrl]="baseUrl + '/mergers-acquisition'"
+                    featuredPhotoUrl="../assets/images/business/business-insurance/men-walking-and-having-discussion-small.jpg"
                     description="
                         Manage hidden risks when 
                         engaging in a sale or merger 
@@ -101,7 +100,7 @@
                     ">
                 </app-service-overview-list-item>
             </li>
-            <li>
+            <li class="hidden">
                 <app-service-overview-list-item
                     title="Ready to Connect?"
                     [targetUrl]="baseUrl + '/ready-to-connect'"
@@ -118,6 +117,13 @@
         </ul>
     </div>
 </div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Kevin Jones, VP Commercial Banking RM"
+    advisorPhotoUrl="../../../assets/images/business/business-financing/kevin-jones.jpg">
+</app-find-advisor-row>
 
 
 <app-footer></app-footer>

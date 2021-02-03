@@ -12,7 +12,7 @@
 <app-header 
     heroTitle="Investing & Retirement"
     heroDescription="
-        Whether you\'re looking to invest 
+        Whether you're looking to invest 
         your money, build a financial plan 
         or prepare for retirement, our 
         advisors can help you create a story 
@@ -21,11 +21,21 @@
     heroImageUrl="../assets/images/personal/couple-retired-having-fun-sailing-large.webp">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row">
         <ul class="service-overview-list">
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Retirement & Financial Planning"
+                    description="
+                        Developing a sound financial 
+                        plan is essential to achieving 
+                        your long-term retirement goals.
+                    "
+                    [linkUrl]="baseUrl + '/retirement-financial-planning'"
+                    imageUrl="../../assets/images/personal/couple-older-looking-at-paint-color-options-small.jpg">
+                </app-image-and-white-rect-row>
+                <!-- <div class="data-wrapper">
                     <div class="data">
                         <h3>
                             <a [href]="baseUrl + '/retirement-financial-planning'">
@@ -45,86 +55,76 @@
                 <div class="image-wrapper">
                     <img src="../../assets/images/personal/couple-older-looking-at-paint-color-options-small.jpg" />
                     <span class="image-overlay"></span>
-                </div>
+                </div> -->
             </li>
-            <li class="card-and-image-container flipped">
-                <div class="data-wrapper">
-                    <div class="data flip-right">
-                        <h3><a [href]="baseUrl + '/investment-management'">Investment Management</a></h3>
-                        <p>
-                            Managing portfolios guided 
-                            by your goals, sound 
-                            research and a prudent 
-                            investment decision-making 
-                            process.
-                        </p>
-    
-                        <a [href]="baseUrl + '/investment-management'" class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/personal/professionals-man-and-woman-planning-small.jpg" />
-                    <div class="image-overlay"></div>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Investment Management"
+                    [isFlipped]="true"
+                    description="
+                        Managing portfolios guided 
+                        by your goals, sound 
+                        research and a prudent 
+                        investment decision-making 
+                        process.
+                    "
+                    [linkUrl]="baseUrl + '/investment-management'"
+                    imageUrl="../../assets/images/personal/professionals-man-and-woman-planning-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
-                    <div class="data">
-                        <h3><a [href]="baseUrl + '/invest-your-way'">Invest Your Way</a></h3>
-                        <p>
-                            Helping you make the most 
-                            of your money and your life 
-                            with a variety of investment 
-                            solutions.
-                        </p>
-    
-                        <a [href]="baseUrl + '/invest-your-way'" class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/personal/couple-getting-ready-for-wedding-small.jpg" />
-                    <span class="image-overlay"></span>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Invest Your Way"
+                    description="
+                        Helping you make the most 
+                        of your money and your life 
+                        with a variety of investment 
+                        solutions.
+                    "
+                    [linkUrl]="baseUrl + '/invest-your-way'"
+                    imageUrl="../../assets/images/personal/couple-getting-ready-for-wedding-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container flipped">
-                <div class="data-wrapper">
-                    <div class="data flip-right">
-                        <h3><a [href]="baseUrl + '/wealth-strategy'">Wealth Strategy</a></h3>
-                        <p>
-                            Helping you make the most 
-                            of your money and your life 
-                            with a variety of investment 
-                            solutions.
-                        </p>
-    
-                        <a [href]="baseUrl + '/wealth-strategy'" class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/personal/woman-meeting-with-financial-advisor-small.jpg" />
-                    <span class="image-overlay"></span>
-                </div>
+            <!-- <li class="hidden">
+                <app-image-and-white-rect-row
+                    title="Wealth Strategy"
+                    [isFlipped]="true"
+                    description="
+                        Helping you make the most 
+                        of your money and your life 
+                        with a variety of investment 
+                        solutions.
+                    "
+                    [linkUrl]="baseUrl + '/wealth-strategy'"
+                    imageUrl="../../assets/images/personal/woman-meeting-with-financial-advisor-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
-                    <div class="data">
-                        <h3><a [href]="baseUrl + '/estate-planning'">Estate Planning</a></h3>
-                        <p>
-                            An estate plan is simply 
-                            a strategy to take care 
-                            of the people you care 
-                            about – including yourself.
-                        </p>
-    
-                        <a [href]="baseUrl + '/estate-planning'" class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/personal/family-three-generations-grandfather-son-grandson-small.jpg" />
-                    <span class="image-overlay"></span>
-                </div>
+            <li class="hidden">
+                <app-image-and-white-rect-row
+                    title="Estate Planning"
+                    description="
+                        An estate plan is simply 
+                        a strategy to take care 
+                        of the people you care 
+                        about – including yourself.ons.
+                    "
+                    [linkUrl]="baseUrl + '/estate-planning'"
+                    imageUrl="../../assets/images/personal/family-three-generations-grandfather-son-grandson-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container flipped">
+            <li class="hidden">                
+                <app-image-and-white-rect-row
+                    title="Wealth Strategy"
+                    [isFlipped]="true"
+                    description="
+                        Helping you make the most 
+                        of your money and your life 
+                        with a variety of investment 
+                        solutions.
+                    "
+                    [linkUrl]="baseUrl + '/wealth-strategy'"
+                    imageUrl="../../assets/images/personal/woman-meeting-with-financial-advisor-small.jpg">
+                </app-image-and-white-rect-row>
                 <div class="data-wrapper">
                     <div class="data flip-right">
                         <h3><a [href]="baseUrl + '/family-wealth-planning'">Family Wealth Planning</a></h3>
@@ -140,7 +140,7 @@
                     <span class="image-overlay"></span>
                 </div>
             </li>
-            <li class="card-and-image-container">
+            <li class="hidden">
                 <div class="data-wrapper">
                     <div class="data">
                         <h3><a [href]="baseUrl + '/business-succession-planning'">Business Succession Planning</a></h3>
@@ -158,7 +158,7 @@
                     <img src="../../assets/images/personal/family-son-taking-over-business-from-mother-small.webp" />
                     <span class="image-overlay"></span>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>

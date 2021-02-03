@@ -1,4 +1,6 @@
+import { UtilityService } from './../../../services/utility.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-strategic-employee-benefits',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StrategicEmployeeBenefitsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title, private utilityService: UtilityService) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(
+      `Strategic Employee Benefits Consulting for Business | ${this.utilityService.bankName}`
+    );
   }
 
 }

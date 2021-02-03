@@ -10,7 +10,7 @@
     heroImageUrl="../assets/images/personal/family-dad-waiting-for-son-with-open-arms-large.jpg">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
         <h2>Our Approach</h2>
         <p class="light">
@@ -24,77 +24,60 @@
     </div>
 </div>
 
-<div class="container">
+<div class="custom-container">
     <div class="row">
         <ul class="service-overview-list">
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
-                    <div class="data">
-                        <h3><a href="/personal/home-personal-loans/home-loans">Home Loans</a></h3>
-                        <p>
-                            Whether you are relocating to 
-                            a new community, refinancing, 
-                            building or buying a home, we’ll 
-                            guide you through the home 
-                            financing process. As your trusted 
-                            advisor, our focus is on finding 
-                            the mortgage that fits your needs 
-                            so you can focus on finding your 
-                            perfect home.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/personal/kids-two-girls-having-fun-washing-dishes-small.jpg" />
-                    <span class="image-overlay"></span>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Home Loans"
+                    description="
+                        Whether you are relocating to 
+                        a new community, refinancing, 
+                        building or buying a home, we’ll 
+                        guide you through the home 
+                        financing process. As your trusted 
+                        advisor, our focus is on finding 
+                        the mortgage that fits your needs 
+                        so you can focus on finding your 
+                        perfect home.
+                    "
+                    [linkUrl]="baseUrl + '/home-loans'"
+                    imageUrl="../../assets/images/personal/kids-two-girls-having-fun-washing-dishes-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container flipped">
-                <div class="data-wrapper">
-                    <div class="data flip-right">
-                        <h3><a>Home Equity Loans & Lines of Credit</a></h3>
-                        <p>
-                            As life changes and your needs 
-                            shift, use the equity in your home 
-                            to finance your next goal. Maybe 
-                            you’re considering a home improvement, 
-                            a new vehicle or want to consolidate debt. 
-                            Whatever your project or plans, a home 
-                            equity loan or line of credit can help 
-                            you achieve them.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/personal/couple-choosing-paint-colors-in-new-room-small.jpg" />
-                    <div class="image-overlay"></div>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Home Equity Loans & Lines of Credit"
+                    [isFlipped]="true"
+                    description="
+                        As life changes and your needs 
+                        shift, use the equity in your home 
+                        to finance your next goal. Maybe 
+                        you’re considering a home improvement, 
+                        a new vehicle or want to consolidate debt. 
+                        Whatever your project or plans, a home 
+                        equity loan or line of credit can help 
+                        you achieve them.
+                    "
+                    [linkUrl]="baseUrl + '/home-equity-loans-lines-of-credit'"
+                    imageUrl="../../assets/images/personal/couple-choosing-paint-colors-in-new-room-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
-            <li class="card-and-image-container">
-                <div class="data-wrapper">
-                    <div class="data">
-                        <h3><a>Personal Loans & Lines of Credit</a></h3>
-                        <p>
-                            Get more control over your finances 
-                            with a flexible personal loan so you 
-                            can prepare for the unexpected, 
-                            purchase a new vehicle or consolidate debt. 
-                            With or without collateral, we can help 
-                            you get access to cash to take control 
-                            and simplify your life.
-                        </p>
-    
-                        <a class="btn btn-outlined">Learn More</a>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="../../assets/images/personal/couple-looking-at-options-on-laptop-small.jpg" />
-                    <span class="image-overlay"></span>
-                </div>
+            <li class="">
+                <app-image-and-white-rect-row
+                    title="Personal Loans & Lines of Credit"
+                    description="
+                        Get more control over your finances 
+                        with a flexible personal loan so you 
+                        can prepare for the unexpected, 
+                        purchase a new vehicle or consolidate debt. 
+                        With or without collateral, we can help 
+                        you get access to cash to take control 
+                        and simplify your life.
+                    "
+                    [linkUrl]="baseUrl + '/personal-loans-lines-of-credit'"
+                    imageUrl="../../assets/images/personal/couple-looking-at-options-on-laptop-small.jpg">
+                </app-image-and-white-rect-row>
             </li>
         </ul>
     </div>

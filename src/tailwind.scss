@@ -1,15 +1,10 @@
 @tailwind base;
 
-$green_heading: #7b9440;
-$divider_color: #d8efb0;
-$paragraph_text_color: #333;
-
-$primaryDarkColor: #0c3c49;
+$primaryDarkColor: #1761a0;
 $colorGray: #eaeaea;
 $linkColor: #597688;
 $headingTextColor: $primaryDarkColor;
 $bodyTextColor: #444;
-
 
 *, *::before, *::after {
     -webkit-box-sizing: border-box;
@@ -61,9 +56,26 @@ p {
   width: 100%;
   padding: 2rem 0;
   // border: 1px solid blue;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;  
+  .header {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    p {
+      font-size: 1.125rem;
+      margin: 1rem 0;
+      &.light {
+        font-weight: 300;
+      }
+    }
+  }
 }
 
+.banking-header {
+  background-color: $primaryDarkColor;
+}
 
 ul.more-info-card-list {
   margin-bottom: 100px;
@@ -185,6 +197,14 @@ header {
     &#top {
       height: 50px;
       background-color: $primaryDarkColor;
+      ul {
+        li {
+          a {
+            color: white;
+            font-weight: 600;
+          }
+        }
+      }
     }
       
     &#primary {
@@ -598,7 +618,7 @@ ul.checkmark-bullets, .list-checkmarks {
 
 .gray-header-item {
   min-height: 400px;
-  width: 700%;
+  width: 400px;
   max-width: 100%;
   margin: 1rem;
   position: relative;
@@ -631,17 +651,12 @@ ul.checkmark-bullets, .list-checkmarks {
   }
 }
 
-
-
-
-
 footer {
     .top-section {
-        padding: 100px;
+        padding: 60px 100px;
         background-color: $primaryDarkColor;
         h5 {
             font-size: 1.5rem;
-            padding: 60px 0 60px 0;
             color: #fff;
             border-bottom: 1px solid #c2c2c2;
         }

@@ -1,16 +1,47 @@
 
 
 <app-header 
-heroTitle="Investment Management"
-heroDescription="
-    Managing portfolios guided 
-    by your goals, sound research 
-    and a prudent investment 
-    decision-making process."
-heroImageUrl="../assets/images/personal/investing-retirement/professionals-man-and-woman-planning-large.jpg">
+    heroTitle="Retirement Plans"
+    heroDescription="
+        Become an employer of choice with a 
+        retirement plan tailored to fit your 
+        organization's overall benefits program, 
+        combining world‐class open architecture 
+        investment options with local personal 
+        service and effortless administration."
+    heroImageUrl="../assets/images/business/employee-benefits/group-looking-at-table-of-papers-large.jpg">
 </app-header>
 
-<div class="container">
+<div class="custom-container">
+    <app-image-and-content-row 
+        title="Attract and retain the best talent"
+        paragraphs="
+            <p>
+                Your organization's retirement plan is 
+                key to a comprehensive employee benefits 
+                program. It should help you attract and 
+                retain quality employees without requiring 
+                all of your time and energy to administer.
+            </p>
+            <p>
+                Our advisors will work closely with you 
+                to understand the unique needs of your 
+                organization and tailor a comprehensive 
+                retirement plan program that fits your 
+                overall employee benefits strategy. 
+                Our team then delivers and services 
+                your program to ensure accountability.
+            </p>
+            "
+        imageUrl="../../../../assets/images/business/employee-benefits/rps-ongoing-process-782x440.jpg">
+    </app-image-and-content-row>
+</div>
+
+<div class="custom-container">
+    <div class="header">
+        <h2>How We Can Help</h2>
+    </div>
+
     <div class="flex items-start justify-between overflow-x-auto">
         <div class="gray-header-item">
             <div class="header">
@@ -82,12 +113,11 @@ heroImageUrl="../assets/images/personal/investing-retirement/professionals-man-a
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
-<div class="container">
-    <div class="row text-center">
+<div class="custom-container">
+    <div class="header">
         <h2>Our Communication Approach</h2>
         <p class="light font-light">
             We take a holistic approach to 
@@ -148,8 +178,12 @@ heroImageUrl="../assets/images/personal/investing-retirement/professionals-man-a
     </div>
 </div>
 
-<div class="row">
-    <app-call-us-row></app-call-us-row>
-</div>
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Bret Almstedt, VP Wealth Retirement Plan Services Manager"
+    advisorPhotoUrl="../../../assets/images/business/employee-benefits/bret-almstedt.jpg">
+</app-find-advisor-row>
+
 
 <app-footer></app-footer>

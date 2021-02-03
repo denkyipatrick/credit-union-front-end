@@ -1,102 +1,20 @@
-<div class="jumbotron">
-    <!-- header stuff comes here -->
-    <div class="nav-container"></div>
-    <div>
-        <div class="content">
-            <h1>Banking</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Sit officiis distinctio necessitatibus similique error 
-                quidem iure temporibus eveniet id dolores assumenda 
-                repudiandae accusantium nulla sed eius excepturi 
-                adipisci, laudantium in?
-            </p>
-        </div>
-    </div>
-</div>
 
-<header class="invisible" style="display: none;">
-    <nav id="top"></nav>
-    <nav id="primary">
-        <ul class="nav-bar">
-            <li><a href="/personal">Personal</a></li>
-            <li><a href="/business">Business</a></li>
-        </ul>
-    </nav>
-    <nav id="secondary">
-        <ul class="nav-bar">
-            <li><a href="#">Banking</a></li>
-            <li><a href="#">Home & Personal Loans</a></li>
-            <li><a href="#">Investing & Retirement</a></li>
-            <li><a href="#">Insurance</a></li>
-            <li><a href="#">Your Financial Life</a></li>
-        </ul>
-        <div id="sub-nav">
-            <div class="space-x-8">
-                <span>
-                    <h2>Bank your Way</h2>
-                    <ul>
-                        <li><a href=#>Checking</a></li>
-                        <li><a href=#>Savings and Money Market</a></li>
-                        <li><a href=#>Health Savings Account (HSA)</a></li>
-                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
-                        <li><a href=#>Cards</a></li>
-                    </ul>
-                </span>
-                
-                <span>
-                    <h2>Bank your Way</h2>
-                    <ul>
-                        <li><a href=#>Checking</a></li>
-                        <li><a href=#>Savings and Money Market</a></li>
-                        <li><a href=#>Health Savings Account (HSA)</a></li>
-                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
-                        <li><a href=#>Cards</a></li>
-                    </ul>
-                </span>
-                
-                <span>
-                    <h2>Bank your Way</h2>
-                    <ul>
-                        <li><a href=#>Checking</a></li>
-                        <li><a href=#>Savings and Money Market</a></li>
-                        <li><a href=#>Health Savings Account (HSA)</a></li>
-                        <li><a href=#>Certificates of Deposit (CDs)</a></li>
-                        <li><a href=#>Cards</a></li>
-                    </ul>
-                </span>
-            </div>
-        </div>
-    </nav>
-</header>
+<app-header 
+    heroTitle="As your needs evolve, we do too."
+    heroDescription="
+        Life moves quickly, and so do we. 
+        Whether face-to-face or digitally, 
+        we keep pace with the rapidly 
+        evolving financial services 
+        landscape while providing the 
+        highest level of personal 
+        service."
+    heroImageUrl="../assets/images/personal/woman-sitting-at-kitchen-counter-with-laptop-and-dog-hero.webp">
+</app-header>
 
-<!-- <div>
-    <div>
-        <h3>Checking your way</h3>
-        <p>
-            Whether you prefer online and mobile banking, 
-            unlimited debit card transactions or no 
-            monthly fees, we have you covered. You'll have 
-            access to fee-free ATMs, contactless debit cards, 
-            Mobile Deposit and Overdraft Services. 
-        </p>
-        <p>
-            Learn how to simplify your finances or open an account in minutes.
-        </p>
-    </div>
-</div>
-
-<div>
-    <h2>Realize your financial goals</h2>
-    <p class="light">
-        Suggestions and inspirational ideas to help 
-        you plan the big decisions in your life.
-    </p>
-</div> -->
-
-<div class="container">
+<div class="custom-container">
     <div class="row btf-title">
-        <h2>Our Approach</h2>
+        <h2>Your Financial Needs Are Provided</h2>
         <p class="light">
             Your financial needs are about more than a 
             transaction. We take the time to understand 
@@ -108,7 +26,7 @@
     </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <ul class="service-overview-list">
             <li class="card-and-image-container">
@@ -230,125 +148,75 @@
             </li>
         </ul>
     </div>
-</div>
+</div> -->
 
-<div class="container">
+<div class="custom-container">
     <div class="row">
-        <ul class="more-info-card-list">
-            <li class="card">
-                <div class="image-wrapper">
-                    <img src="../../assets/images/family-dad-playing-dolls-with-daughter-small.webp" />
-                </div>
-                <div class="data-wrapper">                    
-                    <h3>Creating a Budget</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet 
-                        consectetur adipisicing elit. 
-                        Facilis esse consequatur placeat 
-                        ipsum reiciendis libero 
-                        magnam totam harum sint cupiditate 
-                        officiis, mollitia exercitationem 
-                        praesentium porro voluptatibus sunt 
-                        repellat! A, veniam?
-                    </p>
-
-                    <a class="btn">Learn More</a>
-                </div>
+        <ul class="service-overview-list">
+            <li>
+                <app-service-overview-list-item
+                    title="Personal Banking"
+                    [targetUrl]="baseUrl + '/banking'"
+                    featuredPhotoUrl="../assets/images/personal/kids-young-girl-watering-garden-large.webp"
+                    description="
+                        In planning for the future, your 
+                        goals are as unique as you are. 
+                        We get it. That’s why we offer a 
+                        range of personal banking services 
+                        few financial institutions can match, 
+                        along with people who are focused on 
+                        doing what's right for you.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Home & Personal Loans"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/home-personal-loans'"
+                    featuredPhotoUrl="../assets/images/personal/family-dad-waiting-for-son-with-open-arms-large.jpg"
+                    description="
+                        Finance your next move, big purchase 
+                        or dream vacation with a loan 
+                        personalized just for you. Tell us 
+                        what your plans are, and we’ll help 
+                        you select the best loan to make your 
+                        goals come to life.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Investing & Retirement"
+                    [targetUrl]="baseUrl + '/investment-retirement'"
+                    featuredPhotoUrl="../assets/images/personal/couple-retired-having-fun-sailing-large.webp"
+                    description="
+                        Whether you're looking to invest 
+                        your money, build a financial plan 
+                        or prepare for retirement, our 
+                        advisors can help you create a story 
+                        that grows, manages and protects your 
+                        wealth for future generations.">
+                </app-service-overview-list-item>
+            </li>
+            <li>
+                <app-service-overview-list-item
+                    title="Personal Insurance"
+                    [isFlipped]="true"
+                    [targetUrl]="baseUrl + '/personal-insurance'"
+                    featuredPhotoUrl="../assets/images/personal/personal-insurance/family-father-and-daughter-looking-at-tablet-on-couch-large.jpg"
+                    description="
+                        You have a lot to protect – your home, 
+                        your valuables, your family’s financial 
+                        security and, most of all, you and your 
+                        family. We can help you understand your 
+                        risks and provide you with personal insurance 
+                        solutions to cover you no matter what 
+                        life has in store.">
+                </app-service-overview-list-item>
             </li>
         </ul>
     </div>
 </div>
 
+<app-call-us-row></app-call-us-row>
+
 <app-footer></app-footer>
-
-<!-- <footer>
-    <div class="top-section">
-        <div>
-            <h5>About Us</h5>
-            <nav>
-                <ul>
-                    <li><a href="#">Our History</a></li>
-                    <li><a href="#">Our Leadership</a></li>
-                    <li><a href="#">Community Involvement</a></li>
-                    <li><a href="#">News & Events</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </nav>
-        </div>
-        
-        <div>
-            <h5>Resources</h5>
-            <nav>
-                <ul>
-                    <li><a href="#">Our History</a></li>
-                    <li><a href="#">Our Leadership</a></li>
-                    <li><a href="#">Community Involvement</a></li>
-                    <li><a href="#">News & Events</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <div class="legal-section">
-        <div>
-            <span>
-                <p>
-                    Products and services offered by these 
-                    {{bankName}} Financial Group companies: {{bankName}} Bank, 
-                    {{bankName}} Wealth Inc. and {{bankName}} Insurance Services, LLC.
-                </p>
-            </span>
-            
-            <span>                
-                <h5>{{bankName}} Wealth</h5>
-                <p>
-                    Wealth management services are provided 
-                    through {{bankName}} Bank and {{bankName}} Wealth Inc., 
-                    {{bankName}} Financial Group companies. 
-                    Additional information about {{bankName}} Wealth Inc., 
-                    a registered investment adviser, and its 
-                    investment adviser representatives is 
-                    available at 
-                    <a href="http://www.adviserinfo.sec.gov">adviserinfo.sec.gov.</a>
-                    <br />
-                    NOT FDIC INSURED | NO BANK GUARANTEE | MAY LOSE VALUE
-                </p>
-            </span>
-        </div>
-
-        <div>
-            <span>
-                <ul class="inline-list">
-                    <li>
-                        <a>Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a>Terms of Use</a>
-                    </li>
-                </ul>
-                <p>&copy; Copyright 2019 Johnson Financial Group. All rights reserved.</p>
-            </span>
-            <span>
-                <h5>{{bankName}} Bank</h5>
-                <p>
-                    Bank services are provided by {{bankName}} Bank, 
-                    Member FDIC, Equal Housing Lender. 
-                    Bank services are provided without regard 
-                    to race, color, national origin, sex, handicap, 
-                    or familial status.
-                </p>
-            </span>
-
-            <span>
-                <h5>{{bankName}} Insurance</h5>
-                <p>
-                    Insurance products are provided by 
-                    {{bankName}} Insurance Services, LLC. 
-                    Not FDIC insured, not a deposit, not insured 
-                    by any federal government agency, not bank 
-                    guaranteed, may lose value.
-                </p>
-            </span>
-        </div>
-    </div>
-</footer> -->

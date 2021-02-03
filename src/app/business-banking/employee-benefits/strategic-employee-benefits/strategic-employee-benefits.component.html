@@ -1,1 +1,180 @@
-<p>strategic-employee-benefits works!</p>
+
+<app-header 
+    heroTitle="Strategic Employee Benefits Consulting"
+    heroDescription="
+        You have a long-term business 
+        strategy to grow your organization; 
+        you should have one to manage your 
+        employee benefits costs too."
+    heroImageUrl="../assets/images/business/employee-benefits/business-owners-reviewing-project-large.webp">
+</app-header>
+
+<div class="custom-container">
+    <div class="header">
+        <h2>Our Approach</h2>
+        <p class="light font-light">
+            As a business owner, the traditional 
+            insurance brokerage model of marketing, 
+            negotiating, and changing benefits or 
+            carriers every year can be tiring. 
+            But rest assured – if you have a plan, 
+            the renewal process does not have to be 
+            a painful experience.
+        </p>
+        <p>
+            Our Employee Benefits advisors work with you to develop a documented, long-term benefits strategy specific to your company's short and long-term goals. Our approach extends well beyond the typical reactive health insurance renewal process that erodes your profits.
+        </p>
+    </div>
+</div>
+
+<div class="custom-container">
+    <div>
+        <app-image-and-content-row 
+            title="Step 1: We get to know you and your company"
+            paragraphs="
+                <p>
+                    An employee benefits plan isn’t meant 
+                    to be a “set it and forget it” approach. 
+                    We take the time to understand your 
+                    company as a whole, taking 
+                    into account:
+                </p>"
+            imageUrl="../../../../assets/images/business/employee-benefits/several-employees-sitting-around-table-discussing-objectives.webp"
+            [items]="[
+                'Your culture',
+                'Business objectives',
+                'Risk tolerance',
+                'The role of benefits in your recruitment and retention efforts',
+                'The employee experience',
+                'And most importantly - the impact to your bottom line'
+            ]">
+        </app-image-and-content-row>
+        <app-image-and-content-row 
+            title="Step 2: Define your plan’s foundational structure"
+            [isFlipped]="true"
+            paragraphs="
+                <p>
+                    We balance your company’s priorities 
+                    and goals across three critical elements 
+                    of any health and welfare program, 
+                    taking a holistic approach to the 
+                    strategies we recommend.
+                </p>"            
+            imageUrl="../../../../assets/images/business/employee-benefits/close-up-on-two-hands-with-pens-pointing-at-multiple-papers-with-graphs.webp"
+            [items]="[
+                'Insurance value and choice',
+                'Employee engagement',
+                'Compliance and administration'
+            ]">
+        </app-image-and-content-row>
+        <app-image-and-content-row 
+            title="Step 3: Ongoing assessments"
+            paragraphs="
+                <p>
+                    Your employee benefits plan 
+                    requires a consistent assessment 
+                    to ensure it is meeting your 
+                    company’s needs. Our advisors 
+                    provide ongoing collaboration 
+                    and consultation, bringing together 
+                    leadership, structure, and mutual 
+                    accountability to develop a program 
+                    that's tailored to your organization. 
+                    We’ll work together to:
+                </p>"
+            imageUrl="../../../../assets/images/business/employee-benefits/business-woman-and-team-contemplate-at-post-notes-on-glass-board.webp"
+            [items]="[
+                '
+                    Assess your confidence level with 
+                    the foundational structure of health 
+                    and welfare benefits programs; value 
+                    and participant perception, compliance 
+                    and administration, and the employee 
+                    experience.
+                ',
+                'Identify and define your short and long-term program goals.',
+                '
+                    Implement a disciplined and structured 
+                    strategy to achieve those goals.
+                '
+            ]">
+        </app-image-and-content-row>
+        <app-image-and-content-row 
+            title="Step 4: Your year-round consultative partner"
+            [isFlipped]="true"
+            paragraphs="
+                <p>
+                    From onboarding, setting goals 
+                    and proactively working on your annual 
+                    renewal strategy, our advisors work with 
+                    you year-round to keep your long-term 
+                    strategic plan for your benefits program 
+                    on track. Our team will:
+                </p>"            
+            imageUrl="../../../../assets/images/business/employee-benefits/two-woman-reviewing-at-desk-with-laptop.webp"
+            [items]="[
+                'Take the time to set annual goals.',
+                'Identify opportunities for future renewals.',
+                '
+                    Use data to identify potential 
+                    solutions and address areas of 
+                    opportunity within your health plan.
+                ',
+                '
+                    Review options to leverage emerging 
+                    and maturing strategies in the 
+                    benefits world.
+                ',
+                'Provide ongoing education and guidance to you and your employees.'
+            ]">
+        </app-image-and-content-row>
+    </div>
+</div>
+
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>
+    
+    <app-image-and-dark-rect-content-row
+        title="Retirement Plans"
+        paragraphs="
+            <p>
+                You want to be an employer of choice, 
+                and attractive employee benefits are 
+                key to making that happen. 
+                Your organization's retirement plan 
+                should help you attract and retain 
+                quality employees without requiring 
+                all of your time and energy to administer. 
+                It will also help create financial security 
+                for your employees.
+            </p>
+            <p>
+                We offer comprehensive retirement 
+                plan services for your organization’s 401(k), 403(b), 
+                profit-sharing and pension programs, all locally 
+                delivered and serviced completely by us to ensure 
+                complete accountability.
+            </p>
+        "
+        [hasLink]="true"
+        linkUrl="/business/employee-benefits/retirement-plans"
+        imageUrl="../../../assets/images/business/employee-benefits/group-looking-at-table-of-papers-small.webp">
+    </app-image-and-dark-rect-content-row>
+</div>
+
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Bret Almstedt, VP Wealth Retirement Plan Services Manager"
+    advisorPhotoUrl="../../../assets/images/business/employee-benefits/bret-almstedt.jpg">
+</app-find-advisor-row>
+
+
+<app-footer></app-footer>

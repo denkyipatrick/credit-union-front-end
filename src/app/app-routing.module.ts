@@ -53,19 +53,21 @@ import { InvestingRetirementComponent } from './personal-banking/investing-retir
 import { FinancialLifeComponent } from './personal-banking/financial-life/financial-life.component';
 import { BankingComponent } from './personal-banking/banking/banking.component';
 import { HomeAndEquityLoansComponent } from './personal-banking/loans/home-and-equity-loans/home-and-equity-loans.component';
+import { InsuranceComponent } from './personal-banking/insurance/insurance.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/personal', pathMatch: 'full' },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'signin', component: SigninComponent },
+  { path: 'login', component: SigninComponent },
   { path: 'welcome', component: SigninWelcomeComponent },
   { path: 'create-account', component: SignupComponent },
 
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'banking', loadChildren: () => import('./banking/banking.module').then(m => m.BankingModule) },
 
-  { path: 'personal', redirectTo: '/personal/banking', pathMatch: 'full'},
+  { path: 'personal', component: PersonalBankingComponent }, // redirectTo: '/personal/banking', pathMatch: 'full'},
   { path: 'personal/banking', component: BankingComponent },
   { path: 'personal/banking/checking', component: CheckingComponent },
   { path: 'personal/banking/savings-and-money-market', component: SavingsComponent },
@@ -77,7 +79,7 @@ const routes: Routes = [
   { path: 'personal/home-personal-loans/personal-loans-lines-of-credit', component: PersonalLoansComponent },
   { path: 'personal/home-personal-loans/construction-lot-loans', component: ConstructionLoansComponent },
   { path: 'personal/home-personal-loans/home-equity-loans-lines-of-credit', component: HomeAndEquityLoansComponent },
-  { path: 'personal/personal-insurance', component: PersonalInsuranceComponent },
+  { path: 'personal/personal-insurance', component: InsuranceComponent },
   { path: 'personal/personal-insurance/home-condo', component: HomeAndCondoComponent },
   { path: 'personal/personal-insurance/renters', component: RentersComponent },
   { path: 'personal/personal-insurance/flood', component: FloodComponent },
@@ -105,10 +107,12 @@ const routes: Routes = [
   { path: 'business/employee-benefits/human-resources-consulting-support', component: HumanResourceConsultingComponent },
   { path: 'business/employee-benefits/voluntary-worksite-benefits', component: VoluntaryWorksiteBenefitsComponent },
   { path: 'business/employee-benefits/strategic-employee-benefits', component: StrategicEmployeeBenefitsComponent },
+  { path: 'business/business-insurance', component: BusinessInsuranceComponent },
   { path: 'business/business-insurance/property-casualty-insurance', component: PropertyCasualtyInsuranceComponent },
   { path: 'business/business-insurance/risk-management', component: RiskManagementComponent },
   { path: 'business/business-insurance/claims-advocacy', component: ClaimsAdvocacyComponent },
   { path: 'business/business-insurance/professional-liability', component: ProfessionalLiabilityComponent },
+  { path: 'business/business-insurance/professional-liability-insurance', component: ProfessionalLiabilityComponent },
   { path: 'business/business-insurance/mergers-acquisition', component: MergersAndAcquistionComponent },
   { path: 'business/education-guidance', component: EducationAndGuidanceComponent }
 ];

@@ -1,4 +1,6 @@
+import { UtilityService } from './../../services/utility.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-investing-retirement',
@@ -8,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class InvestingRetirementComponent implements OnInit {
   baseUrl: String
 
-  constructor() {
-    this.baseUrl = "/persoanl/investing-retirement"
+  constructor(private title: Title, private utilityService: UtilityService) {
+    this.baseUrl = "/personal/investment-retirement"
   }
 
   ngOnInit(): void {
+    this.title.setTitle(`Investing & Retirement | ` + 
+    `Build a Financial Plan | ${this.utilityService.bankName}`);
   }
+
 
 }

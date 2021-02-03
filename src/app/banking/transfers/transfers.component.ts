@@ -16,6 +16,7 @@ export class TransfersComponent implements OnInit {
   userAccount: any;
   showForm: boolean;
   form: FormGroup;
+  transfers: any[]
 
   isFetching: boolean;
   isErrorFetching: boolean;

@@ -15,6 +15,9 @@ import { ImageAndDarkRectContentRowComponent } from './image-and-dark-rect-conte
 import { CallUsRowComponent } from './call-us-row/call-us-row.component';
 import { FindAdvisorRowComponent } from './find-advisor-row/find-advisor-row.component';
 import { TitleShadowCardComponent } from './title-shadow-card/title-shadow-card.component';
+import { GrayHeaderItemComponent } from './gray-header-item/gray-header-item.component';
+import { ImageAndWhiteRectRowComponent } from './image-and-white-rect-row/image-and-white-rect-row.component';
+import { TeamMemberCardComponent } from './team-member-card/team-member-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { TitleShadowCardComponent } from './title-shadow-card/title-shadow-card.
     ImageAndDarkRectContentRowComponent,
     CallUsRowComponent,
     FindAdvisorRowComponent,
-    TitleShadowCardComponent
+    TitleShadowCardComponent,
+    GrayHeaderItemComponent,
+    ImageAndWhiteRectRowComponent,
+    TeamMemberCardComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +56,10 @@ import { TitleShadowCardComponent } from './title-shadow-card/title-shadow-card.
     CallUsRowComponent,
     TitleShadowCardComponent,
     FindAdvisorRowComponent,
+    GrayHeaderItemComponent,
+    ImageAndWhiteRectRowComponent,
     ImageAndContentRowComponent,
+    TeamMemberCardComponent,
     ImageAndDarkRectContentRowComponent
   ]
 })

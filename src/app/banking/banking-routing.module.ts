@@ -1,3 +1,4 @@
+import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { TransfersComponent } from './transfers/transfers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', component: BankingComponent, children: [
     { path: 'dashboard', component: DashboardComponent }, 
     { path: 'transfers', component: TransfersComponent }, 
-    { path: 'transactions', component: TransactionsComponent }
+    { path: 'transactions', component: TransactionsComponent },
+    { path: 'accounts/:id', component: AccountDetailComponent }
   ] }
 ];
 

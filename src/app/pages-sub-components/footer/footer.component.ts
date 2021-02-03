@@ -10,15 +10,16 @@ import { UtilityService } from 'src/app/services/utility.service';
 export class FooterComponent implements OnInit {
   appName: String
   bankName: String
+  mainBankName: String;
   copyrightYear: number;
 
   constructor(private title: Title, public utilityService: UtilityService) {
     this.appName = utilityService.applicationName
     this.bankName = utilityService.shortBankName
     this.copyrightYear = new Date().getFullYear();
+    this.mainBankName = utilityService.bankName;
   }
 
   ngOnInit(): void {
-    this.title.setTitle("Personal Banking, Checking, Loans & Credit Cards | BSV");
   }
 }

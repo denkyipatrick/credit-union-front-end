@@ -1,1 +1,85 @@
-<p>professional-liability works!</p>
+
+<app-header 
+heroTitle="Professional Liability"
+heroDescription="
+    Do you or your firm provide a professional 
+    service or offer advice? Protect yourself 
+    and your organization from costly claims.
+"
+heroImageUrl="../assets/images/business/business-insurance/doctor-and-nurse-evaluating-medical-tests-large.jpg">
+</app-header>
+
+<div class="custom-container">
+    <app-image-and-content-row 
+        title="Who needs professional liability insurance?"
+        paragraphs="
+            <p>
+                If you or your organization provides 
+                any sort of professional services or 
+                gives advice to clients, you should 
+                consider professional liability insurance, 
+                also known as errors and ommisions insurance. 
+                Find the protection you and your organization 
+                need against allegations or findings of n
+                egligence in the services you provided.
+            </p>
+            <p>
+                Consultants or organizations that 
+                often need professional liability 
+                insurance:
+            </p>
+            "
+        [items]="[
+            'Accountants',
+            'Architects and Engineers',
+            'Lawyers',
+            'Physicians',
+            'And more'
+        ]"
+        imageUrl="../../../../assets/images/business/business-insurance/older-man-and-woman-shaking-hands-with-woman-across-table.jpg">
+    </app-image-and-content-row>
+</div>
+
+<!-- dark card with photo -->
+<div class="custom-container">
+    <div class="row">
+        <div class="header">
+            <h2 class="my-8 text-center">We can also help you with...</h2>
+        </div>        
+    </div>    
+    
+    <app-image-and-dark-rect-content-row
+        title="Risk Management"
+        description="
+            Proactively control financial loss 
+            to your organization by identifying, 
+            analyzing and controlling your risks 
+            and exposures to prevent claims 
+            before they happen.
+        "
+        [hasLink]="true"
+        linkUrl="/business/business-insurance/risk-management"
+        imageUrl="../../../assets/images/business/business-insurance/man-working-in-a-manufacturing-facility-large.jpg">
+    </app-image-and-dark-rect-content-row>
+    
+    <!-- <app-image-and-dark-rect-content-row
+        title="Financial Solutions for Lawyers"
+        [isFlipped]="true"
+        description="
+            Your profession demands a lot. While you've worked hard to build your career and maintain your wealth, you have special financial needs to consider. Be confident in your financial future with a team of experts on your side.
+        "
+        [hasLink]="false"
+        linkUrl="/business/business-insurance/risk-management"
+        imageUrl="../../../assets/images/business/business-insurance/man-working-in-a-manufacturing-facility-large.jpg">
+    </app-image-and-dark-rect-content-row> -->
+</div>
+
+<app-call-us-row></app-call-us-row>
+
+<app-find-advisor-row
+    advisorName="Bret Almstedt, VP Wealth Retirement Plan Services Manager"
+    advisorPhotoUrl="../../../assets/images/business/employee-benefits/bret-almstedt.jpg">
+</app-find-advisor-row>
+
+
+<app-footer></app-footer>

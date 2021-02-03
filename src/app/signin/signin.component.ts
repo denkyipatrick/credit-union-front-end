@@ -15,7 +15,7 @@ export class SigninComponent implements OnInit {
   isErrorWorking: boolean;
 
   constructor(private title: Title, private utilityService: UtilityService) {
-    this.title.setTitle("Secure Connection to BSV Servers - The Bank of Southside Virginia");
+    this.title.setTitle(`Secure Connection to Our Servers - ${this.utilityService.bankName}`);
     this.form = new FormGroup({
       id: new FormControl(),
       password: new FormControl()
