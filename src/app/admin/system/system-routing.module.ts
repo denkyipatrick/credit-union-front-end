@@ -1,3 +1,4 @@
+import { CurrenciesComponent } from './currencies/currencies.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { SystemComponent } from './system.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent },
     { path: 'users/:id', component: UserDetailComponent },
     { path: 'accounts', component: AccountsComponent },
+    { path: 'currency-rates', component: CurrenciesComponent },
     { path: 'account-types', component: AccountTypesComponent },
   ]}
 ];

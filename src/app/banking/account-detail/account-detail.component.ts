@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountDetailComponent implements OnInit {
   account: any;
+  selectedCurrency: any;
   depositTransactions: any[] = [];
   withdrawalTransactions: any[] = [];
 
@@ -29,6 +30,8 @@ export class AccountDetailComponent implements OnInit {
     this.totalDepositedAmount = 0;
     this.totalWithdrawnAmount = 0;
     this.totalTransactedAmount = 0;
+
+    this.selectedCurrency = this.utilityService.selectedCurrency;
   }
 
   ngOnInit(): void {

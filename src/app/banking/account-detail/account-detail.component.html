@@ -1,5 +1,5 @@
 
-<mat-card class="mb-8">
+<mat-card class="mb-8 mr-4 w-full" style="margin-right: .5rem">
     <mat-card-content>
         <div class="mb-16">
             <span class="flex items-start justify-between">
@@ -11,7 +11,16 @@
 
                 <span>
                     <p class="text-gray-700 font-normal text-xs">Balance</p>
-                    <p class="">${{account?.balance?.toFixed(2)}}</p>
+                    <p class="">
+                        <span *ngIf="selectedCurrency.id == 'usd_currency'">
+                            {{utilityService.dollarSymbol}}
+                        </span>
+                        <span *ngIf="selectedCurrency.id == 'euro_currency'">
+                            {{utilityService.euroSymbol}}
+                        </span>
+                        <!-- {{(account?.balance || 0)?.toFixed(2)}} -->
+                        {{(account?.balance * selectedCurrency.rate)?.toFixed(2)}}
+                    </p>
                 </span>
             </span>
 

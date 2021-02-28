@@ -1,0 +1,41 @@
+
+<mat-card>
+    <div>
+        <h3 class="text-base font-medium">Currency Rates</h3>
+
+        <ul class="space-y-2">
+            <li *ngFor="let currency of currencies">
+                <div>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{currency?.currency}} -> {{currency?.name}} <span>Rate: {{currency?.rate}}</span>
+                            </mat-panel-title>
+                            <!-- <mat-panel-description>
+                              This is a summary of the content
+                            </mat-panel-description> -->
+                          </mat-expansion-panel-header>
+                        <div>
+                            <p class="text-base font-normal">Update</p>
+                            <span class="flex items-center space-x-8">
+                                <mat-form-field appearance="outline" class="text-xs">
+                                    <mat-label>{{currency?.name}} Rate / Amount</mat-label>
+                                    <input #newRateBox matInput 
+                                        type="number" 
+                                        [value]="currency?.rate"/>
+                                </mat-form-field>
+
+                                <button mat-raised-button 
+                                    color="primary" 
+                                    class="mb-4"
+                                    (click)="changeRate(currency, newRateBox.value)">
+                                    UPDATE RATE
+                                </button>
+                            </span>
+                        </div>
+                    </mat-expansion-panel>
+                </div>
+            </li>
+        </ul>
+    </div>
+</mat-card>

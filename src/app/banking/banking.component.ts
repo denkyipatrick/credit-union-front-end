@@ -1,3 +1,4 @@
+import { UtilityService } from 'src/app/services/utility.service';
 import { LeftPaneAccountItemComponent } from './left-pane-account-item/left-pane-account-item.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -9,13 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankingComponent implements OnInit {
   user: any;
+  currencies: any[];
+  selectedCurrency: any;
+
   drawerMode: string = "side";
   drawerOpened = false;
   smallerWindow = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private utilityService: UtilityService) {
     this.user = JSON.parse(localStorage.getItem('user'));
-    
+    this.selectedCurrency = JSON.parse(localStorage.getItem('currency'))
+
     // this code support responsiveness and page adjustments.
     if (window.innerWidth <= 480) {
       this.drawerMode = "over";
@@ -32,8 +37,8 @@ export class BankingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['/banking/accounts', this.user.accounts[0].id])
-
+    this.router.navigate(['/banking/accounts', this.user.accounts[0].id]);
+    this.getCurrencies();
   }
 
   logout() {
@@ -51,6 +56,24 @@ export class BankingComponent implements OnInit {
       this.drawerOpened = true;
       this.smallerWindow = false;
     }
+  }
+
+  changeCurrency(currency: any) {
+    localStorage.setItem('currency', JSON.stringify(currency));
+    this.selectedCurrency = currency;
+    location.reload();
+  }
+
+  getCurrencies() {
+    this.utilityService.getCurrencies()
+    .subscribe(currencies => {
+      this.currencies = currencies;
+      if (!this.selectedCurrency) {
+        this.selectedCurrency = currencies[0]
+      }
+    }, error => {
+      console.log(error);
+    });
   }
 
   showAccountDetail(leftPaneAccountItemComponent: LeftPaneAccountItemComponent) {

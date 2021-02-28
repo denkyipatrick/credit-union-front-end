@@ -20,6 +20,7 @@ export class TransfersComponent implements OnInit {
 
   isFetching: boolean;
   isErrorFetching: boolean;
+  shortBankName: String;
 
   accountTransfers: any[];
   transferReceiver: any;
@@ -35,6 +36,8 @@ export class TransfersComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('user'));
     this.userAccount = JSON.parse(localStorage.getItem('selected-account'));
     this.transferReceiver = JSON.parse(localStorage.getItem('transfer-receiver'));
+
+    this.shortBankName = this.utilityService.shortBankName
 
     this.form = new FormGroup({
       amount: new FormControl(),
@@ -72,8 +75,10 @@ export class TransfersComponent implements OnInit {
     this.dialogOpener.open(OkDialogComponent, {
       data: {
         title: 'No Outbound Transfers',
+        contactUs: `To go through with outbound money transfer, please ` + 
+        `<a href="/contact-us" class="text-blue-600">contact the bank</a>.`,
         message: `Dear ${this.user['firstName']}, kindly note that we do not allow ` + 
-        `transfers to accounts outside of BSV. This is due to online security.`
+        `transfers to accounts outside of our bank on the internet. This is because of online security reasons.`
       }
     })
   }

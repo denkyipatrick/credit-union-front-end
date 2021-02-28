@@ -38,9 +38,13 @@
             <div class="flex space-x-4 items-center">
                 <button mat-raised-button 
                     class="w-full bg-blue-600 text-white" 
-                    (click)="toggleShowForm()">MAKE INBOUND TRANSFER</button>
+                    (click)="toggleShowForm()">
+                    TRANSFER TO 
+                    <span class="uppercase">{{shortBankName}}</span> 
+                    ACCOUNT
+                </button>
                 <button mat-raised-button class="bg-red-600 text-white w-full"
-                (click)="outboundTransfer()">MAKE OUTBOUND TRANSFER</button>
+                (click)="outboundTransfer()">TRANSFER TO OTHER ACCOUNTS</button>
             </div>
 
             <div>

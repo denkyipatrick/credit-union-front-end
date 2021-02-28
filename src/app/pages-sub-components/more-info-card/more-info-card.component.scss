@@ -1,40 +1,4 @@
 :host {
   display: inline-block;
-  .more-info-card {
-      width: 400px;
-      max-width: 100%;
-      text-align: center;
-      cursor: default;
-      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.185);
-      transition: transform 300ms ease;
-      -webkit-transition: transform 300ms ease;
-      -moz-transition: transform 300ms ease;
-      -ms-transition: transform 300ms ease;
-      -o-transition: transform 300ms ease;
-      .image-wrapper {
-        img {
-          width: 100%;
-        }
-      }
-      .data-wrapper {
-        padding: 2rem;
-        h3 {
-          font-size: 2.125rem;
-          margin: 1rem 0;
-        }
-        p {
-          margin: 1rem 0;
-          font-size: 1.125rem;
-        }
-        a {
-        }
-      }
-      &:hover {
-        transform: scale(1.05);
-        -webkit-transform: scale(1.05);
-        -moz-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        -o-transform: scale(1.05);
-      }
-  }
+  
 }

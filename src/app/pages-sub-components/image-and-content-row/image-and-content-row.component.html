@@ -1,17 +1,19 @@
 
-<div class="image-and-content-row" [ngClass]="isFlipped ? 'flip-image' : ''">
-    <div class="content">
-        <h3>{{title}}</h3>
-        <span class="paragraphs" [innerHTML]="paragraphsText || paragraphs"></span>
-        <ul class="checkmark-bullets">
-            <li *ngFor="let item of items">{{item}}</li>
-        </ul>
-        <h4>{{subtitle}}</h4>
-        <ul class="checkmark-bullets">
-            <li *ngFor="let item of subListItems">{{item}}</li>
-        </ul>
-    </div>
-    <div class="image-wrapper">
-        <img [src]="imageUrl" />
+<div style="margin: 4rem 0;">
+    <div class="image-and-content-row" [ngClass]="isFlipped ? 'flip-image' : ''">
+        <div class="content">
+            <h3>{{title}}</h3>
+            <span class="paragraphs" [innerHTML]="paragraphsText || paragraphs"></span>
+            <ul class="checkmark-bullets">
+                <li *ngFor="let item of items">{{item}}</li>
+            </ul>
+            <h4>{{subtitle}}</h4>
+            <ul class="checkmark-bullets">
+                <li *ngFor="let item of subListItems">{{item}}</li>
+            </ul>
+        </div>
+        <div class="image-wrapper">
+            <img [src]="imageUrl" />
+        </div>
     </div>
 </div>

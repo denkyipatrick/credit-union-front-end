@@ -11,6 +11,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class TransactionsComponent implements OnInit {
   userAccount: any;
+  selectedCurrency: any;
+
   isFetching: boolean;
   isErrorFetching: boolean;
   @Input() transactions: any[];
@@ -27,8 +29,9 @@ export class TransactionsComponent implements OnInit {
   totalWithdrawnAmount = 0;
   totalTransferedAmount = 0;
 
-  constructor(private title: Title, private dialogOpener: MatDialog, private utilityService: UtilityService) {
+  constructor(private title: Title, private dialogOpener: MatDialog, public utilityService: UtilityService) {
     this.userAccount = JSON.parse(localStorage.getItem('selected-account'));
+    this.selectedCurrency = this.utilityService.selectedCurrency;
   }
 
   ngOnInit(): void {

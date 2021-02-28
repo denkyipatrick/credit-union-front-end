@@ -1,7 +1,6 @@
-
-<div class="image-and-dark-rect-content-row flex items-center">
-    <div class="dark-rect">
-        <div>
+<div style="margin: 4rem 0;">
+    <div *ngIf="!isFlipped" class="image-and-dark-rect-content-row flex items-center" style="width: 100%;">
+        <div class="dark-rect" style="width: 70%; height: 100%; padding: 5rem;">        
             <h3>{{title}}</h3>
             <p>{{description}}</p>
             <span [innerHTML]="paragraphs"></span>
@@ -17,11 +16,53 @@
                     </ul>
                 </li>
             </ul>
+            <div class="m-8">
+            </div>
         </div>
+        <div style="margin-left: -50px;">
+            <img [src]="imageUrl" style="width: 100%;" />
+        </div>
+    </div>
+    
+    <div *ngIf="isFlipped" class="image-and-dark-rect-content-row flex items-center flex-row-reverse" style="width: 100%; 
+        align-items: center;
+        flex-direction: row-reverse;">
+        <div class="dark-rect w-1/2" style="width: 70%; height: 100%; padding: 5rem;
+            margin-left: -50px;">        
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <span [innerHTML]="paragraphs"></span>
+            <a *ngIf="hasLink" [href]="linkUrl" class="btn btn-outlined">Learn More</a>
+            
+            <ul class="main-list checkmark-bullets">
+                <li *ngFor="let item of items">
+                    {{item.item || item}}
+                    <ul class="sub-list list-disc ml-6">
+                        <li *ngFor="let subItem of item.subItems">
+                            {{subItem}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="m-8">
+            </div>
+        </div>
+    
+        <div>
+            <img [src]="imageUrl" style="width: 100%;" />
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="image-and-dark-rect-content-row flex items-center">
+    <div class="dark-rect">
     </div>
     <div class="image-wrapper">
         <div>
             <img [src]="imageUrl" />
         </div>
     </div>
-</div>
+</div> -->

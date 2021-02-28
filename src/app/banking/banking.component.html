@@ -12,11 +12,31 @@
             <img src="../../assets/images/logo-square.png" 
             style="height: 50px;" />
         </span>
-        <button 
-            class="left-menu-link text-black" 
-            mat-button 
-            (click)="logout()"
-            routerLinkActive="active-left-menu-link">Sign Out</button>
+
+        <span>
+            <span>
+                <p style="font-size: .6rem;">Currency</p>
+                <button mat-button [matMenuTriggerFor]="menu" style="border: 1px solid rgb(185, 185, 185);">
+                    <span>{{selectedCurrency?.currency}}</span> 
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+            </span>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item *ngFor="let currency of currencies" 
+                    (click)="changeCurrency(currency)">
+                    {{currency?.currency}}
+                </button>
+            </mat-menu>
+    
+            <button 
+                class="left-menu-link text-black" 
+                mat-button 
+                (click)="logout()"
+                routerLinkActive="active-left-menu-link">
+                Sign Out
+            </button>
+        </span>
         
     </div>
 </div>
@@ -24,9 +44,9 @@
 <div class="flex items-start justify-between space-x-8 mx-auto" 
     style="width: 1440px; max-width: 90%; margin: 2rem auto;">
     
-    <mat-drawer-container>
+    <mat-drawer-container class="w-full">
         <mat-drawer #drawer [opened]="drawerOpened" [mode]="drawerMode" style="width: 300px;">
-            <div style="">
+            <div>
                 <div class="mb-8 px-4">
                     <span class="block mb-2">
                         <p class="text-xs mb-1 font-thin font-sans text-gray-600">Welcome</p>
@@ -39,7 +59,7 @@
                     </span>
                 </div>
                 <div>
-                    <span class="block px-4 pb-4" style="">
+                    <span class="block px-4 pb-4">
                         <p class="text-lg font-semibold">My Accounts</p>
                         <p class="text-gray-600" style="font-size: .8rem">
                             <span>Total: </span>
@@ -57,8 +77,7 @@
             </div>
         </mat-drawer>
         <mat-drawer-content 
-            style="width: 900px; max-width: 100%;"
-            class="pl-4 pr-1 bg-white">
+            class="px-4 mr-4 bg-white">
             <div class="w-full">
                 <div class="images flex items-center justify-center space-x-4 mb-4">
                     <img src="../../assets/images/security_norton.png" />
@@ -66,7 +85,7 @@
                     <img src="../../assets/images/security_2.png" />
                     <img src="../../assets/images/security_3.jpg" />
                 </div>
-                <p class="secure-indicator text-center text-green-600"
+                <p class="secure-indicator text-center my-4 text-green-600"
                     style="font-size: .8rem; text-decoration: blink;">Your connection to our online portal is secured...</p>
                 <router-outlet></router-outlet>
             </div>
@@ -74,53 +93,3 @@
     </mat-drawer-container>
 
 </div>
-
-<!-- <div 
-    class="flex items-start justify-between space-x-8 mx-auto" 
-    style="width: 1024px; max-width: 90%; margin: 2rem auto">
-
-    <div class="w-1/4" style="margin-top: 3rem;">
-        <div class="text-center">
-            <img src="../../assets/images/g18-300x300.png" style="width: 50px;"
-                class="mx-auto mb-4" />
-            <p class="text-gray-600 text-sm my-2">Secure Connection</p>
-        </div>
-        <ul>
-            <li>
-                <a mat-button 
-                class="left-menu-link"
-                routerLinkActive="active-left-menu-link" 
-                routerLink="/banking/dashboard">Dashboard</a>
-            </li>
-            <li>
-                <a mat-button 
-                class="left-menu-link"
-                routerLinkActive="active-left-menu-link" 
-                routerLink="/banking/transfers">Transfers</a>
-            </li>
-            <li>
-                <a mat-button 
-                class="left-menu-link" 
-                routerLinkActive="active-left-menu-link" 
-                routerLink="/banking/transactions">Transactions</a>
-            </li>
-            <li>
-                <button 
-                class="left-menu-link" 
-                mat-button 
-                (click)="logout()"
-                routerLinkActive="active-left-menu-link">Sign Out</button>
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <h5>Welcome </h5>
-    </div>
-    
-    <div class="w-full">
-        <router-outlet></router-outlet>
-    </div>
-</div> -->
-
-<!-- <app-footer></app-footer> -->

@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DepositDialogComponent } from './deposit-dialog/deposit-dialog.component';
-
+import { CurrenciesComponent } from './currencies/currencies.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { DepositDialogComponent } from './deposit-dialog/deposit-dialog.componen
     AccountTypesComponent,
     UserListItemComponent,
     UserDetailComponent,
-    DepositDialogComponent
+    DepositDialogComponent,
+    CurrenciesComponent
   ],
   imports: [
     CommonModule,

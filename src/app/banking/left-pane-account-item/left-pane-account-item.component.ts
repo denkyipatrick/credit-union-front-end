@@ -1,3 +1,4 @@
+import { UtilityService } from 'src/app/services/utility.service';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -6,11 +7,13 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./left-pane-account-item.component.scss']
 })
 export class LeftPaneAccountItemComponent implements OnInit {
+  currencyId: string;
   @Input() account: any;
   @Output() selected: EventEmitter<LeftPaneAccountItemComponent>
 
-  constructor() { 
-    this.selected = new EventEmitter()
+  constructor(public utilityService: UtilityService) { 
+    this.selected = new EventEmitter();
+    this.currencyId = this.utilityService.selectedCurrency.id;
   }
 
   ngOnInit(): void {

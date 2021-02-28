@@ -9,22 +9,25 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./deposits.component.scss']
 })
 export class DepositsComponent implements OnInit {
+  selectedCurrency: any;
   @Input() deposits: any[];
   @Input() depositedAmount: number;
 
   tableColumns: string[] = ['accountNumber', 'amount', 'date']
 
-  constructor(private dialogOpener: MatDialog) { }
+  constructor(private dialogOpener: MatDialog, public utilityService: UtilityService) {
+    this.selectedCurrency = this.utilityService.selectedCurrency;
+  }
 
   ngOnInit(): void {
   }
 
-  deposit() {
+  makeDeposit() {
     this.dialogOpener.open(OkDialogComponent, {
       data: {
         title: 'Error! Visit Our Branches',
         message: 'You cannot make an online deposit due to security concerns. ' + 
-        'You can make a deposit by visiting any of our branches.'
+        'You can make a deposit via our ATM machines or by visiting any of our branches.'
       }
     });
   }

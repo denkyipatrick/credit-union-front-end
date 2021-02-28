@@ -1,20 +1,30 @@
 
-<div class="w-full bg-teal-700" style="height: 60px;"></div>
+<!-- <div class="w-full bg-teal-700" style="height: 60px;"></div> -->
 <div class="text-center flex flex-col mx-auto justify-center" 
     style="height: 80vh; width: 700px; max-width: 90%;">
-    <img src="../../assets/images/g18-300x300.png" 
+    <img src="../../assets/images/logo-square.png" 
         style="width: 80px"
         class="mx-auto my-8 border-none" />
 
-    <p class="text-3xl my-4">Welcome</p>
+    <p class="text-3xl my-4">Welcome {{user?.firstName}}!</p>
     <p class="mb-8">
         Hi <span class="font-medium">{{user?.firstName}} {{user?.lastName}}</span>, 
-        you are welcome to BSV Online Banking. 
-        Your account details is received and being processed. Kindly be patient as we work 
-        on your account. You will be notified via SMS or Email as soon as we complete 
-        setting up your account. Stay Safe.
+        you are welcome to {{bankName}} Online Banking.
+    </p>
+    <p class="text-gray-700 text-base">
+        We have received your account details in our database. <br />
+        Be informed that we are working on opening your account with absolute 
+        urgency. Kindly be patient as we work on it. You will be notified via SMS or Email as soon as we finish 
+        setting it up. Stay Safe.
     </p>
     <br />
 
-    <a href="/" mat-raised-button class="yellow-button self-center inline-block mt-8">GO HOME</a>
+    <a href="/" mat-raised-button class="yellow-button self-center inline-block mt-8">GO HOME</a>    
+    
+    <div class="security-images flex items-center justify-center space-x-2 py-4 mt-4">
+        <img src="../../assets/images/security_norton.png" />
+        <img src="../../assets/images/security_1.png" />
+        <img src="../../assets/images/security_2.png" />
+        <img src="../../assets/images/security_3.jpg" />
+    </div>
 </div>

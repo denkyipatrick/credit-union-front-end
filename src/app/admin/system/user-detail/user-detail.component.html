@@ -6,7 +6,6 @@
         </button>
         <p class="text-lg" style="margin-right: auto;">User Details</p>
         <button 
-            *ngIf="!user?.password"
             mat-raised-button 
             (click)="setPassword()">
             SET PASSWORD

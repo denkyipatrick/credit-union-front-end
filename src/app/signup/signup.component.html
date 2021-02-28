@@ -2,8 +2,8 @@
 <!-- <div class="w-full bg-teal-700" style="height: 60px;"></div> -->
 
 <div class="mx-auto my-4 py-8" style="width: 800px; max-width: 90%;">
-    <div class="flex space-x-8" style="border: 1px solid lightgray; border-radius: 8px;">
-        <div style="height: auto; width: 300px; overflow-y: hidden; 
+    <div class="flex lg:space-x-8" style="border: 1px solid lightgray; border-radius: 8px;">
+        <div class=" hidden md:block" style="height: auto; width: 300px; overflow-y: hidden; 
             background-repeat: no-repeat;
             background-size: cover;
             border-top-left-radius: 8px;
@@ -16,24 +16,34 @@
                     class="mx-auto outline-none border-none mb-8"
                     style="width: 70px;" />
                 <h4 class="text-3xl my-4 font-light">Online Banking</h4>
+                <p class="text-sm">
+                    <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
+                    if you already have an account with {{bankName}}
+                </p>
             </div>
-            <mat-horizontal-stepper #stepper [linear]="false" labelPosition="bottom" style="">
+            <mat-horizontal-stepper #stepper [linear]="true" labelPosition="bottom" style="">
                 <mat-step [stepControl]="nameForm">
                     <ng-template matStepLabel>Your Basic Details</ng-template>
                     <form [formGroup]="nameForm">
                         <mat-form-field appearance="outline" class="w-full mb-4">
                             <mat-label>First Name</mat-label>
                             <input required matInput formControlName="fName" />
+                            <mat-error>
+                                Please enter your first name.
+                            </mat-error>
                         </mat-form-field>
             
                         <mat-form-field appearance="outline" class="w-full mb-4">
                             <mat-label>Last Name</mat-label>
                             <input required matInput formControlName="lName" />
+                            <mat-error>
+                                Please enter your last name.
+                            </mat-error>
                         </mat-form-field>
 
                         <div class="text-center space-x-4">
                             <button mat-raised-button color="primary" 
-                            matStepperNext>Next</button>
+                            (click)="saveName(stepper)">Next</button>
                         </div>
                     </form>
                 </mat-step>
@@ -58,7 +68,7 @@
                             <button mat-raised-button color="primary" matStepperPrevious 
                                 type="button">Back</button>
                             <button mat-raised-button color="primary" 
-                                matStepperNext 
+                                (click)="saveContact(stepper)" 
                                 type="button">Next</button>
                         </div>
                     </form>
@@ -83,22 +93,25 @@
                                 Please upload any of your national IDs 
                                 <span class="inline-block">(National Identity Card, Driving License)</span>
                             </p>
-                            <input class="inline-block w-full" type="file"
+                            
+                            <input class="inline-block w-full" type="file"                                
+                                formControlName="photoId"
                                 style="font-size: .8rem; font-family: 'Courier New', Courier, monospace;" />
+                            
                         </div>
                         
                         <div class="text-center my-2">
                             <button mat-raised-button color="primary"
-                                (click)="stepper">Create New Account</button>                            
+                                (click)="createAccount()"
+                                [disabled]="creatingUser">
+                                <span *ngIf="!creatingUser">Create New Account</span>
+                                <span *ngIf="creatingUser">Creating Account...</span>
+                            </button>                            
                         </div>
                     </form>
                 </mat-step>
             </mat-horizontal-stepper>
             
-            <p>
-                <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
-                if you already have an account with {{bankName}}
-            </p>
             <form class="my-4 mr-8 hidden" [formGroup]="form">
         
                 <div class="text-center mb-8 px-8">
@@ -178,7 +191,7 @@
                                 <span class="inline-block">(National Identity Card, Driving License)</span>
                             </p>
                             <input class="inline-block w-full bg-yellow-600 text-white" type="file" />
-                        </div>
+                        </div>                        
                     </span>
                 </div>
         
@@ -213,96 +226,12 @@
 
             <div class="security-images flex items-center justify-center space-x-2 py-4">
                 <img src="../../assets/images/security_norton.png" />
-                <img src="../../assets/images/security_3.jpg" />
+                <img src="../../assets/images/security_1.png" />
                 <img src="../../assets/images/security_2.png" />
+                <img src="../../assets/images/security_3.jpg" />
             </div>
 
         </div>
     </div>
 </div>
 
-<!-- <div class="mt-8">
-    <form [formGroup]="form" 
-        (ngSubmit)="createAccount()"
-        style="width: 350px; max-width: 90%;"
-        class="mx-auto my-8 space-y-4">
-
-        <div class="text-center mb-8">
-            <img src="../../assets/images/g18-300x300.png" 
-                class="mx-auto outline-none border-none mb-8"
-                style="width: 70px;" />
-            <p class="text-3xl my-4 font-light">Online Banking</p>
-            <p>
-                <a href="/signin" class="text-blue-700 font-medium">Sign in</a> 
-                if you already have an account with {{bankName}}
-            </p>
-        </div>
-
-        <div>
-            <p class="text-base font-normal">Name</p>
-            <mat-form-field appearance="outline" class="w-full mb-4">
-                <mat-label>First Name</mat-label>
-                <input required matInput formControlName="fName" />
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="w-full mb-4">
-                <mat-label>Last Name</mat-label>
-                <input required matInput formControlName="lName" />
-            </mat-form-field>
-        </div>
-        
-        <div>
-            <p class="text-base font-normal">Contact</p>
-            <mat-form-field appearance="outline" class="w-full mb-4">
-                <mat-label>Email Address</mat-label>
-                <input required email matInput formControlName="email" />
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="w-full mb-4">
-                <mat-label>Phone Number (Intl. Format)</mat-label>
-                <input required matInput formControlName="phone" />
-                <mat-hint>
-                    Phone number must be in the international format. 
-                    <span class="inline-block">Example: (+1 202 220 890)</span>
-                </mat-hint>
-            </mat-form-field>
-        </div>
-        
-        <div>
-            <p class="text-base font-normal">Account</p>
-            <p class="text-sm">Choose which type of account you would like to open.</p>
-            <mat-form-field appearance="outline" class="w-full mb-4">
-                <mat-label>Choose Account Type</mat-label>
-                <mat-select formControlName="accountTypeName">
-                    <mat-option *ngFor="let accountType of accountTypes" [value]="accountType?.name">
-                        {{accountType?.name}} Account
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <div class="p-4 bg-green-400 rounded-md"> 
-                <p class="text-sm">
-                    Please upload any of your national IDs <span class="inline-block">(National Identity Card, Driving License)</span>
-                </p>
-                <input class="inline-block w-full bg-yellow-600 text-white" type="file" />
-            </div>
-        </div>
-
-        <div>
-            <p class="text-red-700 text-center" style="margin: 1.5rem 0;">
-                {{errorMessage}}
-            </p>
-
-            <button mat-raised-button 
-                [disabled]="form.invalid || creatingUser"
-                class="yellow-button w-full inline-block my-4">
-                REGISTER
-            </button>
-
-            <p class="text-xs text-center" style="margin: 1rem 0;">
-                By clicking on REGISTER, you agree 
-                to our Terms.
-            </p>
-        </div>
-    </form>
-</div> -->
