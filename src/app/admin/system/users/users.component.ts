@@ -1,10 +1,12 @@
+import { UtilityService } from './../../../services/utility.service';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { AdminService } from '../../../services/admin.service';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
   users: any[];
@@ -12,9 +14,14 @@ export class UsersComponent implements OnInit {
   errorMessage: string;
   isErrorFetching: boolean;
 
-  constructor(private adminService: AdminService) { }
+  constructor(
+    private title: Title,
+    private adminService: AdminService,
+    private utilityService: UtilityService
+  ) {}
 
   ngOnInit(): void {
+    this.title.setTitle(`Users | ${this.utilityService.applicationName}`);
     this.getUsers();
   }
 
@@ -23,23 +30,24 @@ export class UsersComponent implements OnInit {
     this.errorMessage = '';
     this.isErrorFetching = false;
 
-    this.adminService.getUsers()
-    .subscribe(users => {
-      this.users = users;
-      this.isFetching = false;
+    this.adminService.getUsers().subscribe(
+      (users) => {
+        this.users = users;
+        this.isFetching = false;
 
-      console.log(users);
-    }, error => {
-      this.isFetching = false;
-      this.isErrorFetching = true;
+        console.log(users);
+      },
+      (error) => {
+        this.isFetching = false;
+        this.isErrorFetching = true;
 
-      switch(error.status) {
-        case 400:
-          break;
-        case 500:
-          break;
+        switch (error.status) {
+          case 400:
+            break;
+          case 500:
+            break;
+        }
       }
-    });
+    );
   }
-
 }
