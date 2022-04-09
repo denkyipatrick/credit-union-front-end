@@ -41,4 +41,8 @@ export class AdminService {
   public depositAmount(formData: any) {
     return this.http.post<object>(`${this.constantsService.TRANSACTIONS_URL}/deposit`, formData)
   }
+  
+  public withdrawAmount(formData: any) {
+    return this.http.post<object>(`${this.constantsService.TRANSACTIONS_URL}/withdraw`, formData)
+  }
 }

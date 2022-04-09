@@ -13,6 +13,7 @@ import { UserListItemComponent } from './user-list-item/user-list-item.component
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DepositDialogComponent } from './deposit-dialog/deposit-dialog.component';
 import { CurrenciesComponent } from './currencies/currencies.component';
+import { WithdrawDialogComponent } from './withdraw-dialog/withdraw-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CurrenciesComponent } from './currencies/currencies.component';
     UserListItemComponent,
     UserDetailComponent,
     DepositDialogComponent,
-    CurrenciesComponent
+    CurrenciesComponent,
+    WithdrawDialogComponent
   ],
   imports: [
     CommonModule,

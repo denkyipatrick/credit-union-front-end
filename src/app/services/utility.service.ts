@@ -23,7 +23,7 @@ export class UtilityService {
     this.dollarSymbol = '$';
 
     this.shortBankName = "Lollands";
-    this.bankPhoneNumber = "+31 203 698 556";
+    this.bankPhoneNumber = "+31 970 0503 4293";
     this.bankName = `${this.shortBankName} Credit Union`;
     this.applicationName = `${this.bankName} - Online Banking Platform`;
   }

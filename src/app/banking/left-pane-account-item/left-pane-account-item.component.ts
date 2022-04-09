@@ -13,7 +13,7 @@ export class LeftPaneAccountItemComponent implements OnInit {
 
   constructor(public utilityService: UtilityService) { 
     this.selected = new EventEmitter();
-    this.currencyId = this.utilityService.selectedCurrency.id;
+    this.currencyId = this.utilityService?.selectedCurrency?.id;
   }
 
   ngOnInit(): void {

@@ -71,6 +71,9 @@ export class BankingComponent implements OnInit {
       if (!this.selectedCurrency) {
         this.selectedCurrency = currencies[0]
       }
+
+      localStorage.setItem('currency', JSON.stringify(this.selectedCurrency))
+      localStorage.setItem('currencies', JSON.stringify(currencies))
     }, error => {
       console.log(error);
     });

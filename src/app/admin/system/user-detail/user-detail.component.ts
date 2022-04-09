@@ -1,3 +1,4 @@
+import { WithdrawDialogComponent } from './../withdraw-dialog/withdraw-dialog.component';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AdminService } from 'src/app/services/admin.service';
 import { UtilityService } from './../../../services/utility.service';
@@ -60,6 +61,22 @@ export class UserDetailComponent implements OnInit {
       this.user.accounts.forEach(account => {
         if (account.id === transaction.userAccountId) {
           account.balance += +transaction.amount;
+        }
+      })
+    })
+  }
+  
+  showWithdrawDialog(userAccount: any) {
+    this.dialog.open(WithdrawDialogComponent, {
+      data: {
+        account: userAccount
+      }
+    })
+    .afterClosed()
+    .subscribe(transaction => {
+      this.user.accounts.forEach(account => {
+        if (account.id === transaction.userAccountId) {
+          account.balance -= +transaction.amount;
         }
       })
     })

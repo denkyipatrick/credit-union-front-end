@@ -31,30 +31,35 @@
                         <p class="font-semibold">Accounts</p>
                         <button mat-raised-button 
                             (click)="toggleShowForm()"
+                            color="primary"
                             class="yellow-button">Create Bank Account</button>
                     </div>
 
                     <div style="margin-top: 1rem;">
                         <span class="flex items-center space-x-4">
-                            <p class="w-1/3 font-semibold font-sans">Type</p>
-                            <p class="w-1/3 font-semibold font-sans">Number</p>
-                            <p class="w-1/3 font-semibold font-sans">Balance</p>
+                            <p class="w-1/3 text-base font-semibold font-sans">Type</p>
+                            <p class="w-1/3 text-base font-semibold font-sans">Number</p>
+                            <p class="w-1/3 text-base font-semibold font-sans">Balance</p>
                         </span>
 
                         <ul>
-                            <li class="flex items-center space-x-4" *ngFor="let userAccount of user?.accounts">
-                                <p class="w-1/3">{{userAccount?.accountTypeName}}</p>
-                                <p class="w-1/3">{{userAccount?.accountNumber}}</p>
-                                <p class="w-1/3 flex items-center justify-between">
-                                    ${{userAccount?.balance?.toFixed(2)}}
-                                    <button mat-raised-button (click)="showDepositDialog(userAccount)">deposit</button>
-                                </p>
+                            <li *ngFor="let userAccount of user?.accounts">
+                                <div class="flex items-center space-x-4 border-b-2">
+                                    <p class="w-1/3 text-sm">{{userAccount?.accountTypeName}}</p>
+                                    <p class="w-1/3 text-sm">{{userAccount?.accountNumber}}</p>
+                                    <p class="w-1/3 text-sm flex items-center justify-between">
+                                        ${{userAccount?.balance?.toFixed(2)}}
+                                    </p>
+                                </div>
+
+                                <div class="space-x-4" style="margin-top: .5rem">
+                                    <button mat-raised-button 
+                                        (click)="showDepositDialog(userAccount)">Deposit</button>
+                                    <button mat-raised-button 
+                                        (click)="showWithdrawDialog(userAccount)">Withdraw</button>
+                                </div>
                             </li>
                         </ul>
-
-                        <span>
-
-                        </span>
                     </div>
                 </div>
 

@@ -930,12 +930,6 @@ footer .legal-section p {
   margin-left: calc(2rem * calc(1 - var(--space-x-reverse)));
 }
 
-.space-y-12 > :not(template) ~ :not(template) {
-  --space-y-reverse: 0;
-  margin-top: calc(3rem * calc(1 - var(--space-y-reverse)));
-  margin-bottom: calc(3rem * var(--space-y-reverse));
-}
-
 .bg-white {
   --bg-opacity: 1;
   background-color: #fff;
@@ -1048,6 +1042,10 @@ footer .legal-section p {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
 }
 
 .cursor-default {
@@ -1244,6 +1242,10 @@ footer .legal-section p {
   margin-top: 1rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1350,16 +1352,8 @@ footer .legal-section p {
   padding-right: 3rem;
 }
 
-.pr-1 {
-  padding-right: 0.25rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
 }
 
 .pb-8 {

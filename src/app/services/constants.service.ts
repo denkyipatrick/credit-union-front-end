@@ -1,7 +1,8 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConstantsService {
   private SERVER_URL: string;
@@ -15,8 +16,7 @@ export class ConstantsService {
   public TRANSACTIONS_URL: string;
 
   constructor() {
-    this.SERVER_URL = `http://localhost:5051/api/v1`;
-    this.SERVER_URL = `https://bsvnett.com:5051/api/v1`;
+    this.SERVER_URL = environment.apiURL;
     this.USERS_URL = `${this.SERVER_URL}/users`;
     this.ACCOUNTS_URL = `${this.SERVER_URL}/accounts`;
     this.CURRENCIES_URL = `${this.SERVER_URL}/currencies`;
