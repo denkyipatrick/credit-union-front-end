@@ -25,6 +25,10 @@ export class UsersComponent implements OnInit {
     this.getUsers();
   }
 
+  userDeleted(userId: string) {
+    this.users = this.users.filter((user) => user.id !== userId);
+  }
+
   getUsers() {
     this.isFetching = true;
     this.errorMessage = '';
@@ -34,8 +38,6 @@ export class UsersComponent implements OnInit {
       (users) => {
         this.users = users;
         this.isFetching = false;
-
-        console.log(users);
       },
       (error) => {
         this.isFetching = false;
