@@ -1,52 +1,47 @@
-
 <app-loader *ngIf="isFetching"></app-loader>
 
 <div>
-    <div *ngIf="accountTypes?.length && !isFetching">
-        <div class="flex space-x-4 mb-4 items-center">
-            <button mat-icon-button>
-                <mat-icon>arrow_back</mat-icon>
-            </button>
-            
-            <p class="mr-auto text-lg" style="margin-right: auto;">Account Types</p>
+  <div *ngIf="accountTypes?.length && !isFetching">
+    <div class="flex space-x-4 mb-4 items-center">
+      <p class="mr-auto text-lg" style="margin-right: auto">Account Types</p>
 
-            <button class="yellow-button" 
-                mat-raised-button
-                (click)="toggleShowForm()">
-                NEW ACCOUNT TYPE
-            </button>
-        </div>
-
-        <div *ngIf="showForm" class="my-4">
-            <form [formGroup]="form" (ngSubmit)="createAccountType()">
-                <div class="flex items-center space-x-4">
-                    <mat-form-field class="w-full">
-                        <mat-label>Account Type Name</mat-label>
-                        <input required matInput formControlName="name" />
-                    </mat-form-field>
-
-                    <button mat-raised-button class="bg-blue-500 text-white">
-                        SAVE
-                    </button>
-                </div>
-            </form>            
-        </div>
-
-        <div>
-            <ul class="space-y-4">
-                <li *ngFor="let accountType of accountTypes">
-                    <mat-card>
-                        <mat-card-content>
-                            <p>{{accountType?.name}} Account</p>
-                        </mat-card-content>
-                    </mat-card>
-                </li>
-            </ul>
-        </div>
+      <button
+        class="yellow-button"
+        mat-raised-button
+        (click)="toggleShowForm()"
+      >
+        NEW ACCOUNT TYPE
+      </button>
     </div>
 
-    <div *ngIf="isErrorFetching">
-        <p>{{errorMessage}}</p>
-        <button mat-raised-button (click)="getAccountTypes()">RETRY</button>
+    <div *ngIf="showForm" class="my-4">
+      <form [formGroup]="form" (ngSubmit)="createAccountType()">
+        <div class="flex items-center space-x-4">
+          <mat-form-field class="w-full">
+            <mat-label>Account Type Name</mat-label>
+            <input required matInput formControlName="name" />
+          </mat-form-field>
+
+          <button mat-raised-button class="bg-blue-500 text-white">SAVE</button>
+        </div>
+      </form>
     </div>
+
+    <div>
+      <ul class="space-y-4">
+        <li *ngFor="let accountType of accountTypes">
+          <mat-card>
+            <mat-card-content>
+              <p>{{ accountType?.name }} Account</p>
+            </mat-card-content>
+          </mat-card>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="isErrorFetching">
+    <p>{{ errorMessage }}</p>
+    <button mat-raised-button (click)="getAccountTypes()">RETRY</button>
+  </div>
 </div>

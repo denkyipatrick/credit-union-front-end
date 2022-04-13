@@ -1,35 +1,37 @@
 <app-loader *ngIf="isFetching"></app-loader>
 
-
-<div *ngIf="isErrorFetching" style="height: 30vh;" class="flex mx-auto items-center justify-center">
-    <p class="text-center text-red-600">{{errorMessage}}</p>
+<div
+  *ngIf="isErrorFetching"
+  style="height: 30vh"
+  class="flex mx-auto items-center justify-center"
+>
+  <p class="text-center text-red-600">{{ errorMessage }}</p>
 </div>
 
 <div *ngIf="!isFetching && userAccounts?.length">
-    <span class="flex space-x-4 items-center">
-        <button mat-icon-button>
-            <mat-icon>arrow_back</mat-icon>
-        </button>
-        <p class="text-xl my-8 font-normal" style="margin: 1.5rem 0;">Accounts</p>
-    </span>
+  <span class="flex space-x-4 items-center">
+    <p class="text-xl my-8 font-normal" style="margin: 1.5rem 0">Accounts</p>
+  </span>
 
-    <span class="flex items-center space-x-4 sticky top- ml-4">
-        <p class="w-1/3">Owner</p>
-        <p  class="w-1/3">Account Number</p>
-        <p  class="w-1/3">Account Type</p>
-    </span>
-    <ul class="space-y-4">
-        <li *ngFor="let userAccount of userAccounts">
-            <mat-card>
-                <mat-card-content>
-                    <span class="flex items-center space-x-4">
-                        <p  class="w-1/3">{{userAccount?.owner?.firstName}} {{userAccount?.owner?.lastName}}</p>
-                        <p  class="w-1/3">{{userAccount?.accountNumber}}</p>
-                        <p  class="w-1/3 ml-4">{{userAccount?.accountTypeName}}</p>
-                    </span>
-                    
-                </mat-card-content>
-            </mat-card>
-        </li>
-    </ul>
+  <span class="flex items-center space-x-4 sticky top- ml-4">
+    <p class="w-1/3">Owner</p>
+    <p class="w-1/3">Account Number</p>
+    <p class="w-1/3">Account Type</p>
+  </span>
+  <ul class="space-y-4">
+    <li *ngFor="let userAccount of userAccounts">
+      <mat-card>
+        <mat-card-content>
+          <span class="flex items-center space-x-4">
+            <p class="w-1/3">
+              {{ userAccount?.owner?.firstName }}
+              {{ userAccount?.owner?.lastName }}
+            </p>
+            <p class="w-1/3">{{ userAccount?.accountNumber }}</p>
+            <p class="w-1/3 ml-4">{{ userAccount?.accountTypeName }}</p>
+          </span>
+        </mat-card-content>
+      </mat-card>
+    </li>
+  </ul>
 </div>
