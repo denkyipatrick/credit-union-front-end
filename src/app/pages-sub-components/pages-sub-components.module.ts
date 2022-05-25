@@ -18,6 +18,7 @@ import { TitleShadowCardComponent } from './title-shadow-card/title-shadow-card.
 import { GrayHeaderItemComponent } from './gray-header-item/gray-header-item.component';
 import { ImageAndWhiteRectRowComponent } from './image-and-white-rect-row/image-and-white-rect-row.component';
 import { TeamMemberCardComponent } from './team-member-card/team-member-card.component';
+import { WorkingHoursComponent } from './working-hours/working-hours.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TeamMemberCardComponent } from './team-member-card/team-member-card.com
     TitleShadowCardComponent,
     GrayHeaderItemComponent,
     ImageAndWhiteRectRowComponent,
-    TeamMemberCardComponent
+    TeamMemberCardComponent,
+    WorkingHoursComponent
   ],
   imports: [
     CommonModule,

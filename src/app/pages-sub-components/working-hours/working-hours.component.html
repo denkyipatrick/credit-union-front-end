@@ -1,0 +1,11 @@
+<table class="w-full">
+  <tbody>
+    <tr
+      *ngFor="let workingHour of workingHours"
+      class="w-full grid grid-cols-2"
+    >
+      <td>{{ workingHour.day }}</td>
+      <td>{{ workingHour.openTime }} - {{ workingHour.closeTime }}</td>
+    </tr>
+  </tbody>
+</table>
