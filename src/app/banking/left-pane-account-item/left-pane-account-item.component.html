@@ -1,23 +1,29 @@
-
 <!-- <mat-card class="mb-4">
     <mat-card-content> -->
-        <div style="border-bottom: 1px solid lightgray;"
-            class="flex items-start space-x-4 p-2 cursor-pointer"
-            (click)="accountSelected()">
-            <div style="width: 40px;">
-                <img style="width: 100%;" 
-                    src="../../../assets/images/vault_icon.jpg" />
-            </div>
-            <span>
-                <h5 class="font-sans text-lg font-semibold mb-2">{{account?.accountTypeName}} Account</h5>
-                <p class="text-sm">Account Number: {{account?.accountNumber}}</p>
-                <p class="text-base font-medium">
-                    Balance: 
-                    <span *ngIf="currencyId == 'euro_currency'">{{utilityService.euroSymbol}}</span>
-                    <span *ngIf="currencyId == 'usd_currency'">{{utilityService.dollarSymbol}}</span>
-                    {{(account?.balance * utilityService.selectedCurrency?.rate)?.toFixed(2)}}
-                </p>
-            </span>
-        </div>
-    <!-- </mat-card-content>
+<div
+  style="border-bottom: 1px solid lightgray"
+  class="flex items-start space-x-4 p-2 cursor-pointer"
+  (click)="accountSelected()"
+>
+  <div style="width: 40px">
+    <img style="width: 100%" src="../../../assets/images/vault_icon.jpg" />
+  </div>
+  <span>
+    <h5 class="font-sans text-lg font-semibold mb-2">
+      {{ account?.accountTypeName }} Account
+    </h5>
+    <p class="text-sm">Account Number: {{ account?.accountNumber }}</p>
+    <p class="text-base font-medium">
+      Balance:
+      <span *ngIf="currencyId == 'euro_currency'">{{
+        utilityService.euroSymbol
+      }}</span>
+      <span *ngIf="currencyId == 'usd_currency'">{{
+        utilityService.dollarSymbol
+      }}</span>
+      {{ parsedBalance }}
+    </p>
+  </span>
+</div>
+<!-- </mat-card-content>
 </mat-card> -->

@@ -13,20 +13,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LeftPaneAccountItemComponent } from './left-pane-account-item/left-pane-account-item.component';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { DepositsComponent } from './deposits/deposits.component';
-import { WidthrawalsComponent } from './widthrawals/widthrawals.component';
 import { WithdrawalsComponent } from './withdrawals/withdrawals.component';
 import { TransactionsTableComponent } from './transactions-table/transactions-table.component';
 
 @NgModule({
   declarations: [
-    BankingComponent, 
-    TransactionsComponent, 
-    TransfersComponent, 
-    DashboardComponent, 
-    LeftPaneAccountItemComponent, 
-    AccountDetailComponent, 
-    DepositsComponent, 
-    WidthrawalsComponent, WithdrawalsComponent, TransactionsTableComponent
+    BankingComponent,
+    TransactionsComponent,
+    TransfersComponent,
+    DashboardComponent,
+    LeftPaneAccountItemComponent,
+    AccountDetailComponent,
+    DepositsComponent,
+    WithdrawalsComponent,
+    TransactionsTableComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +34,7 @@ import { TransactionsTableComponent } from './transactions-table/transactions-ta
     BankingRoutingModule,
     WaitingLoaderModule,
     PagesSubComponentsModule,
-    MaterialComponentsModule
-  ]
+    MaterialComponentsModule,
+  ],
 })
-export class BankingModule { }
+export class BankingModule {}
