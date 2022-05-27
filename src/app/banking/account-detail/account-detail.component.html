@@ -1,58 +1,63 @@
-
-<mat-card class="mb-8 mr-4 w-full" style="margin-right: .5rem">
-    <mat-card-content>
-        <div class="mb-16">
-            <span class="flex items-start justify-between">
-                <span>
-                    <p class="text-gray-700 font-normal text-xs">Account Type</p>
-                    <p>{{account?.accountTypeName}}</p>
-                    <p class="text-base">Account Number: {{account?.accountNumber}}</p>
-                </span>
-
-                <span>
-                    <p class="text-gray-700 font-normal text-xs">Balance</p>
-                    <p class="">
-                        <span *ngIf="selectedCurrency.id == 'usd_currency'">
-                            {{utilityService.dollarSymbol}}
-                        </span>
-                        <span *ngIf="selectedCurrency.id == 'euro_currency'">
-                            {{utilityService.euroSymbol}}
-                        </span>
-                        <!-- {{(account?.balance || 0)?.toFixed(2)}} -->
-                        {{(account?.balance * selectedCurrency.rate)?.toFixed(2)}}
-                    </p>
-                </span>
+<mat-card class="mb-8 mr-4 w-full" style="margin-right: 0.5rem">
+  <mat-card-content>
+    <div class="mb-16">
+      <span class="grid grid-cols-2 md:grid-cols-3 gap-y-4">
+        <span>
+          <p class="text-gray-700 font-normal text-xs">Account Type</p>
+          <p class="text-base md:text-lg">{{ account?.accountTypeName }}</p>
+        </span>
+        <span>
+          <p class="text-gray-700 font-normal text-xs">Account Number</p>
+          <p class="text-base md:text-lg">{{ account?.accountNumber }}</p>
+        </span>
+        <span>
+          <p class="text-gray-700 font-normal text-xs">Balance</p>
+          <p class="text-base md:text-lg">
+            <span *ngIf="selectedCurrency.id == 'usd_currency'">
+              {{ utilityService.dollarSymbol }}
             </span>
+            <span *ngIf="selectedCurrency.id == 'euro_currency'">
+              {{ utilityService.euroSymbol }}
+            </span>
+            <!-- {{(account?.balance || 0)?.toFixed(2)}} -->
+            {{ (account?.balance * selectedCurrency.rate)?.toFixed(2) }}
+          </p>
+        </span>
+      </span>
+    </div>
 
-        </div>
-
-        
-        <div>
-            <mat-tab-group>
-                <mat-tab label="Bank Statement">
-                    <div class="my-4">
-                        <app-transactions [transactions]="account?.transactions"
-                            [transactedAmount]="totalTransactedAmount"></app-transactions>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Deposits">
-                    <div>
-                        <app-deposits [deposits]="account?.deposits"
-                            [depositedAmount]="totalDepositedAmount"></app-deposits>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Withdrawals">
-                    <div>
-                        <app-withdrawals [withdrawals]="account?.withdrawals" 
-                            [withdrawnAmount]="totalWithdrawnAmount"></app-withdrawals>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Transfers">
-                    <div>
-                        <app-transfers></app-transfers>
-                    </div>
-                </mat-tab>
-            </mat-tab-group>
-        </div>
-    </mat-card-content>
+    <div>
+      <mat-tab-group>
+        <mat-tab label="Bank Statement">
+          <div class="my-4">
+            <app-transactions
+              [transactions]="account?.transactions"
+              [transactedAmount]="totalTransactedAmount"
+            ></app-transactions>
+          </div>
+        </mat-tab>
+        <mat-tab label="Deposits">
+          <div>
+            <app-deposits
+              [deposits]="account?.deposits"
+              [depositedAmount]="totalDepositedAmount"
+            ></app-deposits>
+          </div>
+        </mat-tab>
+        <mat-tab label="Withdrawals">
+          <div>
+            <app-withdrawals
+              [withdrawals]="account?.withdrawals"
+              [withdrawnAmount]="totalWithdrawnAmount"
+            ></app-withdrawals>
+          </div>
+        </mat-tab>
+        <mat-tab label="Transfers">
+          <div>
+            <app-transfers></app-transfers>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-card-content>
 </mat-card>
