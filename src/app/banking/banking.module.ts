@@ -15,6 +15,7 @@ import { AccountDetailComponent } from './account-detail/account-detail.componen
 import { DepositsComponent } from './deposits/deposits.component';
 import { WidthrawalsComponent } from './widthrawals/widthrawals.component';
 import { WithdrawalsComponent } from './withdrawals/withdrawals.component';
+import { TransactionsTableComponent } from './transactions-table/transactions-table.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { WithdrawalsComponent } from './withdrawals/withdrawals.component';
     LeftPaneAccountItemComponent, 
     AccountDetailComponent, 
     DepositsComponent, 
-    WidthrawalsComponent, WithdrawalsComponent
+    WidthrawalsComponent, WithdrawalsComponent, TransactionsTableComponent
   ],
   imports: [
     CommonModule,
