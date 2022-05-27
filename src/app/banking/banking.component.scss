@@ -1,27 +1,33 @@
 #header {
-    background-image: linear-gradient(to left  #1761a0 white);
+  background-image: linear-gradient(to left #1761a0 white);
 }
 
 .left-menu-link {
-    text-align: left;
+  text-align: left;
 }
 
 body {
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: black;
-    font-family: sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  font-family: sans-serif;
 }
 
 p {
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 .images {
-    img {
-        height: 50px;
-    }
+  img {
+    max-height: 50px;
+    max-width: 100%;
+  }
 }
 
 // .secure-indicator {
