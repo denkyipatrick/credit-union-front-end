@@ -19,8 +19,7 @@
             <span *ngIf="selectedCurrency.id == 'euro_currency'">
               {{ utilityService.euroSymbol }}
             </span>
-            <!-- {{(account?.balance || 0)?.toFixed(2)}} -->
-            {{ (account?.balance * selectedCurrency.rate)?.toFixed(2) }}
+            {{ parsedBalance }}
           </p>
         </span>
       </span>

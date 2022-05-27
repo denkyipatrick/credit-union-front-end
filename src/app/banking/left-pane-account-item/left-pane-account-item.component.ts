@@ -22,10 +22,12 @@ export class LeftPaneAccountItemComponent implements OnInit {
   }
 
   parseAccountBalance() {
-    this.parsedBalance = (
-      (this.account?.balance *
-        this.utilityService.selectedCurrency?.rate) as Number
-    ).toLocaleString('en-US');
+    this.parsedBalance = this.utilityService.parseNumberWithCommas(
+      (
+        (this.account?.balance *
+          this.utilityService.selectedCurrency?.rate) as Number
+      ).toFixed(2)
+    );
   }
 
   accountSelected() {

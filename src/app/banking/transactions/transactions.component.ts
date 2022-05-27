@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.scss']
+  styleUrls: ['./transactions.component.scss'],
 })
 export class TransactionsComponent implements OnInit {
   userAccount: any;
@@ -16,9 +16,10 @@ export class TransactionsComponent implements OnInit {
   isFetching: boolean;
   isErrorFetching: boolean;
   @Input() transactions: any[];
+  transactedAmountString: string;
   @Input() transactedAmount: number;
 
-  transactionsTableColumns = ['accountNumber', 'amount', 'type', 'date']
+  transactionsTableColumns = ['accountNumber', 'amount', 'type', 'date'];
   transactionTypes: string[];
 
   deposits: any[];
@@ -28,65 +29,69 @@ export class TransactionsComponent implements OnInit {
   totalDepositedAmount = 0;
   totalWithdrawnAmount = 0;
   totalTransferedAmount = 0;
+  depositedAmountString: string;
+  parseDepositedNumber: Function;
 
-  constructor(private title: Title, private dialogOpener: MatDialog, public utilityService: UtilityService) {
+  constructor(
+    private title: Title,
+    private dialogOpener: MatDialog,
+    public utilityService: UtilityService
+  ) {
     this.userAccount = JSON.parse(localStorage.getItem('selected-account'));
     this.selectedCurrency = this.utilityService.selectedCurrency;
+    this.parseDepositedNumber = this.utilityService.parseNumberWithCommas;
   }
 
   ngOnInit(): void {
-    this.title.setTitle("Your overall transactions made");
+    this.title.setTitle('Your overall transactions made');
   }
 
-  makeTransaction(actionType: string) {  
+  makeTransaction(actionType: string) {
     this.dialogOpener.open(OkDialogComponent, {
       data: {
         title: 'Error! Visit Our Branches',
-        message: `You cannot make an online ${actionType} due to security concerns. ` + 
-        `You can make a ${actionType} by visiting any of our branches.`
-      }
-    })
+        message:
+          `You cannot make an online ${actionType} due to security concerns. ` +
+          `You can make a ${actionType} by visiting any of our branches.`,
+      },
+    });
   }
 
   getAccountDetails() {
     // this.isFetching = true;
     // this.isErrorFetching = false;
 
-    this.utilityService.getUserAccount(this.userAccount['id'])
-    .subscribe(userAccount => {
-      // this.isFetching = false;
-      // this.userAccount = userAccount;
-
-      // console.log(this.userAccount['transactions']);
-      // this.transactions = this.userAccount['transactions'];
-
-      // this.transfers = this.userAccount['transfers'];
-
-      // this.transfers.forEach(transfer => {
-      //   this.totalTransferedAmount += transfer['amount'];
-      //   transfer['createdAt'] = new Date(transfer['createdAt']).toDateString();
-      //   return transfer;
-      // })
-
-      // this.deposits = this.userAccount['transactions'].filter(transaction => {
-      //   if (transaction['type'] == 'deposit') {
-      //     this.totalDepositedAmount += transaction['amount'];
-      //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
-      //     return transaction;
-      //   }
-      // });
-
-      // this.withdrawals = this.userAccount['transactions'].filter(transaction => {
-      //   if ( transaction['type'] == 'withdrawal') {
-      //     this.totalWithdrawnAmount += transaction['amount'];
-      //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
-      //     return transaction;
-      //   }
-      // });
-    }, error => {
-      // this.isFetching = false;
-      // this.isErrorFetching = true;
-    });
+    this.utilityService.getUserAccount(this.userAccount['id']).subscribe(
+      (userAccount) => {
+        // this.isFetching = false;
+        // this.userAccount = userAccount;
+        // console.log(this.userAccount['transactions']);
+        // this.transactions = this.userAccount['transactions'];
+        // this.transfers = this.userAccount['transfers'];
+        // this.transfers.forEach(transfer => {
+        //   this.totalTransferedAmount += transfer['amount'];
+        //   transfer['createdAt'] = new Date(transfer['createdAt']).toDateString();
+        //   return transfer;
+        // })
+        // this.deposits = this.userAccount['transactions'].filter(transaction => {
+        //   if (transaction['type'] == 'deposit') {
+        //     this.totalDepositedAmount += transaction['amount'];
+        //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
+        //     return transaction;
+        //   }
+        // });
+        // this.withdrawals = this.userAccount['transactions'].filter(transaction => {
+        //   if ( transaction['type'] == 'withdrawal') {
+        //     this.totalWithdrawnAmount += transaction['amount'];
+        //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
+        //     return transaction;
+        //   }
+        // });
+      },
+      (error) => {
+        // this.isFetching = false;
+        // this.isErrorFetching = true;
+      }
+    );
   }
-
 }

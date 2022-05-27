@@ -38,7 +38,11 @@
         </span>
         <!-- {{transactedAmount?.toFixed(2)}} -->
         {{
-          (transactedAmount * utilityService.selectedCurrency.rate)?.toFixed(2)
+          parseDepositedNumber(
+            (
+              this.transactedAmount * this.utilityService.selectedCurrency.rate
+            ).toFixed(2)
+          )
         }}
       </span>
     </p>

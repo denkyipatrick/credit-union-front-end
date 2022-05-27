@@ -30,6 +30,10 @@ export class UtilityService {
     this.applicationName = `${this.bankName} - Online Banking Platform`;
   }
 
+  parseNumberWithCommas(numberString: string): string {
+    return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   public getAccountTypes(): Observable<object[]> {
     return this.http.get<object[]>(
       `${this.constantsService.ACCOUNT_TYPES_URL}`

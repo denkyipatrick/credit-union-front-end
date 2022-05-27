@@ -19,7 +19,11 @@
           {{ utilityService.euroSymbol }}
         </span>
         {{
-          (depositedAmount * utilityService.selectedCurrency.rate)?.toFixed(2)
+          parseDepositedNumber(
+            (
+              this.depositedAmount * this.utilityService.selectedCurrency.rate
+            ).toFixed(2)
+          )
         }}
       </span>
     </p>

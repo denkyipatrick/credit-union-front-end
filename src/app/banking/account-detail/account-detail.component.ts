@@ -24,6 +24,7 @@ export class AccountDetailComponent implements OnInit {
   networkErrorMessage: String;
 
   accountId: string;
+  parsedBalance: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -54,14 +55,22 @@ export class AccountDetailComponent implements OnInit {
         this.account = account;
         this.isLoading = false;
 
+        this.parsedBalance = this.utilityService.parseNumberWithCommas(
+          (
+            (this.account?.balance *
+              this.utilityService.selectedCurrency?.rate) as Number
+          ).toFixed(2)
+        );
+
         this.account.transactions.forEach((transaction) => {
-          // this.totalTransferedAmount += transfer['amount'];
           transaction['createdAt'] = new Date(
             transaction['createdAt']
           ).toDateString();
           this.totalTransactedAmount += transaction.amount;
-          transaction.amount = (transaction.amount as Number).toLocaleString(
-            'en-US'
+          transaction.parsedAmount = this.utilityService.parseNumberWithCommas(
+            (
+              transaction.amount * this.utilityService.selectedCurrency.rate
+            ).toFixed(2)
           );
 
           return transaction;
@@ -70,6 +79,12 @@ export class AccountDetailComponent implements OnInit {
         this.account.deposits.forEach((deposit) => {
           deposit['createdAt'] = new Date(deposit['createdAt']).toDateString();
           this.totalDepositedAmount += deposit.amount;
+
+          deposit.parsedAmount = this.utilityService.parseNumberWithCommas(
+            (
+              deposit.amount * this.utilityService.selectedCurrency.rate
+            ).toFixed(2)
+          );
         });
 
         this.account.withdrawals.forEach((withdrawals) => {
@@ -77,6 +92,12 @@ export class AccountDetailComponent implements OnInit {
             withdrawals['createdAt']
           ).toDateString();
           this.totalWithdrawnAmount += withdrawals.amount;
+
+          withdrawals.parsedAmount = this.utilityService.parseNumberWithCommas(
+            (
+              withdrawals.amount * this.utilityService.selectedCurrency.rate
+            ).toFixed(2)
+          );
         });
       },
       (error) => {

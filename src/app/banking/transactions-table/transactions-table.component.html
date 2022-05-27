@@ -28,9 +28,7 @@
         </strong>
         &nbsp;
         <span class="text-gray-900">
-          {{
-            (element.amount * utilityService.selectedCurrency.rate)?.toFixed(2)
-          }}
+          {{ element.parsedAmount }}
         </span>
       </td>
     </ng-container>
