@@ -1,3 +1,4 @@
+import { tap } from 'rxjs/operators';
 import { OkDialogComponent } from './../../ok-dialog/ok-dialog.component';
 import { Title } from '@angular/platform-browser';
 import { UtilityService } from './../../services/utility.service';
@@ -15,22 +16,11 @@ export class TransactionsComponent implements OnInit {
 
   isFetching: boolean;
   isErrorFetching: boolean;
-  @Input() transactions: any[];
-  transactedAmountString: string;
-  @Input() transactedAmount: number;
-
-  transactionsTableColumns = ['accountNumber', 'amount', 'type', 'date'];
-  transactionTypes: string[];
 
   deposits: any[];
   transfers: any[];
   withdrawals: any[];
-
-  totalDepositedAmount = 0;
-  totalWithdrawnAmount = 0;
-  totalTransferedAmount = 0;
-  depositedAmountString: string;
-  parseDepositedNumber: Function;
+  transactions: any[];
 
   constructor(
     private title: Title,
@@ -39,11 +29,33 @@ export class TransactionsComponent implements OnInit {
   ) {
     this.userAccount = JSON.parse(localStorage.getItem('selected-account'));
     this.selectedCurrency = this.utilityService.selectedCurrency;
-    this.parseDepositedNumber = this.utilityService.parseNumberWithCommas;
   }
 
   ngOnInit(): void {
     this.title.setTitle('Your overall transactions made');
+    this.fetchTransactions();
+  }
+
+  makeDeposit() {
+    this.dialogOpener.open(OkDialogComponent, {
+      data: {
+        title: 'Error! Visit Our Branches',
+        message:
+          'You cannot make an online deposit due to security concerns. ' +
+          'You can make a deposit via our ATM machines or by visiting any of our branches.',
+      },
+    });
+  }
+
+  makeWithdrawal() {
+    this.dialogOpener.open(OkDialogComponent, {
+      data: {
+        title: 'Error! Visit Our Branches',
+        message:
+          'You cannot make an online withdrawal due to security concerns. ' +
+          'You can make a withdrawal by using our ATM machines or visiting any of our branches.',
+      },
+    });
   }
 
   makeTransaction(actionType: string) {
@@ -57,41 +69,33 @@ export class TransactionsComponent implements OnInit {
     });
   }
 
-  getAccountDetails() {
-    // this.isFetching = true;
-    // this.isErrorFetching = false;
-
-    this.utilityService.getUserAccount(this.userAccount['id']).subscribe(
-      (userAccount) => {
-        // this.isFetching = false;
-        // this.userAccount = userAccount;
-        // console.log(this.userAccount['transactions']);
-        // this.transactions = this.userAccount['transactions'];
-        // this.transfers = this.userAccount['transfers'];
-        // this.transfers.forEach(transfer => {
-        //   this.totalTransferedAmount += transfer['amount'];
-        //   transfer['createdAt'] = new Date(transfer['createdAt']).toDateString();
-        //   return transfer;
-        // })
-        // this.deposits = this.userAccount['transactions'].filter(transaction => {
-        //   if (transaction['type'] == 'deposit') {
-        //     this.totalDepositedAmount += transaction['amount'];
-        //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
-        //     return transaction;
-        //   }
-        // });
-        // this.withdrawals = this.userAccount['transactions'].filter(transaction => {
-        //   if ( transaction['type'] == 'withdrawal') {
-        //     this.totalWithdrawnAmount += transaction['amount'];
-        //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
-        //     return transaction;
-        //   }
-        // });
-      },
-      (error) => {
-        // this.isFetching = false;
-        // this.isErrorFetching = true;
-      }
-    );
+  fetchTransactions() {
+    this.utilityService
+      .getUserAccountTransactions(this.userAccount['id'])
+      .pipe(
+        tap((transactions) => {
+          return transactions.map((tr) => {
+            tr['createdAt'] = new Date(tr['createdAt']).toDateString();
+            tr['parsedAmount'] = this.utilityService.parseNumberWithCommas(
+              (
+                tr['amount'] * this.utilityService.selectedCurrency.rate
+              ).toFixed(2)
+            );
+            return tr;
+          });
+        })
+      )
+      .subscribe(
+        (transactions) => {
+          this.transactions = transactions;
+          this.deposits = transactions.filter((t) => t['type'] === 'deposit');
+          this.withdrawals = transactions.filter(
+            (t) => t['type'] === 'withdrawal'
+          );
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 }
