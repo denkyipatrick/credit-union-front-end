@@ -10,14 +10,6 @@ import { Component, OnInit } from '@angular/core';
 export class AccountDetailComponent implements OnInit {
   account: any;
   selectedCurrency: any;
-  depositTransactions: any[] = [];
-  withdrawalTransactions: any[] = [];
-
-  accountTransactions: any[];
-
-  totalDepositedAmount: number;
-  totalWithdrawnAmount: number;
-  totalTransactedAmount: number;
 
   isLoading: boolean;
   isErrorLoading: boolean;
@@ -30,17 +22,12 @@ export class AccountDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private utilityService: UtilityService
   ) {
-    this.totalDepositedAmount = 0;
-    this.totalWithdrawnAmount = 0;
-    this.totalTransactedAmount = 0;
-
     this.selectedCurrency = this.utilityService.selectedCurrency;
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.accountId = params['id'];
-
       this.getAccountDetail();
     });
   }
@@ -61,86 +48,11 @@ export class AccountDetailComponent implements OnInit {
               this.utilityService.selectedCurrency?.rate) as Number
           ).toFixed(2)
         );
-
-        this.account.transactions.forEach((transaction) => {
-          transaction['createdAt'] = new Date(
-            transaction['createdAt']
-          ).toDateString();
-          this.totalTransactedAmount += transaction.amount;
-          transaction.parsedAmount = this.utilityService.parseNumberWithCommas(
-            (
-              transaction.amount * this.utilityService.selectedCurrency.rate
-            ).toFixed(2)
-          );
-
-          return transaction;
-        });
-
-        this.account.deposits.forEach((deposit) => {
-          deposit['createdAt'] = new Date(deposit['createdAt']).toDateString();
-          this.totalDepositedAmount += deposit.amount;
-
-          deposit.parsedAmount = this.utilityService.parseNumberWithCommas(
-            (
-              deposit.amount * this.utilityService.selectedCurrency.rate
-            ).toFixed(2)
-          );
-        });
-
-        this.account.withdrawals.forEach((withdrawals) => {
-          withdrawals['createdAt'] = new Date(
-            withdrawals['createdAt']
-          ).toDateString();
-          this.totalWithdrawnAmount += withdrawals.amount;
-
-          withdrawals.parsedAmount = this.utilityService.parseNumberWithCommas(
-            (
-              withdrawals.amount * this.utilityService.selectedCurrency.rate
-            ).toFixed(2)
-          );
-        });
       },
       (error) => {
         this.isLoading = false;
         this.isErrorLoading = true;
-
-        console.error(error);
       }
     );
-  }
-
-  getAccountDetails() {
-    // this.isFetching = true;
-    // this.isErrorFetching = false;
-    // this.utilityService.getUserAccount(this.userAccount['id'])
-    // .subscribe(userAccount => {
-    // this.isFetching = false;
-    // this.userAccount = userAccount;
-    // console.log(this.userAccount['transactions']);
-    // this.transactions = this.userAccount['transactions'];
-    // this.transfers = this.userAccount['transfers'];
-    // this.transfers.forEach(transfer => {
-    //   this.totalTransferedAmount += transfer['amount'];
-    //   transfer['createdAt'] = new Date(transfer['createdAt']).toDateString();
-    //   return transfer;
-    // })
-    // this.deposits = this.userAccount['transactions'].filter(transaction => {
-    //   if (transaction['type'] == 'deposit') {
-    //     this.totalDepositedAmount += transaction['amount'];
-    //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
-    //     return transaction;
-    //   }
-    // });
-    // this.withdrawals = this.userAccount['transactions'].filter(transaction => {
-    //   if ( transaction['type'] == 'withdrawal') {
-    //     this.totalWithdrawnAmount += transaction['amount'];
-    //     transaction['createdAt'] = new Date(transaction['createdAt']).toDateString();
-    //     return transaction;
-    //   }
-    // });
-    // }, error => {
-    // this.isFetching = false;
-    // this.isErrorFetching = true;
-    // });
   }
 }

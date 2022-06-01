@@ -26,37 +26,7 @@
     </div>
 
     <div>
-      <mat-tab-group>
-        <mat-tab label="Bank Statement">
-          <div class="my-4">
-            <app-transactions
-              [transactions]="account?.transactions"
-              [transactedAmount]="totalTransactedAmount"
-            ></app-transactions>
-          </div>
-        </mat-tab>
-        <mat-tab label="Deposits">
-          <div>
-            <app-deposits
-              [deposits]="account?.deposits"
-              [depositedAmount]="totalDepositedAmount"
-            ></app-deposits>
-          </div>
-        </mat-tab>
-        <mat-tab label="Withdrawals">
-          <div>
-            <app-withdrawals
-              [withdrawals]="account?.withdrawals"
-              [withdrawnAmount]="totalWithdrawnAmount"
-            ></app-withdrawals>
-          </div>
-        </mat-tab>
-        <mat-tab label="Transfers">
-          <div>
-            <app-transfers></app-transfers>
-          </div>
-        </mat-tab>
-      </mat-tab-group>
+      <app-transactions></app-transactions>
     </div>
   </mat-card-content>
 </mat-card>
