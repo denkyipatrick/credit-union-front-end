@@ -15,6 +15,7 @@ import { AccountDetailComponent } from './account-detail/account-detail.componen
 import { DepositsComponent } from './deposits/deposits.component';
 import { WithdrawalsComponent } from './withdrawals/withdrawals.component';
 import { TransactionsTableComponent } from './transactions-table/transactions-table.component';
+import { TransactionTypeDetailComponent } from './transaction-type-detail/transaction-type-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TransactionsTableComponent } from './transactions-table/transactions-ta
     DepositsComponent,
     WithdrawalsComponent,
     TransactionsTableComponent,
+    TransactionTypeDetailComponent,
   ],
   imports: [
     CommonModule,

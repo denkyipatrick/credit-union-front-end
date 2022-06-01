@@ -1,0 +1,28 @@
+<div>
+  <app-transactions-table
+    *ngIf="transactions?.length"
+    [transactions]="transactions"
+    [isShowType]="isShowTransactionType"
+  ></app-transactions-table>
+
+  <div *ngIf="!transactions?.length">
+    <p class="my-8 text-base">Your transactions will show here!</p>
+  </div>
+
+  <div class="my-4 flex items-center justify-between">
+    <p *ngIf="transactions?.length" class="text-base">
+      <span class="text-gray-700">Total: </span>
+      <span class="text-gray-900 font-medium">
+        <span *ngIf="currency.id == 'usd_currency'">
+          {{ utilityService.dollarSymbol }}
+        </span>
+        <span *ngIf="currency.id == 'euro_currency'">
+          {{ utilityService.euroSymbol }}
+        </span>
+        {{ transactedAmountString }}
+      </span>
+    </p>
+    <!-- make transaction (deposit, withdrawal) button will be here...-->
+    <ng-content></ng-content>
+  </div>
+</div>
