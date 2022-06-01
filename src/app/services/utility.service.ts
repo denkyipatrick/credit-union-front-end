@@ -69,6 +69,12 @@ export class UtilityService {
     );
   }
 
+  public getUserAccountTransactions(userAccountId: string) {
+    return this.http.get<object[]>(
+      `${this.constantsService.USER_ACCOUNTS_URL}/${userAccountId}/transactions`
+    );
+  }
+
   public getUserAccountDeposits(userAccountId: string) {
     return this.http.get<object[]>(
       `${this.constantsService.USER_ACCOUNTS_URL}/${userAccountId}/deposits`
