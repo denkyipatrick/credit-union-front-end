@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const materialComponents = [
@@ -32,11 +33,12 @@ const materialComponents = [
   MatMenuModule,
   MatExpansionModule,
   MatTableModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
   imports: [materialComponents],
-  exports: [materialComponents]
+  exports: [materialComponents],
 })
-export class MaterialComponentsModule { }
+export class MaterialComponentsModule {}

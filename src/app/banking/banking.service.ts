@@ -1,10 +1,12 @@
 import { ConstantsService } from './../services/constants.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, of } from 'rxjs';
 
 @Injectable()
 export class BankingService {
   user: any;
+  isRouterLoading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(
     private http: HttpClient,

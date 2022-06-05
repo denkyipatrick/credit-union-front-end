@@ -1,50 +1,56 @@
-<div id="header" class="bg-gray-200" (window:resize)="windowResized()">
-  <div
-    style="width: 1440px; max-width: 95%; margin: 0 auto"
-    class="flex justify-between items-center"
-  >
-    <span class="space-x-4 flex items-center">
-      <button mat-icon-button class="md:hidden" (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-
-      <img src="../../assets/images/logo-square.png" style="height: 50px" />
-    </span>
-
-    <span>
-      <span>
-        <p style="font-size: 0.6rem">Currency</p>
-        <button
-          [matMenuTriggerFor]="menu"
-          style="border: 1px solid rgb(185, 185, 185)"
-        >
-          <span class="flex items-center px-2 rounded-lg">
-            <span>{{ selectedCurrency?.currency }}</span>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </span>
+<div>
+  <div id="header" class="bg-gray-200" (window:resize)="windowResized()">
+    <div
+      style="width: 1440px; max-width: 95%; margin: 0 auto"
+      class="flex justify-between items-center"
+    >
+      <span class="space-x-4 flex items-center">
+        <button mat-icon-button class="md:hidden" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
         </button>
+
+        <img src="../../assets/images/logo-square.png" style="height: 50px" />
       </span>
 
-      <mat-menu #menu="matMenu">
-        <button
-          mat-menu-item
-          *ngFor="let currency of currencies"
-          (click)="changeCurrency(currency)"
-        >
-          {{ currency?.currency }}
-        </button>
-      </mat-menu>
+      <span>
+        <span>
+          <p style="font-size: 0.6rem">Currency</p>
+          <button
+            [matMenuTriggerFor]="menu"
+            style="border: 1px solid rgb(185, 185, 185)"
+          >
+            <span class="flex items-center px-2 rounded-lg">
+              <span>{{ selectedCurrency?.currency }}</span>
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </span>
+          </button>
+        </span>
 
-      <button
-        class="left-menu-link text-black"
-        mat-button
-        (click)="logout()"
-        routerLinkActive="active-left-menu-link"
-      >
-        Sign Out
-      </button>
-    </span>
+        <mat-menu #menu="matMenu">
+          <button
+            mat-menu-item
+            *ngFor="let currency of currencies"
+            (click)="changeCurrency(currency)"
+          >
+            {{ currency?.currency }}
+          </button>
+        </mat-menu>
+
+        <button
+          class="left-menu-link text-black"
+          mat-button
+          (click)="logout()"
+          routerLinkActive="active-left-menu-link"
+        >
+          Sign Out
+        </button>
+      </span>
+    </div>
   </div>
+  <mat-progress-bar
+    [class.hide_progress]="(isLoading | async) === false"
+    mode="indeterminate"
+  ></mat-progress-bar>
 </div>
 
 <div

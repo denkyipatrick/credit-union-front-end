@@ -6,7 +6,8 @@
   text-align: left;
 }
 
-body {
+.hide_progress {
+  visibility: hidden;
 }
 
 h1,
@@ -29,16 +30,3 @@ p {
     max-width: 100%;
   }
 }
-
-// .secure-indicator {
-//     animation-name: marquee;
-// }
-
-// @keyframes marquee {
-//     from {
-//         transform: translateX(100);
-//     }
-//     to {
-//         transform: translateX(0);
-//     }
-// }

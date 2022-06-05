@@ -1,8 +1,14 @@
 import { BankingService } from './banking.service';
 import { UtilityService } from 'src/app/services/utility.service';
 import { LeftPaneAccountItemComponent } from './left-pane-account-item/left-pane-account-item.component';
-import { Router, ActivatedRoute } from '@angular/router';
+import {
+  Router,
+  ActivatedRoute,
+  NavigationStart,
+  NavigationEnd,
+} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-banking',
@@ -18,6 +24,7 @@ export class BankingComponent implements OnInit {
   drawerMode: string = 'side';
   drawerOpened = false;
   smallerWindow = true;
+  isLoading: Observable<boolean>;
 
   constructor(
     private router: Router,
@@ -46,6 +53,18 @@ export class BankingComponent implements OnInit {
     this.currencies = this.route.snapshot.data['currencies'];
     this.bankAccounts = this.route.snapshot.data['bankAccounts'];
     this.router.navigate(['/banking/accounts', this.bankAccounts[0].id]);
+
+    this.isLoading = this.bankingService.isRouterLoading;
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.bankingService.isRouterLoading.next(true);
+      }
+
+      if (event instanceof NavigationEnd) {
+        this.bankingService.isRouterLoading.next(false);
+      }
+    });
   }
 
   logout() {
@@ -78,6 +97,7 @@ export class BankingComponent implements OnInit {
       'selected-account',
       JSON.stringify(leftPaneAccountItemComponent.account)
     );
+
     this.router.navigate([
       'banking/accounts',
       leftPaneAccountItemComponent.account.id,
