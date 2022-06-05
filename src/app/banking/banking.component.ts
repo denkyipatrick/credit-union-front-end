@@ -43,7 +43,6 @@ export class BankingComponent implements OnInit {
   ngOnInit(): void {
     const accounts = this.route.snapshot.data['bankAccounts'];
     this.router.navigate(['/banking/accounts', accounts[0].id]);
-    this.getCurrencies();
   }
 
   logout() {
@@ -67,23 +66,6 @@ export class BankingComponent implements OnInit {
     localStorage.setItem('currency', JSON.stringify(currency));
     this.selectedCurrency = currency;
     location.reload();
-  }
-
-  getCurrencies() {
-    this.utilityService.getCurrencies().subscribe(
-      (currencies) => {
-        this.currencies = currencies;
-        if (!this.selectedCurrency) {
-          this.selectedCurrency = currencies[0];
-        }
-
-        localStorage.setItem('currency', JSON.stringify(this.selectedCurrency));
-        localStorage.setItem('currencies', JSON.stringify(currencies));
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
   }
 
   showAccountDetail(
