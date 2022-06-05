@@ -37,6 +37,6 @@ import { TransactionTypeDetailComponent } from './transaction-type-detail/transa
     PagesSubComponentsModule,
     MaterialComponentsModule,
   ],
-  providers: [BankingService, BankingResolver],
+  providers: [BankingService, BankingResolver, CurrencyResolver],
 })
 export class BankingModule {}

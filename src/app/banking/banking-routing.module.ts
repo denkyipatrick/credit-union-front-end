@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: BankingComponent,
-    resolve: { bankAccounts: BankingResolver },
+    resolve: { bankAccounts: BankingResolver, currencies: CurrencyResolver },
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'transfers', component: TransfersComponent },
