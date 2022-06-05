@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class BankingComponent implements OnInit {
   user: any;
   currencies: any[];
+  bankAccounts: any[];
   selectedCurrency: any;
 
   drawerMode: string = 'side';
@@ -41,8 +42,9 @@ export class BankingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const accounts = this.route.snapshot.data['bankAccounts'];
-    this.router.navigate(['/banking/accounts', accounts[0].id]);
+    this.currencies = this.route.snapshot.data['currencies'];
+    this.bankAccounts = this.route.snapshot.data['bankAccounts'];
+    this.router.navigate(['/banking/accounts', this.bankAccounts[0].id]);
   }
 
   logout() {
