@@ -75,11 +75,11 @@ export class TransactionsComponent implements OnInit {
       .pipe(
         tap((transactions) => {
           return transactions.map((tr) => {
+            tr['amount'] =
+              tr['amount'] * this.utilityService.selectedCurrency.rate;
             tr['createdAt'] = new Date(tr['createdAt']).toDateString();
             tr['parsedAmount'] = this.utilityService.parseNumberWithCommas(
-              (
-                tr['amount'] * this.utilityService.selectedCurrency.rate
-              ).toFixed(2)
+              tr['amount'].toFixed(2)
             );
             return tr;
           });

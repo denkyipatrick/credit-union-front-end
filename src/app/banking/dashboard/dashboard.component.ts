@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
   user: any;
@@ -21,9 +21,12 @@ export class DashboardComponent implements OnInit {
   totalWithdrawnAmount: number;
   totalTransferedAmount: number;
 
-  constructor(private title: Title, private dialogOpener: MatDialog, 
-    private utilityService: UtilityService) {
-    this.user = JSON.parse(localStorage.getItem('user'));
+  constructor(
+    private title: Title,
+    private dialogOpener: MatDialog,
+    private utilityService: UtilityService
+  ) {
+    this.user = this.utilityService.user;
     this.totalDepositedAmount = 0;
     this.totalWithdrawnAmount = 0;
     this.totalTransferedAmount = 0;
@@ -38,10 +41,11 @@ export class DashboardComponent implements OnInit {
     this.dialogOpener.open(OkDialogComponent, {
       data: {
         title: 'Error! Visit Our Branches',
-        message: 'You cannot make an online deposit due to security concerns. ' + 
-        'You can make a deposit by visiting any of our branches.'
-      }
-    })
+        message:
+          'You cannot make an online deposit due to security concerns. ' +
+          'You can make a deposit by visiting any of our branches.',
+      },
+    });
   }
 
   getAccounts() {
@@ -49,44 +53,31 @@ export class DashboardComponent implements OnInit {
     this.fetchingAccountData = true;
     this.errorFetchingAccountData = false;
 
-    this.utilityService.getUserAccounts(this.user['id'])
-    .subscribe(userAccounts => {
-      this.fetchingAccountData = false;
+    this.utilityService.getUserAccounts(this.user['id']).subscribe(
+      (userAccounts) => {
+        this.fetchingAccountData = false;
+        this.userAccount = userAccounts[0];
 
-      this.userAccount = userAccounts[0];
+        localStorage.setItem(
+          'selected-account',
+          JSON.stringify(this.userAccount)
+        );
+      },
+      (error) => {
+        this.fetchingAccountData = false;
+        this.errorFetchingAccountData = true;
 
-      this.userAccount['transactions']
-      .filter(transaction => transaction['type'] == 'deposit')
-      .forEach(deposit => {
-        this.totalDepositedAmount += deposit['amount']
-      });
-      
-      this.userAccount['transactions']
-      .filter(transaction => transaction['type'] == 'withdrawal')
-      .forEach(withdrawal => {
-        this.totalDepositedAmount += withdrawal['amount']
-      });
-      
-      this.userAccount['transfers']
-      .forEach(transfer => {
-        this.totalTransferedAmount += transfer['amount'];
-        return transfer;
-      });
-
-      localStorage.setItem('selected-account', JSON.stringify(this.userAccount));
-    }, error => {
-      this.fetchingAccountData = false;
-      this.errorFetchingAccountData = true;
-
-      switch(error.status) {
-        case 404:
-          this.errorMessage = "Your account could not be located. Please log in.";
-          break;
-        case 500:
-          this.errorMessage = "An unexpected error has occurred. Please try again later.";
-          break;
+        switch (error.status) {
+          case 404:
+            this.errorMessage =
+              'Your account could not be located. Please log in.';
+            break;
+          case 500:
+            this.errorMessage =
+              'An unexpected error has occurred. Please try again later.';
+            break;
+        }
       }
-    })
+    );
   }
-
 }

@@ -6,31 +6,31 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-banking',
   templateUrl: './banking.component.html',
-  styleUrls: ['./banking.component.scss']
+  styleUrls: ['./banking.component.scss'],
 })
 export class BankingComponent implements OnInit {
   user: any;
   currencies: any[];
   selectedCurrency: any;
 
-  drawerMode: string = "side";
+  drawerMode: string = 'side';
   drawerOpened = false;
   smallerWindow = true;
 
   constructor(private router: Router, private utilityService: UtilityService) {
-    this.user = JSON.parse(localStorage.getItem('user'));
-    this.selectedCurrency = JSON.parse(localStorage.getItem('currency'))
+    this.user = this.utilityService.user;
+    this.selectedCurrency = JSON.parse(localStorage.getItem('currency'));
 
     // this code support responsiveness and page adjustments.
     if (window.innerWidth <= 480) {
-      this.drawerMode = "over";
+      this.drawerMode = 'over';
       this.smallerWindow = true; // mobile window, show menu button
     } else if (window.innerWidth >= 481 && window.innerWidth < 901) {
-      this.drawerMode = "over";
+      this.drawerMode = 'over';
       this.drawerOpened = false;
       this.smallerWindow = true; // tablet window, show menu button
     } else {
-      this.drawerMode = "side";
+      this.drawerMode = 'side';
       this.drawerOpened = true;
       this.smallerWindow = false; // desktop window, do not show menu button
     }
@@ -42,17 +42,17 @@ export class BankingComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('user');
-    window.location.href = "/";
+    localStorage.clear();
+    window.location.href = '/';
   }
 
   windowResized() {
     if (window.innerWidth < 901) {
-      this.drawerMode = "over";
+      this.drawerMode = 'over';
       this.drawerOpened = false;
       this.smallerWindow = true;
     } else {
-      this.drawerMode = "side";
+      this.drawerMode = 'side';
       this.drawerOpened = true;
       this.smallerWindow = false;
     }
@@ -65,23 +65,32 @@ export class BankingComponent implements OnInit {
   }
 
   getCurrencies() {
-    this.utilityService.getCurrencies()
-    .subscribe(currencies => {
-      this.currencies = currencies;
-      if (!this.selectedCurrency) {
-        this.selectedCurrency = currencies[0]
+    this.utilityService.getCurrencies().subscribe(
+      (currencies) => {
+        this.currencies = currencies;
+        if (!this.selectedCurrency) {
+          this.selectedCurrency = currencies[0];
+        }
+
+        localStorage.setItem('currency', JSON.stringify(this.selectedCurrency));
+        localStorage.setItem('currencies', JSON.stringify(currencies));
+      },
+      (error) => {
+        console.log(error);
       }
-
-      localStorage.setItem('currency', JSON.stringify(this.selectedCurrency))
-      localStorage.setItem('currencies', JSON.stringify(currencies))
-    }, error => {
-      console.log(error);
-    });
+    );
   }
 
-  showAccountDetail(leftPaneAccountItemComponent: LeftPaneAccountItemComponent) {
-    localStorage.setItem('selected-account', JSON.stringify(leftPaneAccountItemComponent.account))
-    this.router.navigate(['banking/accounts', leftPaneAccountItemComponent.account.id])
+  showAccountDetail(
+    leftPaneAccountItemComponent: LeftPaneAccountItemComponent
+  ) {
+    localStorage.setItem(
+      'selected-account',
+      JSON.stringify(leftPaneAccountItemComponent.account)
+    );
+    this.router.navigate([
+      'banking/accounts',
+      leftPaneAccountItemComponent.account.id,
+    ]);
   }
-
 }

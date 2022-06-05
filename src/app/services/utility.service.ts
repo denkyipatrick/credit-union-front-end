@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UtilityService {
+  user: any;
   bankName: String;
   shortBankName: String;
   applicationName: String;
@@ -19,6 +20,7 @@ export class UtilityService {
     private http: HttpClient,
     private constantsService: ConstantsService
   ) {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.selectedCurrency = JSON.parse(localStorage.getItem('currency'));
 
     this.euroSymbol = '€';
