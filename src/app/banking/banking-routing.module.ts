@@ -1,3 +1,4 @@
+import { AccountDetailResolver } from './account-detail/account-detail.resolver';
 import { CurrencyResolver } from './currency.resolver';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { TransactionsComponent } from './transactions/transactions.component';
@@ -17,7 +18,11 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'transfers', component: TransfersComponent },
       { path: 'transactions', component: TransactionsComponent },
-      { path: 'accounts/:id', component: AccountDetailComponent },
+      {
+        path: 'accounts/:id',
+        component: AccountDetailComponent,
+        resolve: { account: AccountDetailResolver },
+      },
     ],
   },
 ];

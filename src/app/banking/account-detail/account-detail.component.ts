@@ -9,50 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountDetailComponent implements OnInit {
   account: any;
-  selectedCurrency: any;
-
-  isLoading: boolean;
-  isErrorLoading: boolean;
-  networkErrorMessage: String;
-
   accountId: string;
   parsedBalance: string;
+  selectedCurrency: any;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+    private route: ActivatedRoute,
     private utilityService: UtilityService
   ) {
     this.selectedCurrency = this.utilityService.selectedCurrency;
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      this.accountId = params['id'];
-      this.getAccountDetail();
+    this.route.data.subscribe((d) => {
+      this.account = d['account'];
+      this.parsedBalance = this.utilityService.parseNumberWithCommas(
+        Number(this.account?.balance * this.selectedCurrency?.rate).toFixed(2)
+      );
     });
-  }
-
-  getAccountDetail() {
-    this.isLoading = true;
-    this.isErrorLoading = false;
-    this.networkErrorMessage = '';
-
-    this.utilityService.getUserAccount(this.accountId).subscribe(
-      (account) => {
-        this.account = account;
-        this.isLoading = false;
-
-        this.parsedBalance = this.utilityService.parseNumberWithCommas(
-          (
-            (this.account?.balance *
-              this.utilityService.selectedCurrency?.rate) as Number
-          ).toFixed(2)
-        );
-      },
-      (error) => {
-        this.isLoading = false;
-        this.isErrorLoading = true;
-      }
-    );
   }
 }

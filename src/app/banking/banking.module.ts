@@ -1,3 +1,4 @@
+import { AccountDetailResolver } from './account-detail/account-detail.resolver';
 import { CurrencyResolver } from './currency.resolver';
 import { BankingResolver } from './banking.resolver';
 import { BankingService } from './banking.service';
@@ -37,6 +38,11 @@ import { TransactionTypeDetailComponent } from './transaction-type-detail/transa
     PagesSubComponentsModule,
     MaterialComponentsModule,
   ],
-  providers: [BankingService, BankingResolver, CurrencyResolver],
+  providers: [
+    BankingService,
+    BankingResolver,
+    CurrencyResolver,
+    AccountDetailResolver,
+  ],
 })
 export class BankingModule {}

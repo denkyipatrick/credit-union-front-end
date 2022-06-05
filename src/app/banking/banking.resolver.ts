@@ -7,6 +7,7 @@ import {
   ActivatedRouteSnapshot,
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class BankingResolver implements Resolve<boolean | any> {
@@ -17,6 +18,11 @@ export class BankingResolver implements Resolve<boolean | any> {
     state: RouterStateSnapshot
   ): Observable<boolean | any> {
     const user: any = JSON.parse(localStorage.getItem('user'));
-    return this.bankingService.getUserAccounts(user.id);
+    return this.bankingService.getUserAccounts(user.id).pipe(
+      tap((accounts) => {
+        localStorage.setItem('accounts', JSON.stringify(accounts));
+        localStorage.setItem('selected-account', JSON.stringify(accounts[0]));
+      })
+    );
   }
 }

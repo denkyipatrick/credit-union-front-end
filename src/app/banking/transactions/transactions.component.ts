@@ -2,7 +2,13 @@ import { tap } from 'rxjs/operators';
 import { OkDialogComponent } from './../../ok-dialog/ok-dialog.component';
 import { Title } from '@angular/platform-browser';
 import { UtilityService } from './../../services/utility.service';
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -10,20 +16,16 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.scss'],
 })
-export class TransactionsComponent implements OnInit {
+export class TransactionsComponent implements OnChanges {
   userAccount: any;
   selectedCurrency: any;
-
-  isFetching: boolean;
-  isErrorFetching: boolean;
 
   deposits: any[];
   transfers: any[];
   withdrawals: any[];
-  transactions: any[];
+  @Input() transactions: any[];
 
   constructor(
-    private title: Title,
     private dialogOpener: MatDialog,
     public utilityService: UtilityService
   ) {
@@ -31,9 +33,14 @@ export class TransactionsComponent implements OnInit {
     this.selectedCurrency = this.utilityService.selectedCurrency;
   }
 
-  ngOnInit(): void {
-    this.title.setTitle('Your overall transactions made');
-    this.fetchTransactions();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['transactions']?.currentValue['length']) {
+      const transactions = changes['transactions']?.currentValue;
+      this.deposits = transactions.filter((t: any) => t['type'] === 'deposit');
+      this.withdrawals = transactions.filter(
+        (t: any) => t['type'] === 'withdrawal'
+      );
+    }
   }
 
   makeDeposit() {
@@ -67,35 +74,5 @@ export class TransactionsComponent implements OnInit {
           `You can make a ${actionType} by visiting any of our branches.`,
       },
     });
-  }
-
-  fetchTransactions() {
-    this.utilityService
-      .getUserAccountTransactions(this.userAccount['id'])
-      .pipe(
-        tap((transactions) => {
-          return transactions.map((tr) => {
-            tr['amount'] =
-              tr['amount'] * this.utilityService.selectedCurrency.rate;
-            tr['createdAt'] = new Date(tr['createdAt']).toDateString();
-            tr['parsedAmount'] = this.utilityService.parseNumberWithCommas(
-              tr['amount'].toFixed(2)
-            );
-            return tr;
-          });
-        })
-      )
-      .subscribe(
-        (transactions) => {
-          this.transactions = transactions;
-          this.deposits = transactions.filter((t) => t['type'] === 'deposit');
-          this.withdrawals = transactions.filter(
-            (t) => t['type'] === 'withdrawal'
-          );
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
   }
 }
