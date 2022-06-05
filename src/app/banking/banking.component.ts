@@ -1,6 +1,6 @@
 import { UtilityService } from 'src/app/services/utility.service';
 import { LeftPaneAccountItemComponent } from './left-pane-account-item/left-pane-account-item.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,7 +17,11 @@ export class BankingComponent implements OnInit {
   drawerOpened = false;
   smallerWindow = true;
 
-  constructor(private router: Router, private utilityService: UtilityService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private utilityService: UtilityService
+  ) {
     this.user = this.utilityService.user;
     this.selectedCurrency = JSON.parse(localStorage.getItem('currency'));
 
@@ -37,7 +41,8 @@ export class BankingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['/banking/accounts', this.user.accounts[0].id]);
+    const accounts = this.route.snapshot.data['bankAccounts'];
+    this.router.navigate(['/banking/accounts', accounts[0].id]);
     this.getCurrencies();
   }
 

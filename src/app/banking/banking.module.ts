@@ -1,3 +1,6 @@
+import { CurrencyResolver } from './currency.resolver';
+import { BankingResolver } from './banking.resolver';
+import { BankingService } from './banking.service';
 import { PagesSubComponentsModule } from './../pages-sub-components/pages-sub-components.module';
 import { WaitingLoaderModule } from './../waiting-loader/waiting-loader.module';
 import { MaterialComponentsModule } from './../material-components.module';
@@ -34,5 +37,6 @@ import { TransactionTypeDetailComponent } from './transaction-type-detail/transa
     PagesSubComponentsModule,
     MaterialComponentsModule,
   ],
+  providers: [BankingService, BankingResolver],
 })
 export class BankingModule {}
