@@ -1,3 +1,4 @@
+import { BankingService } from './../banking.service';
 import { OkDialogComponent } from './../../ok-dialog/ok-dialog.component';
 import { Title } from '@angular/platform-browser';
 import { UtilityService } from './../../services/utility.service';
@@ -24,9 +25,9 @@ export class DashboardComponent implements OnInit {
   constructor(
     private title: Title,
     private dialogOpener: MatDialog,
-    private utilityService: UtilityService
+    private bankingService: BankingService
   ) {
-    this.user = this.utilityService.user;
+    this.user = this.bankingService.user;
     this.totalDepositedAmount = 0;
     this.totalWithdrawnAmount = 0;
     this.totalTransferedAmount = 0;
@@ -34,7 +35,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle('Dashboard - Bank of Southside Virginia');
-    this.getAccounts();
   }
 
   deposit() {
@@ -46,38 +46,5 @@ export class DashboardComponent implements OnInit {
           'You can make a deposit by visiting any of our branches.',
       },
     });
-  }
-
-  getAccounts() {
-    this.errorMessage = '';
-    this.fetchingAccountData = true;
-    this.errorFetchingAccountData = false;
-
-    this.utilityService.getUserAccounts(this.user['id']).subscribe(
-      (userAccounts) => {
-        this.fetchingAccountData = false;
-        this.userAccount = userAccounts[0];
-
-        localStorage.setItem(
-          'selected-account',
-          JSON.stringify(this.userAccount)
-        );
-      },
-      (error) => {
-        this.fetchingAccountData = false;
-        this.errorFetchingAccountData = true;
-
-        switch (error.status) {
-          case 404:
-            this.errorMessage =
-              'Your account could not be located. Please log in.';
-            break;
-          case 500:
-            this.errorMessage =
-              'An unexpected error has occurred. Please try again later.';
-            break;
-        }
-      }
-    );
   }
 }

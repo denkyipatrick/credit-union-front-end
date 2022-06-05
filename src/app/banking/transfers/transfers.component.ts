@@ -1,3 +1,4 @@
+import { BankingService } from './../banking.service';
 import { OkCancelDialogComponent } from './../../ok-cancel-dialog/ok-cancel-dialog.component';
 import { FormGroup, FormControl } from '@angular/forms';
 import { OkDialogComponent } from './../../ok-dialog/ok-dialog.component';
@@ -9,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-transfers',
   templateUrl: './transfers.component.html',
-  styleUrls: ['./transfers.component.scss']
+  styleUrls: ['./transfers.component.scss'],
 })
 export class TransfersComponent implements OnInit {
   user: any;
   userAccount: any;
   showForm: boolean;
   form: FormGroup;
-  transfers: any[]
+  transfers: any[];
 
   isFetching: boolean;
   isErrorFetching: boolean;
@@ -32,22 +33,33 @@ export class TransfersComponent implements OnInit {
   isTransferring: boolean;
   isErrorTransferring: boolean;
 
-  constructor(private title: Title, private dialogOpener: MatDialog, private utilityService: UtilityService) { 
+  constructor(
+    private title: Title,
+    private bankingService: BankingService,
+    private dialogOpener: MatDialog,
+    private utilityService: UtilityService
+  ) {
     this.user = JSON.parse(localStorage.getItem('user'));
     this.userAccount = JSON.parse(localStorage.getItem('selected-account'));
-    this.transferReceiver = JSON.parse(localStorage.getItem('transfer-receiver'));
+    this.transferReceiver = JSON.parse(
+      localStorage.getItem('transfer-receiver')
+    );
 
-    this.shortBankName = this.utilityService.shortBankName
+    this.shortBankName = this.utilityService.shortBankName;
 
     this.form = new FormGroup({
       amount: new FormControl(),
-      senderAccountId: new FormControl(this.userAccount ? this.userAccount['id'] : ''),
-      receiverAccountId: new FormControl(this.transferReceiver ? this.transferReceiver['accountNumber'] : '')
-    })
+      senderAccountId: new FormControl(
+        this.userAccount ? this.userAccount['id'] : ''
+      ),
+      receiverAccountId: new FormControl(
+        this.transferReceiver ? this.transferReceiver['accountNumber'] : ''
+      ),
+    });
   }
 
   ngOnInit(): void {
-    this.title.setTitle("Transfers - Bank of Southside Virginia");
+    this.title.setTitle('Transfers - Bank of Southside Virginia');
     this.getTransfers();
   }
 
@@ -56,18 +68,22 @@ export class TransfersComponent implements OnInit {
   }
 
   searchReceiver(searchKey: string) {
-    this.utilityService.searchTransferReceivers(searchKey)
-    .subscribe(receivers => {
-      this.transferReceivers = receivers;
-    }, error => {
-      console.error('error', error);
-    });
+    this.bankingService.searchTransferReceivers(searchKey).subscribe(
+      (receivers) => {
+        this.transferReceivers = receivers;
+      },
+      (error) => {
+        console.error('error', error);
+      }
+    );
   }
 
   receiverSelected(transferReceiver) {
     this.transferReceiver = transferReceiver;
     this.transferReceivers = [];
-    this.form.patchValue({'receiverAccountId': transferReceiver['accountNumber']})
+    this.form.patchValue({
+      receiverAccountId: transferReceiver['accountNumber'],
+    });
     localStorage.setItem('transfer-receiver', JSON.stringify(transferReceiver));
   }
 
@@ -75,77 +91,90 @@ export class TransfersComponent implements OnInit {
     this.dialogOpener.open(OkDialogComponent, {
       data: {
         title: 'No Outbound Transfers',
-        contactUs: `To go through with outbound money transfer, please ` + 
-        `<a href="/contact-us" class="text-blue-600">contact the bank</a>.`,
-        message: `Dear ${this.user['firstName']}, kindly note that we do not allow ` + 
-        `transfers to accounts outside of our bank on the internet. This is because of online security reasons.`
-      }
-    })
-  }
-  
-  transferMoney() {
-    this.dialogOpener.open(OkCancelDialogComponent)
-    .componentInstance.ok.subscribe(() => {
-      this.isTransferring = true;
-      this.transferErrorMessage = '';
-      this.isErrorTransferring = false;
-  
-      this.utilityService.transferMoney({
-        amount: +this.form.value['amount'],
-        senderAccountId: this.userAccount['id'],
-        receiverAccountId: this.transferReceiver['id']
-      })
-      .subscribe(transfer => {
-        this.accountTransfers.unshift(transfer);
-
-        this.showForm = false;
-        this.transferReceiver = null;
-        localStorage.removeItem('transfer-receiver');
-        this.userAccount['balance'] -= +this.form.value['amount'];
-        localStorage.setItem('selected-account', JSON.stringify(this.userAccount));
-
-        this.dialogOpener.open(OkDialogComponent, {
-          data: {
-            title: 'Transfer Successful',
-            message: 'The money transfer action was successful.'
-          }
-        })
-      }, error => {
-        this.isTransferring = false;
-        this.isErrorTransferring = true;
-  
-        switch(error.status) {
-          case 500:
-            break;
-        }
-      });
+        contactUs:
+          `To go through with outbound money transfer, please ` +
+          `<a href="/contact-us" class="text-blue-600">contact the bank</a>.`,
+        message:
+          `Dear ${this.user['firstName']}, kindly note that we do not allow ` +
+          `transfers to accounts outside of our bank on the internet. This is because of online security reasons.`,
+      },
     });
+  }
+
+  transferMoney() {
+    this.dialogOpener
+      .open(OkCancelDialogComponent)
+      .componentInstance.ok.subscribe(() => {
+        this.isTransferring = true;
+        this.transferErrorMessage = '';
+        this.isErrorTransferring = false;
+
+        this.bankingService
+          .transferMoney({
+            amount: +this.form.value['amount'],
+            senderAccountId: this.userAccount['id'],
+            receiverAccountId: this.transferReceiver['id'],
+          })
+          .subscribe(
+            (transfer) => {
+              this.accountTransfers.unshift(transfer);
+
+              this.showForm = false;
+              this.transferReceiver = null;
+              localStorage.removeItem('transfer-receiver');
+              this.userAccount['balance'] -= +this.form.value['amount'];
+              localStorage.setItem(
+                'selected-account',
+                JSON.stringify(this.userAccount)
+              );
+
+              this.dialogOpener.open(OkDialogComponent, {
+                data: {
+                  title: 'Transfer Successful',
+                  message: 'The money transfer action was successful.',
+                },
+              });
+            },
+            (error) => {
+              this.isTransferring = false;
+              this.isErrorTransferring = true;
+
+              switch (error.status) {
+                case 500:
+                  break;
+              }
+            }
+          );
+      });
   }
 
   getTransfers() {
     this.isFetching = true;
     this.isErrorFetching = false;
 
-    this.utilityService.getAccountTransfers(this.userAccount['id'])
-    .subscribe(transfers => {
-      this.isFetching = false;
-      this.accountTransfers = transfers;
-      this.accountTransfers.forEach(transfer =>  {
-        transfer['createdAt'] = new Date(transfer['createdAt']).toDateString();
-        this.totalTransferedAmount += +transfer['amount'];
-        return transfer;
-      });
-      
-    }, error => {
-      this.isFetching = false;
-      this.isErrorFetching = true;
-      
-      switch(error.status) {
-        case 404:
-          break;
-        case 500:
-          break;
+    this.bankingService.getAccountTransfers(this.userAccount['id']).subscribe(
+      (transfers) => {
+        this.isFetching = false;
+        this.accountTransfers = transfers;
+        this.accountTransfers.forEach((transfer) => {
+          transfer['createdAt'] = new Date(
+            transfer['createdAt']
+          ).toDateString();
+          this.totalTransferedAmount += +transfer['amount'];
+          return transfer;
+        });
+      },
+      (error) => {
+        this.isFetching = false;
+        this.isErrorFetching = true;
+
+        switch (error.status) {
+          case 404:
+            break;
+          case 500:
+            break;
+        }
       }
-    });
+    );
   }
 }

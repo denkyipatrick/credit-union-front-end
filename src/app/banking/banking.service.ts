@@ -48,4 +48,17 @@ export class BankingService {
       `${this.constantsService.USER_ACCOUNTS_URL}/${userAccountId}/withdrawals`
     );
   }
+
+  searchTransferReceivers(accountIdOrNumber: string) {
+    return this.http.get<object[]>(
+      `${this.constantsService.USER_ACCOUNTS_URL}/search?q=${accountIdOrNumber}`
+    );
+  }
+
+  public transferMoney(data: object) {
+    return this.http.post<object>(
+      `${this.constantsService.MONEY_TRANSFERS_URL}`,
+      data
+    );
+  }
 }
