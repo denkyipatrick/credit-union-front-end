@@ -25,6 +25,7 @@ export class BankingComponent implements OnInit {
   drawerOpened = false;
   smallerWindow = true;
   isLoading: Observable<boolean>;
+  isDrawerOpened: boolean;
 
   constructor(
     private router: Router,
@@ -75,11 +76,11 @@ export class BankingComponent implements OnInit {
   windowResized() {
     if (window.innerWidth < 901) {
       this.drawerMode = 'over';
-      this.drawerOpened = false;
+      this.isDrawerOpened = false;
       this.smallerWindow = true;
     } else {
       this.drawerMode = 'side';
-      this.drawerOpened = true;
+      this.isDrawerOpened = true;
       this.smallerWindow = false;
     }
   }

@@ -60,7 +60,7 @@
   <mat-drawer-container class="w-full">
     <mat-drawer
       #drawer
-      [opened]="drawerOpened"
+      [opened]="isDrawerOpened"
       [mode]="drawerMode"
       style="width: 300px"
     >
@@ -92,7 +92,7 @@
             <li *ngFor="let account of bankAccounts">
               <app-left-pane-account-item
                 [account]="account"
-                (selected)="showAccountDetail($event)"
+                (selected)="showAccountDetail($event); drawer.close()"
               >
               </app-left-pane-account-item>
             </li>
