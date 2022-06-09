@@ -46,6 +46,7 @@ export class BankingComponent implements OnInit {
     } else {
       this.drawerMode = 'side';
       this.drawerOpened = true;
+      this.isDrawerOpened = true;
       this.smallerWindow = false; // desktop window, do not show menu button
     }
   }
